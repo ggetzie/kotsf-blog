@@ -108,7 +108,8 @@
 
     a:link {
         color: blue;
-	    text-decoration: none;
+        text-decoration: none;
+        
     }
 
     a:visited {
