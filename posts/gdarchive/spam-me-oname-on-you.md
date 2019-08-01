@@ -1,0 +1,16 @@
+---
+path: "/gdarchive/10"
+title: "Spam me once, shame on you..."
+oldId: 10
+---
+I knew this day would come. GreaterDebater experienced it's first wave of spam this past week. In a way, it's almost flattering that the site is considered worth spamming now. In another much more prevalent way it's incredibly annoying. I know I'm only about the billionth or so person to complain about spam, but I have to wonder if the fact that spam is a worthwhile activity for some people is not an indication that there's something seriously broken about the way the Internet works.
+
+The blessing and the curse of the Internet has been the ability to widely distribute information with very low overhead. This has simultaneously made more knowledge available to more people than at any point in history and also presented serious challenges for anyone who was making a living copying and distributing information that can now be delivered digitally. Spam and piracy exist at opposite ends of the digital distribution spectrum. In the case of piracy, you have information that many people want, but the producers of this information want to carefully control the supply to maximize the value. With spam, you have information that *nobody* wants, yet the producers want to disseminate it as widely as possible. I'm not sure that this points to a common solution, but I think it helps to know the two problems spring from similar sources. If there were a communication paradigm that balanced the needs of information consumers and producers this might help, but I don't think it's the only solution.
+
+The thing about the spam I've received so far is that it does not appear to be selling anything. For one thing, most of it hasn't been in English. Don't get me wrong, I would love for GreaterDebater to have a fully international audience, but that just isn't the case yet. Attempting to advertise your foreign language product via a site which is pretty obviously only English speaking doesn't make a lot of sense. Since this particular brand of spammers isn't trying to get people to part with their money directly, I can only assume they're trying to promote sites which will attempt to install malware. This is really only a superficial difference, though. In all probability the malware will be used to assimilate the victim's PC into a botnet and send out ... more spam.
+
+It's hard to imagine that spam filters could get much more accurate, or that the response rate for spam could get much lower. Increasing the cost of sending email would undoubtedly produce more harm than good. Few, if any, of the products advertised via spam are legitimate and there's no shortage of outright scams. If the only cost of doing business is sending the spam, it doesn't take much response to make it profitable. 
+
+I don't know what the solution is. I hope one day we'll move past spam. Right now an enormous amount of bandwidth is wasted delivering messages that are unwanted or outright harmful. Not to mention that the spammers' lives are being wasted producing nothing of value. If we could harness these resources towards more productive ends, who knows what we might be able to achieve?
+
+*Originally published 2010-03-22 20:09:25*

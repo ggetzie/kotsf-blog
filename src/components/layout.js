@@ -1,7 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, Link, graphql } from "gatsby"
 import styled from "styled-components"
 import { rhythm } from "../utils/typography"
+
+
 
 const Container = styled.div`
     display: flex;
@@ -38,30 +40,44 @@ const Brand = styled.h1`
     font-size: ${rhythm(2.5)};
 `
 
-export default ({ children }) => (
-    <Container>
-        <Entry>
-            {children}
-        </Entry>
-        <sideNav>
-            <Brand><Link className="brand" to="/">KotSF</Link></Brand>
-            <tagLine>Things n' Stuff</tagLine>
-            <nav className="navigation">
-                <ul>
-                    <li>
-                        <Link to="/about/">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/archive/">Archive</Link>
-                    </li>
-                    <li>
-                        <Link to="/portfolio/">Portfolio</Link>
-                    </li>
-                    <li>
-                        <Link to="/contact/">Contact</Link>
-                    </li>
-                </ul>
-            </nav>
-        </sideNav>
-    </Container>        
-)
+export default ({ children }) => {
+    const data = useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        title
+                        tagline
+                }
+            }
+        }
+    `
+    )
+    return (
+        <Container>
+            <Entry>
+                {children}
+            </Entry>
+            <sideNav>
+                <Brand><Link className="brand" to="/">{data.site.siteMetadata.title}</Link></Brand>
+                <tagLine>{data.site.siteMetadata.tagline}</tagLine>
+                <nav className="navigation">
+                    <ul>
+                        <li>
+                            <Link to="/about/">About</Link>
+                        </li>
+                        <li>
+                            <Link to="/archive/">Archive</Link>
+                        </li>
+                        <li>
+                            <Link to="/portfolio/">Portfolio</Link>
+                        </li>
+                        <li>
+                            <Link to="/contact/">Contact</Link>
+                        </li>
+                    </ul>
+                </nav>
+            </sideNav>
+        </Container>        
+    )
+}
