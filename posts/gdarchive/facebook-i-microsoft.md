@@ -2,6 +2,8 @@
 path: "/gdarchive/14"
 title: "Facebook is the new Microsoft"
 oldId: 14
+date: 2010-05-20
+section: "gdarchive"
 ---
 Is it me, or are the similarities between Facebook and Microsoft becoming downright eerie? I know Microsoft is a major investor in Facebook, so it's probably not all coincidental. But sometimes it seems like Facebook is running the MS playbook step by step, including the mistakes.
 

@@ -2,6 +2,8 @@
 path: "/gdarchive/23"
 title: "Is Music Getting More Self-Centered?"
 oldId: 23
+date: 2011-06-30
+section: "gdarchive"
 ---
 I heard on the radio the other day that Top 40 songs have gotten more self-centered recently. Supposedly, songs in the past used to be about ideas and now they're just all about the person singing the song. The DJ picked a few examples, found that it was the case, and declared this to be true. 
 

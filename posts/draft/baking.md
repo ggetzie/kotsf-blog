@@ -2,6 +2,8 @@
 path: "/drafts/baking/"
 title: "The Great British Baking Show"
 oldId: 
+date: 2018-11-01
+section: "draft"
 ---
 Just what is it about The Great British Baking Show?
 

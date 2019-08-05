@@ -3,6 +3,7 @@ path: "/never-buy-retail/"
 date: 2015-01-18
 title: "Never Buy Retail"
 oldId: 64
+section: "publish"
 ---
 In light of a particularly aggressive savings plan this year, I've been thinking
 hard about every purchase I make. In doing so I think I've come up with a good

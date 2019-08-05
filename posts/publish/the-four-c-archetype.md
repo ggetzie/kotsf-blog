@@ -3,6 +3,7 @@ path: "/the-four-c-archetype/"
 date: 2015-08-15
 title: "The Four Character Group Archetype"
 oldId: 100
+section: "publish"
 ---
 I've noticed that when a work of fiction focuses on a group of four characters,
 the roles those characters play within the group fall into a pattern. It seems

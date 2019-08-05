@@ -2,6 +2,8 @@
 path: "/gdarchive/4"
 title: "So you want to autolink urls..."
 oldId: 4
+date: 2010-02-08
+section: "gdarchive"
 ---
 Finding a url inside a chunk of text is no easy task.
 [Coding Horror](http://www.codinghorror.com/blog/archives/001181.html)

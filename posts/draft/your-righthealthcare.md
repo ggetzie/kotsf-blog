@@ -2,6 +2,8 @@
 path: "/drafts/your-righthealthcare/"
 title: "Your right to healthcare"
 oldId: 21
+date: 2016-01-24
+section: "draft"
 ---
 Whether a single payer or other government run system is a more effective way to deliver healthcare to people is a different issue from whether or not it's a right. The evidence I've seen is that countries with more socialized systems spend less on healthcare per person than the US does, with roughly the same or better average life expectancy. 
 

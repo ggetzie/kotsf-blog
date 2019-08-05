@@ -2,6 +2,8 @@
 path: "/gdarchive/8"
 title: "Would you live in a Google house?"
 oldId: 8
+date: 2010-03-08
+section: "gdarchive"
 ---
 Google is the undisputed champ when it comes to internet advertising. There's no shortage of companies on the web pursuing the same model. Obviously, not every product can be offered for free and funded with advertising, at some point somebody has to pay for the products being advertised in order for there to be any money to buy advertising with. Google's great insight has been the ability to specifically target advertising towards what people are looking for at the time. This advertising is much more valuable to both consumers and advertisers and it has enabled Google to make a plethora of excellent services available for free. How far could this model be taken though?
 

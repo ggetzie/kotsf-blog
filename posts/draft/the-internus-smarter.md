@@ -2,6 +2,8 @@
 path: "/drafts/the-internus-smarter/"
 title: "The internet is making us smarter"
 oldId: 17
+date: 2016-01-24
+section: "draft"
 ---
 not dumber. Clumping. Levels of abstractions. Something is lost with each new abstraction but it doesn't mean something isn't gained. You can't write high level software while thinking in machine language. You can't explore quantum physics if you have to churn your own butter.
 

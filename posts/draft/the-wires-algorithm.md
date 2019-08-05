@@ -2,6 +2,8 @@
 path: "/drafts/the-wires-algorithm/"
 title: "The Wire's Follow the Money Algorithm"
 oldId: 34
+date: 2016-01-24
+section: "draft"
 ---
 Could it be automated?
 

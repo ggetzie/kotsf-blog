@@ -3,6 +3,7 @@ path: "/new-beginnings/"
 date: 2015-01-02
 title: "New Beginnings"
 oldId: 61
+section: "publish"
 ---
 It's been a long time coming, but I think it's finally time for me
 to shutter GreaterDebater. Suffice it to say, the site never

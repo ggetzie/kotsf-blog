@@ -2,6 +2,8 @@
 path: "/drafts/a-new-mode-education/"
 title: "A new model for education"
 oldId: 16
+date: 2016-01-24
+section: "draft"
 ---
 
 The world is open book. When you don't know the answer to something in real

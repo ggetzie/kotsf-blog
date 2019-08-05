@@ -2,6 +2,8 @@
 path: "/drafts/markdown-test/"
 title: "*Title with some markdown*[^1]"
 oldId: 
+date: 2016-01-24
+section: "draft"
 ---
 Let's just test out this markdown business a little bit.
 

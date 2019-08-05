@@ -2,6 +2,8 @@
 path: "/drafts/longevity-ers-random/"
 title: "Longevity clusters: Random?"
 oldId: 40
+date: 2016-01-24
+section: "draft"
 ---
 Find world map including population density over given areas.
 

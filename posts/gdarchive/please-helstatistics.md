@@ -2,6 +2,8 @@
 path: "/gdarchive/35"
 title: "Please Help: Join The Society for the Prevention of Cruelty to Statistics"
 oldId: 35
+date: 2012-07-02
+section: "gdarchive"
 ---
 Every day, on Twitter and Facebook and comment threads all across the Internet, thousands, if not millions of statistics are being cruelly mistreated. These helpless statistics are ripped away from their proper context and used to support or attack viewpoints they may have nothing to do with. Others are dropped into the middle of a hostile argument and then heartlessly neglected by their caretakers.
 

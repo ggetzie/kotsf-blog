@@ -3,6 +3,7 @@ path: "/how-necesse-expenses/"
 date: 2016-01-03
 title: "How Necessary Are Those Expenses?"
 oldId: 106
+section: "publish"
 ---
 One of the key elements of personal finance is separating "needs" from
 "wants". Every guide to controlling your budget usually starts with

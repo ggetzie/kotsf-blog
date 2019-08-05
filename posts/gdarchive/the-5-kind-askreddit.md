@@ -2,6 +2,8 @@
 path: "/gdarchive/24"
 title: "The 5 Kinds of Questions You Answer on AskReddit."
 oldId: 24
+date: 2011-05-06
+section: "gdarchive"
 ---
 I never thought this day would come. For years now, I've chuckled at the naysayers who lamented that "Reddit has gone downhill". People have been saying that for about as long as I can remember, and I've been there for over four years. Sooner or later, though, I guess we all become what we hate, because here I am.
 

@@ -2,6 +2,8 @@
 path: "/drafts/how-we-think/"
 title: "What I think about when I think about thinking[^1] Part 1"
 oldId: 
+date: 2016-01-24
+section: "draft"
 ---
 When I was young people told me I was smart. I don't think there's a good way to
 talk about that without sounding like I'm bragging, but there it is. The thing

@@ -2,6 +2,8 @@
 path: "/drafts/progress/"
 title: "The Ethics of Human Progress"
 oldId: 
+date: 2016-01-24
+section: "draft"
 ---
 >Of course slavery is the worst thing that's ever happened...but maybe every
 >incredible achievement in human history was done with slaves.

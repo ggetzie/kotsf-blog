@@ -2,6 +2,8 @@
 path: "/drafts/stealing-a-country/"
 title: "Stealing a Country"
 oldId: 13
+date: 2016-01-24
+section: "draft"
 ---
 Could you take down an evil regime by simply spiriting away its
 citizens? I'm not talking about kidnapping. Look at North Korea, for

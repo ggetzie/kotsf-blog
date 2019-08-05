@@ -3,6 +3,7 @@ path: "/the-one-qu-be-asking/"
 date: 2015-07-06
 title: "The One Question Every Prospective College Student Should Be Asking"
 oldId: 93
+section: "publish"
 ---
 Apologies for the clickbaity headline. That sort of thing isn't usually my
 style. I'll cut right to the chase. The question is "What percentage of classes

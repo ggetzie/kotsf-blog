@@ -3,6 +3,7 @@ path: "/the-conteningularity/"
 date: 2015-01-08
 title: "The Content Singularity"
 oldId: 63
+section: "publish"
 ---
 Think back to the time before the Internet, if you're old enough. How did you
 get entertainment? Typically, you had to drive to a store pay some not

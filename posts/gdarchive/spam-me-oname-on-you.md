@@ -2,6 +2,8 @@
 path: "/gdarchive/10"
 title: "Spam me once, shame on you..."
 oldId: 10
+date: 2010-03-22
+section: "gdarchive"
 ---
 I knew this day would come. GreaterDebater experienced it's first wave of spam this past week. In a way, it's almost flattering that the site is considered worth spamming now. In another much more prevalent way it's incredibly annoying. I know I'm only about the billionth or so person to complain about spam, but I have to wonder if the fact that spam is a worthwhile activity for some people is not an indication that there's something seriously broken about the way the Internet works.
 

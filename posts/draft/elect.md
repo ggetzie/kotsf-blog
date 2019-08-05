@@ -2,6 +2,8 @@
 path: "/drafts/elect/"
 title: "This Election"
 oldId: 
+date: 2016-11-20
+section: "draft"
 ---
 This election has blown my mind like nothing else ever has. Seriously, I feel
 like I just woke up from the matrix. I'm still reeling and trying to process

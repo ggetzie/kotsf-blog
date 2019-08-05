@@ -2,6 +2,8 @@
 path: "/drafts/the-steve-bs-problem/"
 title: "The Steve Jobs Problem"
 oldId: 36
+date: 2016-01-24
+section: "draft"
 ---
 There was an [article](http://www.wired.com/business/2012/07/ff_stevejobs/all/) making the rounds a while ago about Steve Jobs, and whether his legacy is one to be imitated or to serve as a cautionary tale. It inspired me to write [this comment](http://news.ycombinator.com/item?id=4282354) on Hacker News and since then it's become one of those ideas that just kind of worms its way into your head and gestates there. The question it's made me curious about is something I'm going to call The Steve Jobs Problem. The Problem is specific to people who succeed in creative endeavors, the fields where taste and a keen sense of design are the key factors for success. The Problem is, why are the people at the tops of these fields often huge assholes?
 

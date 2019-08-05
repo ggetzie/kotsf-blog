@@ -2,6 +2,8 @@
 path: "/gdarchive/12"
 title: "A Django Unit Testing Primer"
 oldId: 12
+date: 2010-04-05
+section: "gdarchive"
 ---
 One thing I really slacked on while developing GreaterDebater was
 testing. Maybe that's not the right way to put it. It's not like I

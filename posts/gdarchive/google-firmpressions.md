@@ -2,6 +2,8 @@
 path: "/gdarchive/25"
 title: "Google+ First Impressions"
 oldId: 25
+date: 2011-07-01
+section: "gdarchive"
 ---
 By hook and/or crook I managed to wangle an invitation to Google+ yesterday. After messing around with it a little, I really like what they've done and I think it has great potential.
 

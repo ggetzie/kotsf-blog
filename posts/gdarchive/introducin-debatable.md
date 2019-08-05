@@ -2,6 +2,8 @@
 path: "/gdarchive/1"
 title: "Introducing That's Debatable"
 oldId: 1
+date: 2010-02-01
+section: "gdarchive"
 ---
 Welcome to the first installment of **That's Debatable**, the official GreaterDebater blog. I guess this is the part where I talk about the sorts of things I intend to be posting here. For the time being, I'm planning on using this as a catchall blog for everything I want to write about. I suppose time will tell if this is the best idea or not. On the GreaterDebater front, I'd like to blog about:
 

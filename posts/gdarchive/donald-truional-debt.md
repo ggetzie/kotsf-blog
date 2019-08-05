@@ -2,6 +2,8 @@
 path: "/gdarchive/22"
 title: "Donald Trump's grand plan to pay off the national debt"
 oldId: 22
+date: 2011-03-29
+section: "gdarchive"
 ---
 [Crooks and Liars](http://crooksandliars.com/karoli/donald-trump-lets-tax-rich-pay-national-deb) is parading around a [twelve year old article](http://articles.cnn.com/1999-11-09/politics/trump.rich_1_donald-trump-trump-said-trump-trump-said-the?_s=PM:ALLPOLITICS) wherein Trump proposed a one time 14.25% tax on the top 1% of Americans (then defined as households with a net worth of greater than $10 million) to pay off the national debt then $5.7 trillion.
 

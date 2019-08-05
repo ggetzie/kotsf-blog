@@ -2,6 +2,8 @@
 path: "/gdarchive/27"
 title: "How to stop SOPA: Don't build it."
 oldId: 27
+date: 2011-12-16
+section: "gdarchive"
 ---
 I've been following the news about SOPA, the Stop Online Piracy Act, for the past couple of weeks. Yesterday there was an interesting development when 83 of the most prominent engineers responsible for creating the Internet signed an [open letter](https://www.eff.org/deeplinks/2011/12/internet-inventors-warn-against-sopa-and-pipa) voicing their opposition to SOPA. This in and of itself is hardly surprising. Since the law was introduced anyone with a shred of technical acumen has stated that a.) It will not work. The law will not hinder piracy. b.) It *will* be hugely detrimental to the normal operation of the Internet.
 

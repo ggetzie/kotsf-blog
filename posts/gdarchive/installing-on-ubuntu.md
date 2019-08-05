@@ -2,6 +2,8 @@
 path: "/gdarchive/38"
 title: "Installing matplotlib in a virtrualenv on Ubuntu"
 oldId: 38
+date: 2012-09-22
+section: "gdarchive"
 ---
 Just a short note to document some missing dependencies for anyone else trying to google the same problem I just had.
 

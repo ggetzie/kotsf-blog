@@ -2,6 +2,8 @@
 path: "/gdarchive/5"
 title: "When is a debate won?"
 oldId: 5
+date: 2010-02-15
+section: "gdarchive"
 ---
 For now, let's disregard the cynical response: "If you're arguing online, you've already lost". Sure, there's no shortage of unproductive flaming happening on the internet, but let's assume for the moment that it's possible for people to disagree constructively.
 

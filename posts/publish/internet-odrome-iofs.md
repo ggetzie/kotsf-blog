@@ -3,6 +3,7 @@ path: "/internet-odrome-iofs/"
 date: 2015-02-04
 title: "Internet Outrage Fatigue Syndrome (IOFS)"
 oldId: 77
+section: "publish"
 ---
 The 1980s were a scary time to be a kid. At least that is if you watched the
 evening news. Every night at 6 and 11 you'd be apprised of a new mortal danger,

@@ -2,6 +2,8 @@
 path: "/gdarchive/41"
 title: "Why do we accept car control, but not gun control?"
 oldId: 41
+date: 2013-03-26
+section: "gdarchive"
 ---
 Today I want to talk about two pillars of the American cultural experience, cars and guns. If you think about it, they're really quite similar. Both can be very useful and fun if used properly. Both are very dangerous when used by people who are inexperienced, drunk, or mentally ill. Both are responsible for thousands of deaths in the United States every year. (30,470 firearm related deaths in 2010 [source](http://en.wikipedia.org/wiki/Gun_violence_in_the_United_States), 32,885 automobile deaths in 2010 [source](http://en.wikipedia.org/wiki/List_of_motor_vehicle_deaths_in_U.S._by_year)) 
 

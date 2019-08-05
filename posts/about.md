@@ -1,3 +1,8 @@
+---
+title: "About"
+path: "/about/"
+---
+
 I'm Gabriel Getzie, an electrical engineer by day and python programmer /
 website designer by night in Washington, DC. 
 

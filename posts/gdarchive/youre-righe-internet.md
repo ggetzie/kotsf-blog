@@ -2,6 +2,8 @@
 path: "/gdarchive/48"
 title: "You're right Mr. Cruz. Net Neutrality is like Obamacare for the Internet."
 oldId: 48
+date: 2014-11-11
+section: "gdarchive"
 ---
 US Senator Ted Cruz [recently issued](http://www.salon.com/2014/11/10/ted_cruz_attacks_net_neutrality_with_totally_incoherent_obamacare_analogy/) an apparent non-sequitur comparing Net Neutrality to Obamacare. However, on further reflection, I am surprised to find he may have a point. In fact when you think about, the similarities are quite shocking:
 

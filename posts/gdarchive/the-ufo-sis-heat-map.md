@@ -2,6 +2,8 @@
 path: "/gdarchive/19"
 title: "The UFO Sightings US Heat Map"
 oldId: 19
+date: 2011-01-24
+section: "gdarchive"
 ---
 For a while now I've been interested in data mining and
 visualization. When someone posted a link to a

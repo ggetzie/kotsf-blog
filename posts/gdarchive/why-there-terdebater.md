@@ -2,6 +2,8 @@
 path: "/gdarchive/6"
 title: "Why there are no up or down arrows on GreaterDebater"
 oldId: 6
+date: 2010-02-22
+section: "gdarchive"
 ---
 Other social news sites([Reddit](http://reddit.com),
 [Hacker News](http://news.ycombinator.com), [Digg](http://digg.com) to

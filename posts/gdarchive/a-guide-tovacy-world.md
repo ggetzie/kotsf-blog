@@ -2,6 +2,8 @@
 path: "/gdarchive/37"
 title: "A Guide to Living in a Post-Privacy World"
 oldId: 37
+date: 2014-05-28
+section: "gdarchive"
 ---
 It seems apparent that privacy is soon going to go the way of the record store, and for much the same reason. Once information becomes digital, it becomes harder to prevent people from copying it than it is to copy it in the first place. Instead of trying to hold back the digital floodgates like the RIAA's fruitless efforts to combat file sharing, I think we should examine why we need privacy in the first place, and what would have to change to make the world a good place to live without it. 
 

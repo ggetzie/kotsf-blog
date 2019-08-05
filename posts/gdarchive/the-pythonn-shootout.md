@@ -2,6 +2,8 @@
 path: "/gdarchive/7"
 title: "The Python String Concatenation Shootout"
 oldId: 7
+date: 2010-03-01
+section: "gdarchive"
 ---
 Python is the language of one, and only one, obvious way to do
 things. This isn't quite the case when it comes to concatenating

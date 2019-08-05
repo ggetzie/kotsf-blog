@@ -2,6 +2,8 @@
 path: "/gdarchive/9"
 title: "Your most hated code"
 oldId: 9
+date: 2010-03-15
+section: "gdarchive"
 ---
 I think every programmer must have some bit of code they wrote that
 they absolutely hate. Maybe it's something that's brute force where it
