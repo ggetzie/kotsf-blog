@@ -1,5 +1,5 @@
 ---
-path: "/drafts/systems-vs-goals/"
+path: "/draft/systems-vs-goals/"
 title: "Systems vs. Goals"
 oldId: 44
 date: 2016-01-24

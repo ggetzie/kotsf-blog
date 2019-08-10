@@ -1,5 +1,5 @@
 ---
-path: "/drafts/baking/"
+path: "/draft/baking/"
 title: "The Great British Baking Show"
 oldId: 
 date: 2018-11-01

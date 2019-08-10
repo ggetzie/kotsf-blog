@@ -1,5 +1,5 @@
 ---
-path: "/drafts/the-real-eon-problem/"
+path: "/draft/the-real-eon-problem/"
 title: "The Real Education Problem"
 oldId: 29
 date: 2016-01-24

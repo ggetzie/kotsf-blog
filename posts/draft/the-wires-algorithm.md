@@ -1,5 +1,5 @@
 ---
-path: "/drafts/the-wires-algorithm/"
+path: "/draft/the-wires-algorithm/"
 title: "The Wire's Follow the Money Algorithm"
 oldId: 34
 date: 2016-01-24

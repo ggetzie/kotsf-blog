@@ -1,5 +1,5 @@
 ---
-path: "/drafts/how-we-think/"
+path: "/draft/how-we-think/"
 title: "What I think about when I think about thinking[^1] Part 1"
 oldId: 
 date: 2016-01-24

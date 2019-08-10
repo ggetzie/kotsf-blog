@@ -1,5 +1,5 @@
 ---
-path: "/drafts/your-righthealthcare/"
+path: "/draft/your-righthealthcare/"
 title: "Your right to healthcare"
 oldId: 21
 date: 2016-01-24

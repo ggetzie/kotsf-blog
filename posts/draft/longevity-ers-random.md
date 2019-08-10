@@ -1,5 +1,5 @@
 ---
-path: "/drafts/longevity-ers-random/"
+path: "/draft/longevity-ers-random/"
 title: "Longevity clusters: Random?"
 oldId: 40
 date: 2016-01-24

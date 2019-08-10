@@ -1,5 +1,5 @@
 ---
-path: "/drafts/authority/"
+path: "/draft/authority/"
 title: "he Myth of Authority"
 oldId: 
 date: 2016-03-29

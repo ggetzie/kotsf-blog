@@ -1,5 +1,5 @@
 ---
-path: "/drafts/the-steve-bs-problem/"
+path: "/draft/the-steve-bs-problem/"
 title: "The Steve Jobs Problem"
 oldId: 36
 date: 2016-01-24

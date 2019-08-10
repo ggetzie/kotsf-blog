@@ -1,5 +1,5 @@
 ---
-path: "/drafts/two-kinds-of-heroes/"
+path: "/draft/two-kinds-of-heroes/"
 title: "Two kinds of heroes"
 oldId: 32
 date: 2016-01-24

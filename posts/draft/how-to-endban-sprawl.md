@@ -1,5 +1,5 @@
 ---
-path: "/drafts/how-to-endban-sprawl/"
+path: "/draft/how-to-endban-sprawl/"
 title: "How to End Urban Sprawl"
 oldId: 43
 date: 2016-01-24

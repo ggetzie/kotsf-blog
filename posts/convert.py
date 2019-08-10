@@ -67,7 +67,7 @@ def convert_drafts():
             timestamp = os.stat(filename).st_ctime
             filedate = datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d")
         frontmatter = f"""---
-path: "/drafts/{draft[:-3]}/"
+path: "/draft/{draft[:-3]}/"
 title: "{title}"
 oldId: {oldId}
 date: {filedate}

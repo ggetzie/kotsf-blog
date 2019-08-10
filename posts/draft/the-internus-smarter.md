@@ -1,5 +1,5 @@
 ---
-path: "/drafts/the-internus-smarter/"
+path: "/draft/the-internus-smarter/"
 title: "The internet is making us smarter"
 oldId: 17
 date: 2016-01-24

@@ -1,5 +1,5 @@
 ---
-path: "/drafts/fixthenews/"
+path: "/draft/fixthenews/"
 title: "et's Fix the News"
 oldId: 
 date: 2016-04-06

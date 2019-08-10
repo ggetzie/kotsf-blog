@@ -1,5 +1,5 @@
 ---
-path: "/drafts/cargo-cultf-humanity/"
+path: "/draft/cargo-cultf-humanity/"
 title: "Cargo culting, bane of humanity."
 oldId: 20
 date: 2016-01-24

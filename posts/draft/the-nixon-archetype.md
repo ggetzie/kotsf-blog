@@ -1,5 +1,5 @@
 ---
-path: "/drafts/the-nixon-archetype/"
+path: "/draft/the-nixon-archetype/"
 title: "The Nixon Character Archetype"
 oldId: 42
 date: 2016-01-24

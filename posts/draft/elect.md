@@ -1,5 +1,5 @@
 ---
-path: "/drafts/elect/"
+path: "/draft/elect/"
 title: "This Election"
 oldId: 
 date: 2016-11-20

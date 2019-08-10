@@ -1,5 +1,5 @@
 ---
-path: "/drafts/a-new-mode-education/"
+path: "/draft/a-new-mode-education/"
 title: "A new model for education"
 oldId: 16
 date: 2016-01-24

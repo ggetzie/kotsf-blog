@@ -1,5 +1,5 @@
 ---
-path: "/drafts/stealing-a-country/"
+path: "/draft/stealing-a-country/"
 title: "Stealing a Country"
 oldId: 13
 date: 2016-01-24

@@ -1,5 +1,5 @@
 ---
-path: "/drafts/progress/"
+path: "/draft/progress/"
 title: "The Ethics of Human Progress"
 oldId: 
 date: 2016-01-24
