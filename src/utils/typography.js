@@ -24,6 +24,12 @@ lincolnTheme.overrideStyles = () => ({
     'nav.navigation': {
         marginTop: '1rem',
     },
+    '.dateline': {
+        fontWeight: 200,
+        fontSize: "17px",
+        fontStyle: 'italic',
+        marginBottom: 0,
+    }
 })
 
 const typography = new Typography(

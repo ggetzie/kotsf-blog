@@ -67,7 +67,7 @@ export default ({ children }) => {
                             <Link to="/about/">About</Link>
                         </li>
                         <li>
-                            <Link to="/archive/">Archive</Link>
+                            <a href={"/archive"}>Archive</a>
                         </li>
                         <li>
                             <Link to="/portfolio/">Portfolio</Link>
