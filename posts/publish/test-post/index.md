@@ -1,8 +1,8 @@
 ---
-path: "/draft/test-post"
+path: "/test-post/"
 title: "Test Post Please Ignore"
-date: 2019-08-18
-section: "draft"
+date: 2019-08-19
+section: "publish"
 ---
 
 This is a test post.

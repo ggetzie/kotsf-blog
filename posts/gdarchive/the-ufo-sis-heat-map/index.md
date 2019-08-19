@@ -21,8 +21,8 @@ location field in the data. For the most part, I was able to stitch
 together data from several other datasets to resolve the city and
 state format of the location field into the county and state
 information needed to locate the sighting on the map. Unfortunately,
-this narrowed down the data from around 63000 sightings to around
-43000. For the records where no county and state could be identified,
+this narrowed down the data from around 63000 sightings to around 43000. 
+For the records where no county and state could be identified,
 most were either outside the US, or the city name was not connected to
 a county name in any of the datasets I dug up. Obviously, having a
 more comprehensive listing of all city names in the US along with the
