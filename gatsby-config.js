@@ -8,7 +8,9 @@ module.exports = {
   siteMetadata: {
     title: "KotSF",
     author: "Gabriel Getzie",
-    tagline: "Things n' Stuff",
+    tagline: "Veni, Vidi, Bloggi",
+    siteUrl: `https://kotsf.com`,
+    description: "The KotSF blog",
   },
   plugins:[
     `gatsby-plugin-styled-components`,
@@ -48,8 +50,62 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`
       },
-    }
-  ]
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map( edge => { 
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  filter: {frontmatter: {section: {eq: "publish"}}},
+                  sort: {order: DESC, fields: [frontmatter___date] },
+                ) {
+                    edges {
+                      node {
+                        excerpt
+                        html
+                        frontmatter {
+                          path
+                          title
+                          date
+                        }
+                      }
+                    }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "KotSF RSS Feed",
+          },
+        ],
+      },
+    },
+  ],
 }
 
 
