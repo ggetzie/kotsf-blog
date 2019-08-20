@@ -1,34 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KotSF]]></title><description><![CDATA[The KotSF blog]]></description><link>https://kotsf.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 20 Aug 2019 02:38:46 GMT</lastBuildDate><item><title><![CDATA[Test Post Please Ignore]]></title><description><![CDATA[This is a test post.
-Let's add a photo]]></description><link>https://kotsf.com/test-post/</link><guid isPermaLink="false">https://kotsf.com/test-post/</guid><pubDate>Mon, 19 Aug 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is a test post.
-Let&apos;s add a photo&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 604px;&quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/6c77b9c2a31ed6f4acf5bb8c2f99ef5c/5e702/drunkface.jpg&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAE/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIQAxAAAAEFHA3oHkZv/8QAGxAAAQQDAAAAAAAAAAAAAAAAAQACERMDBDH/2gAIAQEAAQUCVJqJgjpdOAarY//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/AUf/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARL/2gAIAQIBAT8Bjdf/xAAbEAABBAMAAAAAAAAAAAAAAAAAAQIREhAhgf/aAAgBAQAGPwIvOa2hTbl4f//EABoQAAMAAwEAAAAAAAAAAAAAAAABESFBgVH/2gAIAQEAAT8hjJLCeUTCXpmqQyPQwh5Xa+D/2gAMAwEAAgADAAAAEKMP/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERQf/aAAgBAwEBPxBzSD//xAAWEQEBAQAAAAAAAAAAAAAAAAABECH/2gAIAQIBAT8QSOQ//8QAHRAAAgIDAAMAAAAAAAAAAAAAAREAITFBUXGB8P/aAAgBAQABPxDcBXYDjhHcn3EIPYDiOkWRnEBKCnzVci3ybAN4dz//2Q==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;Drunk Face&quot;
-        title=&quot;Drunk Face&quot;
-        src=&quot;/static/6c77b9c2a31ed6f4acf5bb8c2f99ef5c/5e702/drunkface.jpg&quot;
-        srcset=&quot;/static/6c77b9c2a31ed6f4acf5bb8c2f99ef5c/aca85/drunkface.jpg 163w,
-/static/6c77b9c2a31ed6f4acf5bb8c2f99ef5c/0954f/drunkface.jpg 325w,
-/static/6c77b9c2a31ed6f4acf5bb8c2f99ef5c/5e702/drunkface.jpg 604w&quot;
-        sizes=&quot;(max-width: 604px) 100vw, 604px&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How Necessary Are Those Expenses?]]></title><description><![CDATA[One of the key elements of personal finance is separating "needs" from
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KotSF]]></title><description><![CDATA[The KotSF blog]]></description><link>https://kotsf.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 20 Aug 2019 02:49:44 GMT</lastBuildDate><item><title><![CDATA[How Necessary Are Those Expenses?]]></title><description><![CDATA[One of the key elements of personal finance is separating "needs" from
 "wants". Every guide to controlling your budget usually starts with…]]></description><link>https://kotsf.com/how-necesse-expenses/</link><guid isPermaLink="false">https://kotsf.com/how-necesse-expenses/</guid><pubDate>Sun, 03 Jan 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;One of the key elements of personal finance is separating &quot;needs&quot; from
 &quot;wants&quot;. Every guide to controlling your budget usually starts with
 this. However, there&apos;s not a lot of guidance in deciding between one and the

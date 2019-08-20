@@ -22,7 +22,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `root`,
-        path: `${__dirname}/posts/`
+        path: `/usr/local/src/kotsf-posts/`
       },
     },
     {
