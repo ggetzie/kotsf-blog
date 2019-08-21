@@ -53,20 +53,20 @@ main difference is this blog has three sections.
     When writing posts make sure to have a field called `section` in the frontmatter that has a value of either `"gdarchive"`, `"publish"`, or `"draft"` and make sure the path is set appropriately so gatsby puts the post in the right place when building the site. My posts directory looks like this:
 
     ```
-    -draft
-      -a-draft-slug
-        -index.md
-    -gdarchive
-      -a-gdarchive-slug
-        -index.md
-        -an-image.jpg
-    -publish
-      -a-published-slug
-        -index.md
-        -another-image.jpg
-    about.md
-    portfolio.md
-    contact.md
+    ├── draft
+      ├── a-draft-slug
+        ├── index.md
+    ├── gdarchive
+      ├── a-gdarchive-slug
+        ├── index.md
+        ├── an-image.jpg
+    ├── publish
+      ├── a-published-slug
+        ├── index.md
+        ├── another-image.jpg
+    ├── about.md
+    ├── portfolio.md
+    ├── contact.md
     ```
 
     Markdown files for each section are stored with the pattern of having a directory with the slug name and an index.md with the post content underneath it. The about.md, portfolio.md, and contact.md contain the content to use for those portions of the site.
