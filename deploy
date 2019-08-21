@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+# sync public folder to server
+
+rsync -av -e "ssh -P 19999" /usr/local/src/kotsf-blog/public/ gabe@kotsf.com:/usr/local/src/kotsf-blog/public
