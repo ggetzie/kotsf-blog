@@ -73,6 +73,9 @@ export default ({ children }) => {
                             <Link to="/portfolio/">Portfolio</Link>
                         </li>
                         <li>
+                            <Link to="/referrals/">Referrals</Link>
+                        </li>
+                        <li>
                             <Link to="/contact/">Contact</Link>
                         </li>
                     </ul>
