@@ -14,10 +14,12 @@ const Container = styled.div`
 `
 
 const sideNav = styled.section`
+    position: relative
     width: 20%;
 `
 
 const Entry = styled.div`
+    position: relative;
     width: 65%;
     margin: ${rhythm(2)} ${rhythm(1)} ${rhythm(1)} ${rhythm(2)};
 `
@@ -77,6 +79,9 @@ export default ({ children }) => {
                         </li>
                         <li>
                             <Link to="/contact/">Contact</Link>
+                        </li>
+                        <li>
+                            <Link to="/license/">License</Link>
                         </li>
                     </ul>
                 </nav>
