@@ -3,8 +3,6 @@ import { useStaticQuery, Link, graphql } from "gatsby"
 import styled from "styled-components"
 import { rhythm } from "../utils/typography"
 
-
-
 const Container = styled.div`
     display: flex;
     flex-flow: row;
@@ -70,18 +68,6 @@ export default ({ children }) => {
                         </li>
                         <li>
                             <a href={"/archive"}>Archive</a>
-                        </li>
-                        <li>
-                            <Link to="/portfolio/">Portfolio</Link>
-                        </li>
-                        <li>
-                            <Link to="/referrals/">Referrals</Link>
-                        </li>
-                        <li>
-                            <Link to="/contact/">Contact</Link>
-                        </li>
-                        <li>
-                            <Link to="/license/">License</Link>
                         </li>
                     </ul>
                 </nav>
