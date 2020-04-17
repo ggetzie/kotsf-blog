@@ -12,13 +12,17 @@ const Container = styled.div`
 `
 
 const sideNav = styled.section`
-    position: relative
-    width: 20%;
+    display: inline-block;
+    min-width: 20%;
+    max-width: 100%;
+    width: calc((480px - 100%) * 480);
 `
 
 const Entry = styled.div`
-    position: relative;
-    width: 65%;
+    display: inline-block;
+    min-width: 65%;
+    max-width: 100%;
+    width: calc((480px - 100%) * 480);
     margin: ${rhythm(2)} ${rhythm(1)} ${rhythm(1)} ${rhythm(2)};
 `
 
