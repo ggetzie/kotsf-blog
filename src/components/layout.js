@@ -3,8 +3,6 @@ import { useStaticQuery, Link, graphql } from "gatsby"
 import styled from "styled-components"
 import { rhythm } from "../utils/typography"
 
-const breakpoint = 480;
-
 const Container = styled.div`
     display: flex;
     flex-direction: row;
@@ -28,7 +26,7 @@ const Entry = styled.div`
     flex-direction: column;
     flex-basis: 100%;
     flex: 2;
-    min-width: 380px;
+    min-width: 300px;
     margin: ${rhythm(2)} ${rhythm(1)} ${rhythm(1)} ${rhythm(1)};
 `
 
