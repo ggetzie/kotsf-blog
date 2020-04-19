@@ -7,24 +7,28 @@ const breakpoint = 480;
 
 const Container = styled.div`
     display: flex;
-    flex-flow: row;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
     padding: 0 ${rhythm(1)};
     margin: 40px auto;
+    width: 100%;
 `
 
 const sideNav = styled.section`
-    min-width: 20%;
-    max-width: 100%;
-    // width: calc((${breakpoint} - 100%) * ${breakpoint});
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
     height: 100%;
 `
 
 const Entry = styled.div`
-    max-width: 800px;
-    min-width: 390px; 
-    // width: calc((${breakpoint} - 100%) * ${breakpoint});
-    margin: ${rhythm(2)} 2% ${rhythm(1)} 2%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 2;
+    margin: ${rhythm(2)} ${rhythm(2)} ${rhythm(1)} ${rhythm(1)};
 `
 
 const tagLine = styled.p`
@@ -60,10 +64,10 @@ export default ({ children }) => {
     )
     return (
         <Container>
-            <Entry>
+            <Entry className="entry">
                 {children}
             </Entry>
-            <sideNav>
+            <sideNav className="side-nav">
                 <Brand><Link className="brand" to="/">{data.site.siteMetadata.title}</Link></Brand>
                 <tagLine>{data.site.siteMetadata.tagline}</tagLine>
                 <nav className="navigation">
