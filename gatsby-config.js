@@ -41,6 +41,16 @@ module.exports = {
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`],
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: "<",
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            }
+          }
         ]
       },
     },
@@ -100,7 +110,7 @@ module.exports = {
               }
             `,
             output: "/feed.xml",
-            title: "KotSF RSS Feed",
+            title: "KotSF",
           },
         ],
       },
