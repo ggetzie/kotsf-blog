@@ -28,7 +28,8 @@ const Entry = styled.div`
     flex-direction: column;
     flex-basis: 100%;
     flex: 2;
-    margin: ${rhythm(2)} ${rhythm(2)} ${rhythm(1)} ${rhythm(1)};
+    min-width: 380px;
+    margin: ${rhythm(2)} ${rhythm(1)} ${rhythm(1)} ${rhythm(1)};
 `
 
 const tagLine = styled.p`
