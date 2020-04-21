@@ -25,6 +25,12 @@
         margin-top:2em;
     }
 
+    .post-container {
+        min-width: 300px;
+        max-width: 800px;
+        margin: auto;
+    }
+
     .container {
 	    display: flex;
 	    flex-flow: row;

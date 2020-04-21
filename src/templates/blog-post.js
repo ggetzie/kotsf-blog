@@ -3,19 +3,19 @@ import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
-export default function Template({
-    data
-}) {
+export default function Template({ data}) {
     const { markdownRemark: post } = data
+
     return (
         <Layout>
-            <div className="blogpost-container">
+            <div className="post-container">
                 <Helmet title={post.frontmatter.title + " - " + data.site.siteMetadata.title} />
                 <h2>{post.frontmatter.title}</h2>
                 <p className="dateline">{post.frontmatter.date}</p>
                 <div className="blogpost"
                      dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
+
         </Layout>
         
     )

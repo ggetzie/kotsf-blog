@@ -17,7 +17,7 @@ const sideNav = styled.section`
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
-    flex: 1;
+    flex: 1;    
     height: 100%;
 `
 
@@ -25,8 +25,9 @@ const Entry = styled.div`
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
-    flex: 2;
+    flex: 2;    
     min-width: 300px;
+    max-width: 65%;
     margin: ${rhythm(2)} ${rhythm(1)} ${rhythm(1)} ${rhythm(1)};
 `
 
