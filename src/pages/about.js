@@ -30,6 +30,9 @@ export default ({ data }) => {
                 <li>
                     <Link to="/license/">License</Link> - I occasionally post snippets of code I'm working on here. All code is released under the MIT license unless noted otherwise.
                 </li>
+                <li>
+                    Resumes - <a href="/GetzieResume_web.pdf">Software Developer</a> and <a href="/GetzieResumeMEP_web.pdf">Electrical Engineer</a>
+                </li>
             </InfoList>
         </Layout>
     )
