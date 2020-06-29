@@ -142,11 +142,12 @@
         color: #333;
     }
 
-    .post blockquote{
+    blockquote{
 	    border-left:2px solid #A5ABAB; 
 	    margin: 1.8em .8em; 
 	    padding:0 1em 0 1em; color: #666; 
         font-family: Open Sans, Helvetica, sans-serif;
+        font-size: 0.9rem;
     }
 
     .home_bottom {
