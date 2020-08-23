@@ -6,11 +6,11 @@
 
 module.exports = {
   siteMetadata: {
-    title: "KotSF",
+    title: "Tilting at Windmills",
     author: "Gabriel Getzie",
     tagline: "Veni, Vidi, Bloggi",
-    siteUrl: `https://kotsf.com`,
-    description: "The KotSF blog",
+    siteUrl: `https://tiltingatwindmills.dev`,
+    description: "Personal blog for Gabriel Getzie",
   },
   plugins:[
     `gatsby-plugin-styled-components`,
@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-simple-analytics`,
       options: {
-        domain: 'api.kotsf.com'
+        domain: 'sa.tiltingatwindmills.dev'
       }
     },
     
@@ -117,7 +117,7 @@ module.exports = {
               }
             `,
             output: "/feed.xml",
-            title: "KotSF",
+            title: "Tilting at Windmills",
           },
         ],
       },
