@@ -13,7 +13,7 @@ const Container = styled.div`
     width: 100%;
 `
 
-const sideNav = styled.section`
+const SideNav = styled.section`
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
@@ -31,7 +31,7 @@ const Entry = styled.div`
     margin: ${rhythm(2)} ${rhythm(1)} ${rhythm(1)} ${rhythm(1)};
 `
 
-const tagLine = styled.p`
+const TagLine = styled.p`
     padding: 0; 
     color: #003366; 
     letter-spacing: 0.7px; 
@@ -67,9 +67,9 @@ export default ({ children }) => {
             <Entry className="entry">
                 {children}
             </Entry>
-            <sideNav className="side-nav">
+            <SideNav className="side-nav">
                 <Brand><Link className="brand" to="/">{data.site.siteMetadata.title}</Link></Brand>
-                <tagLine>{data.site.siteMetadata.tagline}</tagLine>
+                <TagLine>{data.site.siteMetadata.tagline}</TagLine>
                 <nav className="navigation">
                     <ul>
                         <li>
@@ -78,9 +78,10 @@ export default ({ children }) => {
                         <li>
                             <a href={"/archive"}>Archive</a>
                         </li>
+
                     </ul>
                 </nav>
-            </sideNav>
+            </SideNav>
         </Container>        
     )
 }
