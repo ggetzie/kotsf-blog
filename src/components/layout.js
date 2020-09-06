@@ -36,7 +36,7 @@ const TagLine = styled.p`
     width: auto;
     letter-spacing: 0.7px;
     position: relative;
-    left: 15%;
+    left: 12%;
     margin-top: 0;
 `
 
@@ -67,7 +67,7 @@ const NavLink = styled(Link)`
 font-size: 0.8rem;
 letter-spacing: 0.05rem;
 font-weight: 600;
-padding-right: 20px;
+padding-left: 15px;
 color: black;
 `;
 
@@ -93,11 +93,13 @@ export default ({ is_index, children }) => {
 	    </SiteHeader>
 	    }
 	    <NavBar>
+		<div style={{paddingLeft: "10%", paddingRight: "10%", display: "inline-block"}}>
 		<NavLink to="/">Home</NavLink>
 		<NavLink to="/about/">About</NavLink>
 		<NavLink to="/archive/">Archive</NavLink>
 		<NavLink to="/portfolio/">Portfolio</NavLink>
 		<NavLink to="/referrals/">Referrals</NavLink>
+		</div>
 	    </NavBar>
 	    <Container>
 		<Entry>
