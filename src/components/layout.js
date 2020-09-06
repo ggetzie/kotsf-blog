@@ -5,7 +5,7 @@ import styled from "styled-components"
 const Container = styled.div`
     margin: 0 auto;
     max-width: 50rem;
-    padding: 4em, 1em;
+    padding: 2em 2em 4em 2em;
 `
 const SiteHeader = styled.div`
     width: 100%;
@@ -14,7 +14,8 @@ const SiteHeader = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-image: url("/img/header_image.png");
+    align-items: center;
+    background-image: url("/img/header_image.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -24,17 +25,18 @@ const Entry = styled.div`
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
-    flex: 2;    
+    flex: 2; 
 `
 
 const TagLine = styled.p`
     padding: 0; 
     /* color: #003366;  */
     color: black;
+    display: inline-block;
     width: auto;
     letter-spacing: 0.7px;
     position: relative;
-    left: 160px;
+    left: 15%;
     margin-top: 0;
 `
 
@@ -50,12 +52,9 @@ const Brand = styled.h1`
 const NavBar = styled.nav`
     height: 50px;
     width: 100%;
-    /* padding-left: 10%; */
-    /* padding-right: 10%;  */
     position: sticky;
     top: 0;
     background-color: #f1ebaf;
-    margin-bottom: 20px;
     z-index: 1;
     display: flex;
     flex-direction: row;

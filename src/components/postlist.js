@@ -11,7 +11,7 @@ const PostTitle = styled.h3`
 `
 const Dateline = styled.p`
     font-size: smaller;
-    font-weight: light;
+    font-weight: 200;
     margin: 0;
 `
 const PostExcerpt = styled.p`
