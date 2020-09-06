@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import { rhythm } from "../utils/typography"
 
 export default ({ pageContext }) => {
     const {currentPage, numPages} = pageContext
@@ -13,7 +12,7 @@ export default ({ pageContext }) => {
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             alignItems: 'center',
             listStyle: 'none',
             padding: 0,
@@ -21,7 +20,7 @@ export default ({ pageContext }) => {
         >
           {!isFirst && (
             <Link to={`${prevPage}`} rel="prev">
-              ← Previous Page
+              « Previous
             </Link>
           )}
           {Array.from({ length: numPages }, (_, i) => (
@@ -34,7 +33,7 @@ export default ({ pageContext }) => {
               <Link
                 to={`/archive/${i === 0 ? '' : i + 1}`}
                 style={{
-                  padding: rhythm(1 / 4),
+                  padding: 10px,
                   textDecoration: 'none',
                   color: i + 1 === currentPage ? '#ffffff' : '',
                   background: i + 1 === currentPage ? '#007acc' : '',
@@ -46,7 +45,7 @@ export default ({ pageContext }) => {
           ))}
           {!isLast && (
             <Link to={`${nextPage}/`} rel="next">
-              Next Page →
+              Next »
             </Link>
           )}
         </ul>

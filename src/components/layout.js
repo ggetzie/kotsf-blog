@@ -13,10 +13,11 @@ const SiteHeader = styled.div`
     height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     background-image: url("/img/header_photo.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
 `
 
 const Entry = styled.div`
@@ -28,8 +29,11 @@ const Entry = styled.div`
 
 const TagLine = styled.p`
     padding: 0; 
-    color: #003366; 
-    letter-spacing: 0.7px; 
+    /* color: #003366;  */
+    color: black;
+    letter-spacing: 0.7px;
+    position: relative;
+    left: 15%;
 `
 
 const Brand = styled.h1`
@@ -37,6 +41,8 @@ const Brand = styled.h1`
     color: #003366; 
     letter-spacing: 0.7px; 
     font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: black;
 `
 
 const NavBar = styled.nav`
@@ -46,7 +52,7 @@ const NavBar = styled.nav`
     padding-right: 10%;
     position: sticky;
     top: 0;
-    background-color: #EEE;
+    background-color: #f1ebaf;
     margin-bottom: 20px;
     z-index: 1;
     display: flex;
@@ -57,7 +63,9 @@ const NavBar = styled.nav`
 
 const NavLink = styled(Link)`
 padding-left: 20px;
-font-size: 0.9rem
+font-size: 0.8rem;
+letter-spacing: 0.05rem;
+font-weight: 600;
 `;
 
 export default ({ children }) => {
@@ -80,6 +88,7 @@ export default ({ children }) => {
 		<TagLine>{data.site.siteMetadata.tagline}</TagLine>
 	    </SiteHeader>
 	    <NavBar>
+		<NavLink to="/">Home</NavLink>
 		<NavLink to="/about/">About</NavLink>
 		<NavLink to="/archive/">Archive</NavLink>
 		<NavLink to="/portfolio/">Portfolio</NavLink>
