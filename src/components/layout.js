@@ -14,7 +14,7 @@ const SiteHeader = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-image: url("/img/header_photo.jpg");
+    background-image: url("/img/header_image.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
