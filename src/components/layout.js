@@ -10,7 +10,7 @@ const Container = styled.div`
 const SiteHeader = styled.div`
     width: 100%;
     text-align: center;
-    height: 400px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -34,7 +34,7 @@ const TagLine = styled.p`
     width: auto;
     letter-spacing: 0.7px;
     position: relative;
-    left: 15%;
+    left: 160px;
     margin-top: 0;
 `
 
@@ -61,17 +61,18 @@ const NavBar = styled.nav`
     flex-direction: row;
     justify-content: right;
     align-items: center;
+    color: black;
 `
 
 const NavLink = styled(Link)`
-padding-left: 10px;
 font-size: 0.8rem;
 letter-spacing: 0.05rem;
 font-weight: 600;
-padding-right: 10px;
+padding-right: 20px;
+color: black;
 `;
 
-export default ({ children }) => {
+export default ({ is_index, children }) => {
     const data = useStaticQuery(
         graphql`
             query {
@@ -86,10 +87,12 @@ export default ({ children }) => {
     )
     return (
         <React.Fragment>
+	    {is_index &&
 	    <SiteHeader>
 		<Link to="/"><Brand>{data.site.siteMetadata.title}</Brand></Link>
 		<TagLine>{data.site.siteMetadata.tagline}</TagLine>
 	    </SiteHeader>
+	    }
 	    <NavBar>
 		<NavLink to="/">Home</NavLink>
 		<NavLink to="/about/">About</NavLink>

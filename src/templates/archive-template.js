@@ -14,7 +14,9 @@ export default class Archive extends React.Component {
 		<h2>Archive</h2>
                 <PostList posts={posts} />
                 <Pagination pageContext={this.props.pageContext} />
-                <div>See older posts from <Link to="/gdarchive"><em>That's Debatable</em></Link></div>
+		<p>
+                    See older posts from <Link to="/gdarchive"><em>That's Debatable</em></Link>
+		</p>
             </Layout>
         )
     }

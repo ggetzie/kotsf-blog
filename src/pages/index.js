@@ -2,15 +2,18 @@ import React from "react"
 import Layout from "../components/layout"
 import { PostList } from "../components/postlist"
 import { Helmet } from "react-helmet"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 export default function Index({ data }) {
     const { edges: posts } = data.allMarkdownRemark
     return (
-        <Layout>
+        <Layout is_index={true}>
             <Helmet title={data.site.siteMetadata.title} />
             <h2>Latest</h2>
             <PostList posts={posts} />
+	    <p>
+		<Link to="/archive/">More…</Link>
+	    </p>
         </Layout>
     )
     
