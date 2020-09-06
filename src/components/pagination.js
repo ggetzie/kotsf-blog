@@ -33,7 +33,7 @@ export default ({ pageContext }) => {
               <Link
                 to={`/archive/${i === 0 ? '' : i + 1}`}
                 style={{
-                  padding: 10px,
+                  padding: '10px',
                   textDecoration: 'none',
                   color: i + 1 === currentPage ? '#ffffff' : '',
                   background: i + 1 === currentPage ? '#007acc' : '',

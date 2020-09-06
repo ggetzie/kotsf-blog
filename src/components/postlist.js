@@ -7,16 +7,16 @@ import styled from "styled-components"
  * ` */
 
 const PostTitle = styled.h3`
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
 `
 const Dateline = styled.p`
     font-size: smaller;
     font-weight: light;
-    margin-bottom: 0.2rem;
+    margin: 0;
 `
 const PostExcerpt = styled.p`
-    margin-bottom = 0.7rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.7rem;
 `
 const PostItem = ({ post }) => {
     return (
@@ -53,4 +53,4 @@ const PostList = ({ posts }) => {
     )
 }
 
-export default PostList;
+export { PostList, Dateline };

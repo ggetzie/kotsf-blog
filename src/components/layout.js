@@ -31,9 +31,11 @@ const TagLine = styled.p`
     padding: 0; 
     /* color: #003366;  */
     color: black;
+    width: auto;
     letter-spacing: 0.7px;
     position: relative;
     left: 15%;
+    margin-top: 0;
 `
 
 const Brand = styled.h1`
@@ -48,8 +50,8 @@ const Brand = styled.h1`
 const NavBar = styled.nav`
     height: 50px;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
+    /* padding-left: 10%; */
+    /* padding-right: 10%;  */
     position: sticky;
     top: 0;
     background-color: #f1ebaf;
@@ -62,10 +64,11 @@ const NavBar = styled.nav`
 `
 
 const NavLink = styled(Link)`
-padding-left: 20px;
+padding-left: 10px;
 font-size: 0.8rem;
 letter-spacing: 0.05rem;
 font-weight: 600;
+padding-right: 10px;
 `;
 
 export default ({ children }) => {

@@ -2,6 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import { Dateline } from "../components/postlist"
 
 export default function Template({ data}) {
     const { markdownRemark: post } = data
@@ -11,9 +12,9 @@ export default function Template({ data}) {
             <div className="post-container">
                 <Helmet title={post.frontmatter.title + " - " + data.site.siteMetadata.title} />
                 <h2>{post.frontmatter.title}</h2>
-                <p className="dateline">{post.frontmatter.date}</p>
+		<Dateline>{post.frontmatter.date}</Dateline>
                 <div className="blogpost"
-                     dangerouslySetInnerHTML={{ __html: post.html }} />
+		dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
 
         </Layout>
