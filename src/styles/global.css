@@ -25,3 +25,9 @@ a {
 nav {
     color: black;
 }
+
+li {
+    max-width: 80%;
+    padding-bottom: 8px;
+}
+    
