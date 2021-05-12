@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -86,26 +87,27 @@ export default ({ is_index, children }) => {
     )
     return (
         <React.Fragment>
-	    {is_index &&
-	    <SiteHeader>
-		<Link to="/"><Brand>{data.site.siteMetadata.title}</Brand></Link>
-		<TagLine>{data.site.siteMetadata.tagline}</TagLine>
-	    </SiteHeader>
-	    }
-	    <NavBar>
-		<div style={{paddingLeft: "10%", paddingRight: "10%", display: "inline-block"}}>
-		<NavLink to="/">Home</NavLink>
-		<NavLink to="/about/">About</NavLink>
-		<NavLink to="/archive/">Archive</NavLink>
-		<NavLink to="/portfolio/">Portfolio</NavLink>
-		<NavLink to="/referrals/">Referrals</NavLink>
-		</div>
-	    </NavBar>
-	    <Container>
-		<Entry>
+            <Helmet htmlAttributes={{lang: 'en'}} />
+            {is_index &&
+            <SiteHeader>
+                <Link to="/"><Brand>{data.site.siteMetadata.title}</Brand></Link>
+                <TagLine>{data.site.siteMetadata.tagline}</TagLine>
+            </SiteHeader>
+            }
+            <NavBar>
+                <div style={{paddingLeft: "10%", paddingRight: "10%", display: "inline-block"}}>
+                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/about/">About</NavLink>
+                    <NavLink to="/archive/">Archive</NavLink>
+                    <NavLink to="/portfolio/">Portfolio</NavLink>
+                    <NavLink to="/referrals/">Referrals</NavLink>
+                </div>
+            </NavBar>
+            <Container>
+                <Entry>
                     {children}
-		</Entry>
+                </Entry>
             </Container>
-	</React.Fragment>
+	    </React.Fragment>
     )
 }

@@ -9,7 +9,7 @@ export default ({ data }) => {
         <Layout>
             <Helmet title={data.site.siteMetadata.title} />
             <h2>{post.frontmatter.title}</h2>
-            <div className="blogpost"
+            <div className="blogpost referrals"
                  dangerouslySetInnerHTML={{ __html: post.html }}/>
         </Layout>
     )

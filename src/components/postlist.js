@@ -42,9 +42,9 @@ const PostList = ({ posts }) => {
         <div className="post-list">
             {posts
                 .filter(post => post.node.frontmatter.title.length > 0)
-                .map(({ node: post }) => {
+                .map(({ node: post }, index) => {
                     return (
-			<PostItem post={post} />
+                        <PostItem key={index} post={post} />
                     )
                 }
                 )
