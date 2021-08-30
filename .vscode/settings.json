@@ -3,6 +3,7 @@
         "blogpost",
         "frontmatter",
         "hamnav",
-        "prismjs"
+        "prismjs",
+        "uuidv"
     ]
 }
