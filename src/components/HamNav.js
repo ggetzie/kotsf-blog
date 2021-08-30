@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function({ children }) {
+export default function HamNav({ children }) {
     return(
         <nav id="ham_nav">
             <label htmlFor="hamburger">&#9776;</label>

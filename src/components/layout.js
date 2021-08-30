@@ -52,7 +52,7 @@ const Brand = styled.h1`
     color: black;
 `
 
-export default ({ is_index, children, fullWidth=false }) => {
+export default function Layout({ is_index, children, fullWidth=false }) {
     const data = useStaticQuery(
         graphql`
             query {

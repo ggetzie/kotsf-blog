@@ -2,10 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-/* const PostItem = styled.p`
- *     margin-bottom: 2rem;
- * ` */
-
 const PostTitle = styled.h3`
     margin-bottom: 0.2rem;
 `

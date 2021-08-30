@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export default ({ pageContext }) => {
+export default function Pagination({ pageContext }) {
     const {currentPage, numPages} = pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
