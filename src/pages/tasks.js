@@ -3,25 +3,18 @@ import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import {v4 as uuidv4} from 'uuid';
+import { graphql } from 'gatsby';
 
 import "../styles/tasks.css"
+import getOrDefault from "../utils/getOrDefault";
 
+const TASK_UNASSIGNED = "TASK_UNASSIGNED";
+const TASK_COMPLETED = "TASK_COMPLETED";
+const TASK_SOMETIME = "TASK_SOMETIME";
+const TASK_LATER = "TASK_LATER";
+const TASK_SOON = "TASK_SOON";
+const TASK_NOW = "TASK_NOW";
 
-const ProjectPane = styled.div`
-    width: 20%;
-    height: 100%;
-`
-
-const TaskPane = styled.div`
-    height: 100%;
-    width: 80%;
-`
-
-const PaneHeading = styled.h3`
-    width: 100%;
-    text-align: center;
-    margin-bottom: 5px;
-`
 
 const ProjectList = styled.div`
     margin-top: 1em;
@@ -33,7 +26,7 @@ function AddProject({handleSubmit}) {
     return (
         <form onSubmit={handleSubmit} className="addProject">
             <label htmlFor="projectName">Name</label>
-            <input name="projectName" type="text" required={true} />
+            <input id="projectName" name="projectName" type="text" required={true} />
             <input type="submit" value="Add" />
         </form>
     )
@@ -44,30 +37,105 @@ function ProjectListItem({ handleSelect, handleDelete, isSelected, project }) {
     const cn = "projectName" + (isSelected ? " selected" : "");
     return (
         <div className="projectListItem">
-            <div className={cn} onClick={handleSelect}>{project.name}</div>
+            <div 
+                className={cn} 
+                onClick={handleSelect} 
+                onKeyPress={handleSelect}
+                role="button" tabIndex={0}>
+                {project.name}
+            </div>
             <div 
                 className="projectDelete" 
                 onClick={handleDelete} 
-                role="button">
+                onKeyPress={handleDelete}
+                role="button"
+                tabIndex={0}>
                 &times;
             </div>
         </div>
     )
 }
 
-const TASK_UNASSIGNED = "TASK_UNASSIGNED";
-const TASK_COMPLETED = "TASK_COMPLETED";
-const TASK_SOMETIME = "TASK_SOMETIME";
-const TASK_LATER = "TASK_LATER";
-const TASK_SOON = "TASK_SOON";
-const TASK_NOW = "TASK_NOW";
+function StatusSelect({ selected, id, name }) {
+    return (
+        <select 
+            id={id}
+            name={name}
+            className="statusSelect"
+            defaultValue={selected}
+            >
+            <option value={TASK_UNASSIGNED}>
+                Unassigned
+            </option>
+            <option value={TASK_SOMETIME}>
+                Sometime
+            </option>
+            <option value={TASK_LATER}>
+                Later
+            </option>
+            <option value={TASK_SOON}>
+                Soon
+            </option>
+            <option value={TASK_NOW}>
+                Now
+            </option>
+            <option value={TASK_COMPLETED}>
+                Completed
+            </option>
+        </select>
+    )
+}
+
+function TaskForm({ task, handleSubmit }) {
+    const [taskName, setTaskName] = useState(task ? task.name: "");
+    const [taskStatus, setTaskStatus] = useState(task ? task.status : TASK_UNASSIGNED);
+    return (
+        <form onSubmit={(e) => {
+            handleSubmit(e); 
+            setTaskName("");
+            setTaskStatus(TASK_UNASSIGNED);
+        }} className="taskForm">
+            <label htmlFor="taskName">Name</label>
+            <input 
+                type="text" 
+                id="taskName" 
+                name="taskName" 
+                value={taskName} 
+                onChange = {(e) => setTaskName(e.target.value)}
+                required={true}
+            />
+            <label htmlFor="statusSelect">Status</label>
+            <StatusSelect 
+                id="statusSelect" 
+                name="statusSelect" 
+                selected={taskStatus} 
+                onChange={(e) => setTaskStatus(e.target.value)}
+            />
+            <input type="submit" value={task ? "Edit" : "Add"} />
+        </form>
+    )
+}
+
+function TaskCol({ title, tasks, width="100%", height="100%", classArray=[]}) {
+    const cn = ["taskContainer"].concat(classArray).join(" ");
+    return(
+        <div className={cn} style={{width: width, height: height}}>
+            <h4>{title}</h4>
+            {tasks.map((task) => <div className="taskCell" key={task.id}>{task.name}</div>)}
+        </div>
+    )
+}
+
+
 function TaskBoard({ project, handleNewTask, handleEditTask, handleDeleteTask }) {
+
+    const [selectedTask, setSelectedTask] = useState(null);
 
     // sort tasks by status
     let taskMap = new Map();
     for (let task of project.tasks) {
         if (taskMap.has(task.status)) {
-            current = taskMap.get(task.status)
+            const current = taskMap.get(task.status)
             taskMap.set(task.status, current.concat(task))
         } else {
             taskMap.set(task.status, [task])
@@ -75,35 +143,71 @@ function TaskBoard({ project, handleNewTask, handleEditTask, handleDeleteTask })
     }
 
     return (
-        <div className="taskBoard">
-            <div className="taskCol">
-            </div>
-            <div className="taskGrid">
-                <div className="taskRow">
-                    <div className="taskQuad">
-                    </div>
-                    <div className="taskQuad">
-                    </div>
-                </div>
-                <div className="taskRow">
-                    <div className="taskQuad">
-                    </div>
-                    <div className="taskQuad">
-                    </div>
-                </div>
-            </div>
-            <div className="taskCol">
+        <>
+            <h3>Tasks for {project.name}</h3>
+            <div className="taskControl">
+                <TaskForm task={selectedTask} handleSubmit={(e) => {
+                    e.preventDefault()
+                    const taskName = e.target.querySelector("input#taskName");
+                    const taskStatus = e.target.querySelector("select#statusSelect");
+                    handleNewTask({
+                        id: uuidv4(),
+                        name: taskName.value,
+                        status: taskStatus.value
+                    })
+                    setSelectedTask(null);
+                }}/>
 
             </div>
-        </div>
+            <div className="taskBoard">
+                <TaskCol 
+                    title="Unassigned" 
+                    tasks={getOrDefault(taskMap, TASK_UNASSIGNED, [])} 
+                    width="20%"
+                    classArray={["borderRight"]}
+                />
+                <div className="gridCol">
+                    <TaskCol
+                        title="Now"
+                        tasks={getOrDefault(taskMap, TASK_NOW, [])}
+                        width="100%"
+                        classArray={["borderRight", "borderBottom"]}
+                    />
+                    <TaskCol
+                        title="Later"
+                        tasks={getOrDefault(taskMap, TASK_LATER, [])}
+                        width="100%"
+                    />
+                </div>
+                <div className="gridCol">
+                    <TaskCol
+                        title="Soon"
+                        tasks={getOrDefault(taskMap, TASK_SOON, [])}
+                        height="50%"
+                    />
+                    <TaskCol
+                        title="Sometime"
+                        tasks={getOrDefault(taskMap, TASK_SOMETIME, [])}
+                        height="50%"
+                        classArray={["borderLeft", "borderTop"]}
+                    />
+                </div>
+                <TaskCol 
+                    title="Completed" 
+                    tasks={getOrDefault(taskMap, TASK_COMPLETED, [])} 
+                    width="20%"
+                    classArray={["borderLeft"]}
+                />
+            </div>
+        </>
     )
 }
 
-export default({ data }) => {
+export default function TaskPage({ data })  {
     const [projects, setProjects] = useState([]);
     const [currentProjectId, setCurrentProjectId] = useState(null);
 
-    const currentProject = currentProjectId !== "" ? projects[currentProjectId]: {}
+    const currentProject = getProject(currentProjectId);
 
     function selectProject(id) {
         if (currentProjectId === id) {
@@ -125,12 +229,21 @@ export default({ data }) => {
         if (currentProjectId === id) {
             setCurrentProjectId(null);
         }
-        setProjects(projects.filter(p => p.id !== id))
+        const project = getProject(id);
+        const msg = `Project ${project.name} and all associated tasks will be deleted. Are you sure?`
+        if (window.confirm(msg)) {
+            setProjects(projects.filter(p => p.id !== id))
+        }
+        
     }
 
     function getProject(id) {
         const filtered = projects.filter(p => p.id === id);
-        return filtered.length === 0 ? null : filtered[0];
+        if (filtered.length === 0) {
+            return null;
+        } else {
+            return filtered[0];
+        }
     }
 
     function editProject(projectId, name=null, tasks=null) {
@@ -149,9 +262,31 @@ export default({ data }) => {
         setProjects(res);
     }
 
-    function addTask(projectId, task) {
-        const project = getProject(projectId);
-        editProject(projectId, tasks=project.tasks.concat(task));
+    function addTask(project, task) {
+        const tasks = project.tasks.concat(task);
+        editProject(project.id, project.name, tasks);
+    }
+
+    function getTask(project, taskId) {
+        const filtered = project.tasks.filter(task => task.id === taskId)
+        return filtered.length === 0 ? null : filtered[0];
+    }
+
+    function editTask(project, taskId, taskName=null, taskStatus=null) {
+        const task = getTask(project, taskId);
+        let res = [];
+        for (let t of project.tasks) {
+            if (t.id === taskId) {
+                res.push({
+                    id: taskId,
+                    name: taskName || t.name,
+                    status: taskStatus || t.status
+                })
+            } else {
+                res.push(t);
+            }
+        }
+        editProject(project.id, project.name, res);
     }
 
     const ProjectListItems = projects.map(p => {
@@ -168,28 +303,29 @@ export default({ data }) => {
         <Layout fullWidth={true}>
             <Helmet title={"Task Manager - " + data.site.siteMetadata.title} />
             <h2>Task Manager</h2>
-            <div className="taskMain" style={{fontSize: "1.2em"}}>
-                <ProjectPane>
-                    <PaneHeading>Add Project</PaneHeading>
+            <div className="taskMain">
+                <div className="projectPane">
+                    <h3>Add Project</h3>
                     <AddProject handleSubmit={(e) => {
                         e.preventDefault();
                         const nameField = e.target.querySelector("input[name='projectName']");
                         addProject(nameField.value);
                         nameField.value=""
                     }}/>
-                    <PaneHeading>Projects</PaneHeading>
+                    <h3>Projects</h3>
                     <ProjectList>
                         {ProjectListItems}
                     </ProjectList>
                     
-                </ProjectPane>
-                <TaskPane>
-                    {currentProjectId !== null &&
-                        <PaneHeading>
-                            Tasks for {currentProject.name}
-                        </PaneHeading> 
+                </div>
+                <div className="taskPane">
+                    {currentProject !== null && 
+                        <TaskBoard 
+                            project={currentProject} 
+                            handleNewTask={(task) => addTask(currentProject, task)}
+                        />
                     }
-                </TaskPane>
+                </div>
             </div>
         </Layout>
     )
