@@ -1,0 +1,65 @@
+h2 {
+    text-align: center;
+    width: 100%;
+}
+form.addProject input[type='text'] {
+    font-size: 1em;
+    border-radius: 0.2em;
+    box-sizing: border-box;
+    margin-bottom: 0.3em;
+    width: 100%;
+}
+
+form.addProject label {
+    font-weight: 600;
+}
+
+form.addProject input[type='submit'] {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+}
+
+div.taskMain {
+    min-height: calc(-50px + 100vh);
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2em;
+}
+
+div.projectListItem {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.selected {
+    background-color: #AFB5F1;
+    color: white;
+}
+
+div.projectName {
+    width: 90%;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0.2em;
+    margin-right: 0.1em;
+}
+
+div.projectDelete {
+    width: 10%;
+    color: red;
+    cursor: pointer;
+    text-align: center;
+    display: none;
+}
+
+div.projectListItem:hover .projectDelete {
+    display: inline-block;
+}
+
+.projectDelete:hover {
+    border: 1px solid red;
+    border-radius: 0.2em;
+}

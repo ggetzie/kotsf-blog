@@ -5,9 +5,9 @@ import styled from "styled-components"
 
 import HamNav from './HamNav';
 
+// max-width: 50rem;
 const Container = styled.div`
     margin: 0 auto;
-    max-width: 50rem;
     padding: 2em 2em 4em 2em;
 `
 const SiteHeader = styled.div`
@@ -52,7 +52,7 @@ const Brand = styled.h1`
     color: black;
 `
 
-export default ({ is_index, children }) => {
+export default ({ is_index, children, fullWidth=false }) => {
     const data = useStaticQuery(
         graphql`
             query {
@@ -83,7 +83,7 @@ export default ({ is_index, children }) => {
                     <Link to="/referrals/">Referrals</Link>
                 </HamNav>
             </div>
-            <Container>
+            <Container style={{maxWidth: fullWidth ? "100%" : "50rem"}}>
                 <Entry>
                     {children}
                 </Entry>
