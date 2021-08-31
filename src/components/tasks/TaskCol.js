@@ -1,8 +1,8 @@
 import React from 'react';
 import { TASK_COMPLETED } from '.';
 
-function TaskCell({task, handleSelect, currentTaskId}) {
-    let cn = "taskCell";
+function TaskCell({task, handleSelect, handleDelete, currentTaskId}) {
+    let cn = "projectName";
 
     if (task.id === currentTaskId) {
         cn += " selected"
@@ -13,19 +13,26 @@ function TaskCell({task, handleSelect, currentTaskId}) {
     }
     
     return (
-        <div 
-            className={cn}
-            onClick={() => handleSelect(task)}
-            onKeyPress={() => handleSelect(task)}
-            tabIndex={0}
-            role="button"
-        >
-            {task.name}
+        <div className="projectListItem">
+            <div onClick={() => handleSelect(task)}
+                 onKeyPress={() => handleSelect(task)}
+                 tabIndex={0}
+                 role="button"
+                 className={cn}>
+                {task.name}
+            </div>
+            <div className="projectDelete"
+                 role="button"
+                 onClick={() => handleDelete(task)}
+                 onKeyPress={() => handleDelete(task)}
+                 tabIndex={0}>
+                &times;
+            </div>
         </div>
     )
 }
 
-export function TaskCol({ title, tasks, handleSelect, currentTaskId, width="100%", height="100%", classArray=[]}) {
+export function TaskCol({ title, tasks, handleSelect, handleDelete, currentTaskId, width="100%", height="100%", classArray=[]}) {
     const cn = ["taskContainer"].concat(classArray).join(" ");
     return(
         <div className={cn} style={{width: width, height: height}}>
@@ -34,6 +41,7 @@ export function TaskCol({ title, tasks, handleSelect, currentTaskId, width="100%
                                     key={task.id} 
                                     task={task} 
                                     handleSelect={handleSelect} 
+                                    handleDelete={handleDelete}
                                     currentTaskId={currentTaskId} />)}
         </div>
     )

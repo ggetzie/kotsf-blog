@@ -59,7 +59,7 @@ form.addProject input[type='submit'] {
 
 div.projectListItem {
     margin: 0;
-    padding: 0;
+    padding: 0 0.2em;
     display: flex;
     flex-direction: row;
 }
@@ -72,13 +72,13 @@ div.projectListItem {
 div.projectName {
     width: 90%;
     cursor: pointer;
-    text-align: center;
+    text-align: left;
     border-radius: 0.2em;
     margin-right: 0.1em;
+    padding: 0 0.5em;
 }
 
 div.projectDelete {
-    width: 10%;
     color: red;
     cursor: pointer;
     text-align: center;
@@ -86,7 +86,9 @@ div.projectDelete {
 }
 
 div.projectListItem:hover .projectDelete {
-    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    display: block;
 }
 
 .projectDelete:hover {

@@ -94,9 +94,12 @@ export default function TaskPage({ data })  {
         editProject(project.id, project.name, res);
     }
 
-    function deleteTask(project, taskId) {
-        const filtered = project.tasks.filter((task) => task.id !== taskId);
-        editProject(project.id, project.name, filtered);
+    function deleteTask(project, task) {
+        const msg = `Task ${task.name} will be permanently deleted from project ${project.name}. Are you sure?`
+        if (window.confirm(msg)) {
+            const filtered = project.tasks.filter((t) => t.id !== task.id);
+            editProject(project.id, project.name, filtered);
+        }
     }
 
     const ProjectListItems = projects.map(p => {

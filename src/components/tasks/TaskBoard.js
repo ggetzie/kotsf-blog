@@ -47,6 +47,13 @@ export function TaskBoard({ project, handleNewTask, handleEditTask, handleDelete
         }
     }
 
+    function deselectAndDelete(task) {
+        if (task.id === currentTask.id) {
+            selectTask(emptyTask);
+        }
+        handleDeleteTask(task);
+    }
+
     return (
         <>
             <h3>Tasks for {project.name}</h3>
@@ -78,6 +85,7 @@ export function TaskBoard({ project, handleNewTask, handleEditTask, handleDelete
                     title="Unassigned" 
                     tasks={getOrDefault(taskMap, TASK_UNASSIGNED, [])} 
                     handleSelect={(task) => selectTask(task)}
+                    handleDelete={(task) => deselectAndDelete(task)}
                     currentTaskId={currentTask.id}
                     width="20%"
                     classArray={["borderRight", "borderLeft"]}
@@ -86,15 +94,17 @@ export function TaskBoard({ project, handleNewTask, handleEditTask, handleDelete
                     <TaskCol
                         title="Now"
                         tasks={getOrDefault(taskMap, TASK_NOW, [])}
-                        handleSelect={(id) => selectTask(id)}
+                        handleSelect={(task) => selectTask(task)}
                         currentTaskId={currentTask.id}
+                        handleDelete={(task) => deselectAndDelete(task)}
                         width="100%"
                         classArray={["borderRight", "borderBottom"]}
                     />
                     <TaskCol
                         title="Later"
                         tasks={getOrDefault(taskMap, TASK_LATER, [])}
-                        handleSelect={(id) => selectTask(id)}
+                        handleSelect={(task) => selectTask(task)}
+                        handleDelete={(task) => deselectAndDelete(task)}
                         currentTaskId={currentTask.id}
                         width="100%"
                     />
@@ -103,14 +113,16 @@ export function TaskBoard({ project, handleNewTask, handleEditTask, handleDelete
                     <TaskCol
                         title="Soon"
                         tasks={getOrDefault(taskMap, TASK_SOON, [])}
-                        handleSelect={(id) => selectTask(id)}
+                        handleSelect={(task) => selectTask(task)}
+                        handleDelete={(task) => deselectAndDelete(task)}
                         currentTaskId={currentTask.id}
                         height="50%"
                     />
                     <TaskCol
                         title="Sometime"
                         tasks={getOrDefault(taskMap, TASK_SOMETIME, [])}
-                        handleSelect={(id) => selectTask(id)}
+                        handleSelect={(task) => selectTask(task)}
+                        handleDelete={(task) => deselectAndDelete(task)}
                         currentTaskId={currentTask.id}
                         height="50%"
                         classArray={["borderLeft", "borderTop"]}
@@ -119,7 +131,8 @@ export function TaskBoard({ project, handleNewTask, handleEditTask, handleDelete
                 <TaskCol 
                     title="Completed" 
                     tasks={getOrDefault(taskMap, TASK_COMPLETED, [])} 
-                    handleSelect={(id) => selectTask(id)}
+                    handleSelect={(task) => selectTask(task)}
+                    handleDelete={(task) => deselectAndDelete(task)}
                     currentTaskId={currentTask.id}
                     width="20%"
                     classArray={["borderLeft", "borderRight"]}
