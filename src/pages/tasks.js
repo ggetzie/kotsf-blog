@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
 import {v4 as uuidv4} from 'uuid';
@@ -6,65 +6,74 @@ import { graphql } from 'gatsby';
 
 import "../styles/tasks.css"
 
-import { TaskBoard, ProjectListItem, AddProject } from '../components/tasks';
+import { TaskBoard, ProjectListItem, ProjectForm } from '../components/tasks';
 
 export default function TaskPage({ data })  {
-    const [projects, setProjects] = useState([]);
-    const [currentProjectId, setCurrentProjectId] = useState(null);
+    const emptyProject = {
+        id: null,
+        name: "",
+        tasks: []
+    }
+    const [projects, setProjects] = useState(() => {
+        const savedProjects = localStorage.getItem("projects");
+        return savedProjects ? JSON.parse(savedProjects) : [];
+    });
 
-    const currentProject = getProject(currentProjectId);
+    const [currentProject, setCurrentProject] = useState(() => {
+        const savedCurrent = localStorage.getItem("currentProject");
+        return savedCurrent ? JSON.parse(savedCurrent) : emptyProject;
+    })
 
-    function selectProject(id) {
-        if (currentProjectId === id) {
-            setCurrentProjectId(null);
+    const [projectFormName, setProjectFormName] = useState(currentProject.name);
+
+    function selectProject(project) {
+        if (currentProject.id === project.id) {
+            setCurrentProject(emptyProject);
+            setProjectFormName(emptyProject.name);
         } else {
-            setCurrentProjectId(id)
+            setCurrentProject(project);
+            setProjectFormName(project.name);
         }
     }
 
     function addProject(name) {
-        setProjects(projects.concat({
-                id: uuidv4(),
-                name: name,
-                tasks: []
-            }));
+        const newProject = {
+            id: uuidv4(),
+            name: name,
+            tasks: []
+        }
+        setProjects(projects.concat(newProject));
+        setCurrentProject(newProject);
     }
 
-    function getProject(id) {
-        const filtered = projects.filter(p => p.id === id);
-        if (filtered.length === 0) {
-            return null;
-        } else {
-            return filtered[0];
+    function deleteProject(project) {
+        if (currentProject.id === project.id) {
+            setCurrentProject(emptyProject);
         }
-    }
-
-    function deleteProject(id) {
-        if (currentProjectId === id) {
-            setCurrentProjectId(null);
-        }
-        const project = getProject(id);
         const msg = `Project ${project.name} and all associated tasks will be deleted. Are you sure?`
         if (window.confirm(msg)) {
-            setProjects(projects.filter(p => p.id !== id))
+            setProjects(projects.filter(p => p.id !== project.id))
         }
-        
     }
 
     function editProject(projectId, name=null, tasks=null) {
-        let res = [];
+        let newProjectList = [];
         for (let project of projects) {
             if (project.id === projectId) {
-                res.push({
+                const edited = {
                     id: projectId,
                     name: name || project.name,
                     tasks: tasks || project.tasks
-                })
+                }
+                newProjectList.push(edited)
+                if (currentProject.id == projectId) {
+                    setCurrentProject(edited);
+                }
             } else {
-                res.push(project)
+                newProjectList.push(project)
             }
         }
-        setProjects(res);
+        setProjects(newProjectList);
     }
 
     function addTask(project, task) {
@@ -106,9 +115,9 @@ export default function TaskPage({ data })  {
         return <ProjectListItem
                     key={p.id}
                     project={p}
-                    isSelected={currentProjectId === p.id}
-                    handleSelect={() => selectProject(p.id)}
-                    handleDelete={() => deleteProject(p.id)}
+                    isSelected={currentProject.id === p.id}
+                    handleSelect={() => selectProject(p)}
+                    handleDelete={() => deleteProject(p)}
                 />
     });
     
@@ -118,13 +127,19 @@ export default function TaskPage({ data })  {
             <h2>Task Manager</h2>
             <div className="taskMain">
                 <div className="projectPane">
-                    <h3>Add Project</h3>
-                    <AddProject handleSubmit={(e) => {
-                        e.preventDefault();
-                        const nameField = e.target.querySelector("input[name='projectName']");
-                        addProject(nameField.value);
-                        nameField.value=""
-                    }}/>
+                    <ProjectForm 
+                        handleSubmit={(e) => {
+                            e.preventDefault();
+                            if (currentProject.id !== null) {
+                                editProject(currentProject.id, projectFormName);
+                            } else {
+                                addProject(projectFormName);
+                            }
+                        }}
+                        projectFormName={projectFormName}
+                        projectFormNameChange={(e) => setProjectFormName(e.target.value)}
+                        editMode={currentProject.id !== null}
+                    />
                     <div className="projectList">
                         <h3>Projects</h3>
                         {ProjectListItems}
@@ -132,7 +147,7 @@ export default function TaskPage({ data })  {
                     
                 </div>
                 <div className="taskPane">
-                    {currentProject !== null && 
+                    {currentProject.id !== null && 
                         <TaskBoard 
                             project={currentProject} 
                             handleNewTask={(task) => addTask(currentProject, task)}

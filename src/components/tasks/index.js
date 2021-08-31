@@ -3,7 +3,7 @@ import { TaskBoard } from "./TaskBoard";
 import { TaskForm } from "./TaskForm";
 import { StatusSelect } from "./StatusSelect";
 import { ProjectListItem } from "./ProjectListItem";
-import { AddProject } from "./AddProject";
+import { ProjectForm } from "./ProjectForm";
 import {
     TASK_UNASSIGNED,
     TASK_COMPLETED,
@@ -19,7 +19,7 @@ export {
     TaskForm,
     StatusSelect,
     ProjectListItem,
-    AddProject,
+    ProjectForm,
     TASK_UNASSIGNED,
     TASK_COMPLETED,
     TASK_LATER,
