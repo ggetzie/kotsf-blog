@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
-export default function LicensePage ({ data }) {
+export default function License ({ data }) {
     const {markdownRemark: post} = data
     return ( 
         <Layout>

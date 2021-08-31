@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
 
-export default function ContactPage ({ data }) {
+export default function Contact ({ data }) {
     const {markdownRemark: post} = data
     return (
         <Layout>

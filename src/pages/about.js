@@ -8,7 +8,7 @@ const InfoList = styled.ul`
     list-style: none;
 `
 
-export default function AboutPage({ data }) {
+export default function About({ data }) {
     const {markdownRemark: post} = data
     return ( 
         <Layout>
