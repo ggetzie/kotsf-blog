@@ -75,7 +75,9 @@ export function TaskBoard({ project, handleNewTask, handleEditTask, handleDelete
                         } else {
                             handleEditTask(currentTask.id, taskFormName, taskFormStatus);
                         }
-                        selectTask(emptyTask);
+                        // leave last status in the form
+                        setCurrentTask(emptyTask);
+                        setTaskFormName(emptyTask.name);
                     }}
                 />
 

@@ -15,16 +15,21 @@ export default function TaskPage({ data })  {
         tasks: []
     }
     const [projects, setProjects] = useState(() => {
-        const savedProjects = localStorage.getItem("projects");
+        const savedProjects = localStorage.getItem("TAW_projects");
         return savedProjects ? JSON.parse(savedProjects) : [];
     });
 
     const [currentProject, setCurrentProject] = useState(() => {
-        const savedCurrent = localStorage.getItem("currentProject");
+        const savedCurrent = localStorage.getItem("TAW_currentProject");
         return savedCurrent ? JSON.parse(savedCurrent) : emptyProject;
     })
 
     const [projectFormName, setProjectFormName] = useState(currentProject.name);
+
+    useEffect(() => {
+        localStorage.setItem("TAW_projects", JSON.stringify(projects));
+        localStorage.setItem("TAW_currentProject", JSON.stringify(currentProject));
+    })
 
     function selectProject(project) {
         if (currentProject.id === project.id) {
