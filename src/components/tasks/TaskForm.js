@@ -1,32 +1,27 @@
-import React, { useState } from 'react';
-import { StatusSelect, TASK_UNASSIGNED } from '.';
+import React from 'react';
+import { StatusSelect } from '.';
 
-export function TaskForm({ task, handleSubmit }) {
-    const [taskName, setTaskName] = useState(task ? task.name: "");
-    const [taskStatus, setTaskStatus] = useState(task ? task.status : TASK_UNASSIGNED);
+export function TaskForm({ taskFormName, taskFormNameChange, taskFormStatus, taskFormStatusChange, handleSubmit, editMode }) {
+        
     return (
-        <form onSubmit={(e) => {
-            handleSubmit(e); 
-            setTaskName("");
-            setTaskStatus(TASK_UNASSIGNED);
-        }} className="taskForm">
+        <form onSubmit={handleSubmit} className="taskForm">
             <label htmlFor="taskName">Name</label>
             <input 
                 type="text" 
                 id="taskName" 
                 name="taskName" 
-                value={taskName} 
-                onChange = {(e) => setTaskName(e.target.value)}
+                value={taskFormName} 
+                onChange={taskFormNameChange}
                 required={true}
             />
             <label htmlFor="statusSelect">Status</label>
             <StatusSelect 
                 id="statusSelect" 
                 name="statusSelect" 
-                value={taskStatus} 
-                handleChange={(e) => setTaskStatus(e.target.value)}
+                value={taskFormStatus} 
+                handleChange={taskFormStatusChange}
             />
-            <input type="submit" value={task ? "Edit" : "Add"} />
+            <input type="submit" value={editMode ? "Edit" : "Add"} />
         </form>
     )
 }

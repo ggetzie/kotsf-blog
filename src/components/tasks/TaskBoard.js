@@ -14,24 +14,28 @@ import {
 import getOrDefault from '../../utils/getOrDefault';
 
 export function TaskBoard({ project, handleNewTask, handleEditTask, handleDeleteTask }) {
+    const emptyTask = {
+        id: null,
+        name: "",
+        status: TASK_UNASSIGNED
+    }
 
-    const [currentTaskId, setCurrentTaskId] = useState(null);
-
-    function selectTask(id) {
-        if (currentTaskId === id) {
-            setCurrentTaskId(null);
+    const [currentTask, setCurrentTask] = useState(emptyTask);
+    const [taskFormName, setTaskFormName] = useState("");
+    const [taskFormStatus, setTaskFormStatus] = useState(TASK_UNASSIGNED);
+    
+    function selectTask(task) {
+        if (currentTask.id === task.id) {
+            setCurrentTask(emptyTask);
+            setTaskFormName(emptyTask.name);
+            setTaskFormStatus(emptyTask.status);
         } else {
-            setCurrentTaskId(id);
+            setCurrentTask(task);
+            setTaskFormName(task.name);
+            setTaskFormStatus(task.status);
         }
     }
-
-    function getTask(id) {
-        const filtered = project.tasks.filter(task => task.id === id);
-        return filtered.length === 0 ? null : filtered[0];
-    }
-
-    const currentTask = getTask(currentTaskId);
-
+    
     // sort tasks by status
     let taskMap = new Map();
     for (let task of project.tasks) {
@@ -47,36 +51,51 @@ export function TaskBoard({ project, handleNewTask, handleEditTask, handleDelete
         <>
             <h3>Tasks for {project.name}</h3>
             <div className="taskControl">
-                <TaskForm task={currentTask} handleSubmit={(e) => {
-                    e.preventDefault()
-                    const taskName = e.target.querySelector("input#taskName");
-                    const taskStatus = e.target.querySelector("select#statusSelect");
-                    handleNewTask({
-                        id: uuidv4(),
-                        name: taskName.value,
-                        status: taskStatus.value
-                    })
-                    setCurrentTaskId(null);
-                }}/>
+                <TaskForm 
+                    taskFormName={taskFormName}
+                    taskFormNameChange={(e) => setTaskFormName(e.target.value)}
+                    taskFormStatus={taskFormStatus}
+                    taskFormStatusChange={(e) => setTaskFormStatus(e.target.value)}
+                    editMode={currentTask.id !== null}
+                    handleSubmit={(e) => {
+                        e.preventDefault()
+                        if (currentTask.id === null) {
+                            handleNewTask({
+                                id: uuidv4(),
+                                name: taskFormName,
+                                status: taskFormStatus,
+                            })
+                        } else {
+                            handleEditTask(currentTask.id, taskFormName, taskFormStatus);
+                        }
+                        selectTask(emptyTask);
+                    }}
+                />
 
             </div>
             <div className="taskBoard">
                 <TaskCol 
                     title="Unassigned" 
                     tasks={getOrDefault(taskMap, TASK_UNASSIGNED, [])} 
+                    handleSelect={(task) => selectTask(task)}
+                    currentTaskId={currentTask.id}
                     width="20%"
-                    classArray={["borderRight"]}
+                    classArray={["borderRight", "borderLeft"]}
                 />
                 <div className="gridCol">
                     <TaskCol
                         title="Now"
                         tasks={getOrDefault(taskMap, TASK_NOW, [])}
+                        handleSelect={(id) => selectTask(id)}
+                        currentTaskId={currentTask.id}
                         width="100%"
                         classArray={["borderRight", "borderBottom"]}
                     />
                     <TaskCol
                         title="Later"
                         tasks={getOrDefault(taskMap, TASK_LATER, [])}
+                        handleSelect={(id) => selectTask(id)}
+                        currentTaskId={currentTask.id}
                         width="100%"
                     />
                 </div>
@@ -84,11 +103,15 @@ export function TaskBoard({ project, handleNewTask, handleEditTask, handleDelete
                     <TaskCol
                         title="Soon"
                         tasks={getOrDefault(taskMap, TASK_SOON, [])}
+                        handleSelect={(id) => selectTask(id)}
+                        currentTaskId={currentTask.id}
                         height="50%"
                     />
                     <TaskCol
                         title="Sometime"
                         tasks={getOrDefault(taskMap, TASK_SOMETIME, [])}
+                        handleSelect={(id) => selectTask(id)}
+                        currentTaskId={currentTask.id}
                         height="50%"
                         classArray={["borderLeft", "borderTop"]}
                     />
@@ -96,8 +119,10 @@ export function TaskBoard({ project, handleNewTask, handleEditTask, handleDelete
                 <TaskCol 
                     title="Completed" 
                     tasks={getOrDefault(taskMap, TASK_COMPLETED, [])} 
+                    handleSelect={(id) => selectTask(id)}
+                    currentTaskId={currentTask.id}
                     width="20%"
-                    classArray={["borderLeft"]}
+                    classArray={["borderLeft", "borderRight"]}
                 />
             </div>
         </>

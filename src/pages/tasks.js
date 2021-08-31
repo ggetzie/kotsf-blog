@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
-import styled from "styled-components"
 import {v4 as uuidv4} from 'uuid';
 import { graphql } from 'gatsby';
 
@@ -95,6 +94,11 @@ export default function TaskPage({ data })  {
         editProject(project.id, project.name, res);
     }
 
+    function deleteTask(project, taskId) {
+        const filtered = project.tasks.filter((task) => task.id !== taskId);
+        editProject(project.id, project.name, filtered);
+    }
+
     const ProjectListItems = projects.map(p => {
         return <ProjectListItem
                     key={p.id}
@@ -129,6 +133,8 @@ export default function TaskPage({ data })  {
                         <TaskBoard 
                             project={currentProject} 
                             handleNewTask={(task) => addTask(currentProject, task)}
+                            handleEditTask={(taskId, taskName, taskStatus) => editTask(currentProject, taskId, taskName, taskStatus)}
+                            handleDeleteTask={(taskId) => deleteTask(currentProject, taskId)}
                         />
                     }
                 </div>
