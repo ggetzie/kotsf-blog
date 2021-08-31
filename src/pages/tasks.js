@@ -30,6 +30,15 @@ export default function TaskPage({ data })  {
             }));
     }
 
+    function getProject(id) {
+        const filtered = projects.filter(p => p.id === id);
+        if (filtered.length === 0) {
+            return null;
+        } else {
+            return filtered[0];
+        }
+    }
+
     function deleteProject(id) {
         if (currentProjectId === id) {
             setCurrentProjectId(null);
@@ -40,15 +49,6 @@ export default function TaskPage({ data })  {
             setProjects(projects.filter(p => p.id !== id))
         }
         
-    }
-
-    function getProject(id) {
-        const filtered = projects.filter(p => p.id === id);
-        if (filtered.length === 0) {
-            return null;
-        } else {
-            return filtered[0];
-        }
     }
 
     function editProject(projectId, name=null, tasks=null) {
