@@ -2,9 +2,9 @@ import React from 'react';
 
 export function ProjectListItem({ handleSelect, handleDelete, isSelected, project }) {
     
-    const cn = "projectName" + (isSelected ? " selected" : "");
+    const cn = "itemName" + (isSelected ? " selected" : "");
     return (
-        <div className="projectListItem">
+        <div className="listItem">
             <div 
                 className={cn} 
                 onClick={handleSelect} 
@@ -13,7 +13,7 @@ export function ProjectListItem({ handleSelect, handleDelete, isSelected, projec
                 {project.name}
             </div>
             <div 
-                className="projectDelete" 
+                className="itemDelete" 
                 onClick={handleDelete} 
                 onKeyPress={handleDelete}
                 role="button"

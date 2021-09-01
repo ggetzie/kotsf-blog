@@ -2,7 +2,7 @@ import React from 'react';
 import { TASK_COMPLETED } from '.';
 
 function TaskCell({task, handleSelect, handleDelete, currentTaskId}) {
-    let cn = "projectName";
+    let cn = "itemName";
 
     if (task.id === currentTaskId) {
         cn += " selected"
@@ -13,7 +13,7 @@ function TaskCell({task, handleSelect, handleDelete, currentTaskId}) {
     }
     
     return (
-        <div className="projectListItem">
+        <div className="listItem">
             <div onClick={() => handleSelect(task)}
                  onKeyPress={() => handleSelect(task)}
                  tabIndex={0}
@@ -21,7 +21,7 @@ function TaskCell({task, handleSelect, handleDelete, currentTaskId}) {
                  className={cn}>
                 {task.name}
             </div>
-            <div className="projectDelete"
+            <div className="itemDelete"
                  role="button"
                  onClick={() => handleDelete(task)}
                  onKeyPress={() => handleDelete(task)}
@@ -32,7 +32,10 @@ function TaskCell({task, handleSelect, handleDelete, currentTaskId}) {
     )
 }
 
-export function TaskCol({ title, tasks, handleSelect, handleDelete, currentTaskId, width="100%", height="100%", classArray=[]}) {
+export function TaskCol({ 
+    title, tasks, handleSelect, handleDelete, 
+    currentTaskId, width="100%", height="100%", classArray=[]
+}) {
     const cn = ["taskContainer"].concat(classArray).join(" ");
     return(
         <div className={cn} style={{width: width, height: height}}>

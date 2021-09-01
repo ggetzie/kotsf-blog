@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
 import {v4 as uuidv4} from 'uuid';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import "../styles/tasks.css"
 
@@ -71,7 +71,7 @@ export default function TaskPage({ data })  {
                     tasks: tasks || project.tasks
                 }
                 newProjectList.push(edited)
-                if (currentProject.id == projectId) {
+                if (currentProject.id === projectId) {
                     setCurrentProject(edited);
                 }
             } else {
@@ -86,13 +86,7 @@ export default function TaskPage({ data })  {
         editProject(project.id, project.name, tasks);
     }
 
-    function getTask(project, taskId) {
-        const filtered = project.tasks.filter(task => task.id === taskId)
-        return filtered.length === 0 ? null : filtered[0];
-    }
-
     function editTask(project, taskId, taskName=null, taskStatus=null) {
-        const task = getTask(project, taskId);
         let res = [];
         for (let t of project.tasks) {
             if (t.id === taskId) {
@@ -128,8 +122,31 @@ export default function TaskPage({ data })  {
     
     return (
         <Layout fullWidth={true}>
-            <Helmet title={"Task Manager - " + data.site.siteMetadata.title} />
-            <h2>Task Manager</h2>
+            <Helmet title={"Project Manager - " + data.site.siteMetadata.title} />
+            <h2>Tilting at Windmills Project Manager</h2>
+            <div class="intro">
+                <p>
+                    Finally, a place to keep track of all the windmills you're tilting at. To start, enter a project name "Add Project" form on the left and click Add. Enter tasks in the the form that appears on the right and assign them a status with the drop down menu. They'll automatically sort to the appropriate column. You can click on a task to select it and change the name and status in the same form at the top of the task area. Change the status to move the task to the associated column.
+                </p>
+
+                <p>
+                    To add a new project, click on the currently selected project name to deselect it, enter a new name in the "Add Project" form and click Add. You can switch back and forth between projects by clicking on the project name in the list to select it.
+                </p>
+
+                <p>
+                    Clicking on the red <span style={{color: "red"}}>&times;</span> that appears next to a project or task when you hover over it will delete it.
+                </p>
+
+                <p>
+                    All changes are automatically saved to your browser's local storage, so your data never leaves your computer. However this also means that your data will be lost if you clear site data from your browser's settings.
+                </p>
+
+                <p>
+                    Like the rest of the blog, this application is released under the site <Link to="/license/">license</Link>. View the source on <a href="https://github.com/ggetzie/kotsf-blog/blob/master/src/pages/tasks.js">Github</a>.
+                </p>
+
+            </div>
+            
             <div className="taskMain">
                 <div className="projectPane">
                     <ProjectForm 

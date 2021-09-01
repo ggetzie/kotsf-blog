@@ -81,6 +81,7 @@ export default function Layout({ is_index, children, fullWidth=false }) {
                     <Link to="/archive/">Archive</Link>
                     <Link to="/portfolio/">Portfolio</Link>
                     <Link to="/referrals/">Referrals</Link>
+                    <Link to="/miscellany/">Miscellany</Link>
                 </HamNav>
             </div>
             <Container style={{maxWidth: fullWidth ? "100%" : "50rem"}}>

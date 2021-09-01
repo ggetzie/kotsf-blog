@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
-export default function ReferralsPage ({ data }) {
+export default function Referrals ({ data }) {
     const {markdownRemark: post} = data
     return ( 
         <Layout>

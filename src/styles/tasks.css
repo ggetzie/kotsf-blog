@@ -55,10 +55,11 @@ form.addProject input[type='submit'] {
     flex-direction: row;
     align-content: stretch;
     font-size: 1.2em;
+    margin-top: 1em;
 }
 
-div.projectListItem {
-    margin: 0;
+div.listItem {
+    margin: 0 0 0.5em 0;
     padding: 0 0.2em;
     display: flex;
     flex-direction: row;
@@ -66,10 +67,10 @@ div.projectListItem {
 
 .selected {
     background-color: #AFB5F1;
-    color: #f1ebaf;
+    color: whitesmoke;
 }
 
-div.projectName {
+div.itemName {
     width: 90%;
     cursor: pointer;
     text-align: left;
@@ -78,20 +79,20 @@ div.projectName {
     padding: 0 0.5em;
 }
 
-div.projectDelete {
+div.itemDelete {
     color: red;
     cursor: pointer;
     text-align: center;
     display: none;
 }
 
-div.projectListItem:hover .projectDelete {
+div.listItem:hover .itemDelete {
     width: 1.5em;
     height: 1.5em;
     display: block;
 }
 
-.projectDelete:hover {
+.itemDelete:hover {
     border: 1px solid red;
     border-radius: 0.2em;
 }
@@ -167,3 +168,8 @@ div.projectListItem:hover .projectDelete {
 .completed {
     text-decoration: line-through;
 }
+
+.intro {
+    max-width: 50rem;
+    margin: 0 auto;
+ }
