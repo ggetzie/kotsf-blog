@@ -15,20 +15,30 @@ export default function TaskPage({ data })  {
         tasks: []
     }
     const [projects, setProjects] = useState(() => {
-        const savedProjects = localStorage.getItem("TAW_projects");
-        return savedProjects ? JSON.parse(savedProjects) : [];
+        if (typeof window !== 'undefined') {
+            const savedProjects = localStorage.getItem("TAW_projects");
+            return savedProjects ? JSON.parse(savedProjects) : [];
+        } else {
+            return [];
+        }
     });
 
     const [currentProject, setCurrentProject] = useState(() => {
-        const savedCurrent = localStorage.getItem("TAW_currentProject");
-        return savedCurrent ? JSON.parse(savedCurrent) : emptyProject;
+        if (typeof window !== 'undefined') {
+            const savedCurrent = localStorage.getItem("TAW_currentProject");
+            return savedCurrent ? JSON.parse(savedCurrent) : emptyProject;
+        } else {
+            return emptyProject;
+        }
     })
 
     const [projectFormName, setProjectFormName] = useState(currentProject.name);
 
     useEffect(() => {
-        localStorage.setItem("TAW_projects", JSON.stringify(projects));
-        localStorage.setItem("TAW_currentProject", JSON.stringify(currentProject));
+        if (typeof window !== 'undefined') {
+            localStorage.setItem("TAW_projects", JSON.stringify(projects));
+            localStorage.setItem("TAW_currentProject", JSON.stringify(currentProject));
+        }
     })
 
     function selectProject(project) {
