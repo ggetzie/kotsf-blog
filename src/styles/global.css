@@ -39,6 +39,15 @@ li {
 .referrals p {
     margin-top: 0;
 }
+
+.blogpost h3 + p {
+  margin-top: 0;
+}
+
+.blogpost h3 {
+  margin-top: 2rem;
+  margin-bottom: .75rem;
+}
         
 #ham_nav {
   height:100%;

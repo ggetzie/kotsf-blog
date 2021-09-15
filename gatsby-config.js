@@ -32,9 +32,11 @@ module.exports = {
         path: `/usr/local/src/kotsf-posts/`
       },
     },
+
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        footnotes: true,
         plugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -42,36 +44,28 @@ module.exports = {
               maxWidth: 650,
             },
           },
-            {
-		resolve: `gatsby-remark-copy-linked-files`,
-		options: {
-		    ignoreFileExtensions: [`png`, `jpg`, `jpeg`],
-		},
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`],
             },
-            {
-		resolve: `gatsby-remark-prismjs`,
-		options: {
-		    classPrefix: "language-",
-		    inlineCodeMarker: "<",
-		    aliases: {},
-		    showLineNumbers: false,
-		    noInlineHighlight: false,
-		}
-            },
-	    'gatsby-remark-numbered-footnotes',
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: "±",
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+		        }
+          },
         ]
       },
     },
-      
-      /* {
-       *   resolve: `gatsby-plugin-typography`,
-       *   options: {
-       *     pathToConfigModule: `src/utils/typography`
-       *   },
-       * }, */
-      {
-	  resolve: `gatsby-plugin-feed`,
-	  options: {
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
         query: `
           {
             site {
