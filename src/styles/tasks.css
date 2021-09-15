@@ -127,16 +127,12 @@ div.listItem:hover .itemDelete {
 }
 
 .taskContainer {
-    overflow-y: scroll;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
     text-align: center;
-}
-
-.taskContainer::-webkit-scrollbar {
-    display: none;
+    scrollbar-width: thin;
+    scrollbar-color: #333 #eee;
 }
 
 .borderRight {
