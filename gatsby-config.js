@@ -12,7 +12,7 @@ module.exports = {
     siteUrl: `https://tiltingatwindmills.dev`,
     description: "Personal blog for Gabriel Getzie",
   },
-  plugins:[
+  plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
@@ -21,15 +21,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-simple-analytics`,
       options: {
-        domain: 'sa.tiltingatwindmills.dev'
-      }
+        domain: "sa.tiltingatwindmills.dev",
+      },
     },
-    
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `root`,
-        path: `/usr/local/src/kotsf-posts/`
+        path: `/usr/local/src/kotsf-posts/`,
       },
     },
 
@@ -58,9 +58,9 @@ module.exports = {
               aliases: {},
               showLineNumbers: false,
               noInlineHighlight: false,
-		        }
+            },
           },
-        ]
+        ],
       },
     },
     {
@@ -81,7 +81,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map( edge => { 
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
@@ -119,5 +119,3 @@ module.exports = {
     },
   ],
 }
-
-

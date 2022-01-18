@@ -62,6 +62,16 @@ h4 {
   margin-top: 3rem;
 }
 
+.caption {
+  text-align: center;
+  font-size: small;
+  margin-top: -1em;
+}
+
+.caption a {
+  color: lightslategray;
+}
+
 #ham_nav {
   height: 100%;
   width: 100%;
