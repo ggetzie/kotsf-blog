@@ -142,3 +142,12 @@ h4 {
   width: 100%;
   padding: 0;
 }
+
+dl.section-list dt {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+dl.section-list dd {
+  margin-bottom: 1.5em;
+}
