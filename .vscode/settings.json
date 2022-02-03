@@ -1,10 +1,13 @@
 {
-    "cSpell.ignoreWords": [
-        "blogpost",
-        "frontmatter",
-        "hamnav",
-        "okaidia",
-        "prismjs",
-        "uuidv"
-    ]
+  "cSpell.ignoreWords": [
+    "blogpost",
+    "darr",
+    "documenation",
+    "frontmatter",
+    "hamnav",
+    "okaidia",
+    "prismjs",
+    "uarr",
+    "uuidv"
+  ]
 }

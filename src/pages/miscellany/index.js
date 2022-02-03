@@ -37,6 +37,13 @@ export default function Miscellany({ data }) {
           thing, it has a different number of words than claimed in the README,
           so probably not.
         </dd>
+        <dt>
+          <Link to="/miscellany/special/">How Do I Type That Character?</Link>
+        </dt>
+        <dd>
+          A sortable, searchable table of special characters and how to type
+          them on different systems.
+        </dd>
       </dl>
     </Layout>
   )

@@ -18,6 +18,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-plugin-simple-analytics`,
       options: {
