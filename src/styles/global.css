@@ -151,3 +151,10 @@ dl.section-list dt {
 dl.section-list dd {
   margin-bottom: 1.5em;
 }
+
+.subtitle {
+  font-size: 1.1rem;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+}

@@ -12,8 +12,9 @@ export default function Template({ data}) {
             <div className="post-container">
                 <Helmet title={post.frontmatter.title + " - " + data.site.siteMetadata.title} />
                 <h2>{post.frontmatter.title}</h2>
-		        <Dateline>{post.frontmatter.date}</Dateline>
                 {post.frontmatter.subtitle && <p className="subtitle">{post.frontmatter.subtitle}</p>}
+		        <Dateline>{post.frontmatter.date}</Dateline>
+                
                 <div className="blogpost"
 		dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
