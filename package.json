@@ -32,6 +32,7 @@
     "gatsby-plugin-simple-analytics": "^1.0.4",
     "gatsby-plugin-styled-components": "@latest",
     "gatsby-remark-copy-linked-files": "@latest",
+    "gatsby-remark-embed-video": "^3.1.1",
     "gatsby-remark-images": "@latest",
     "gatsby-remark-numbered-footnotes": "^1.0.1",
     "gatsby-remark-prismjs": "@latest",

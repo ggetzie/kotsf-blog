@@ -26,6 +26,10 @@ nav {
   color: black;
 }
 
+ul.info-list {
+  list-style: none;
+}
+
 li {
   max-width: 80%;
   padding-bottom: 8px;
@@ -157,4 +161,9 @@ dl.section-list dd {
   font-style: italic;
   text-align: center;
   margin: 0;
+}
+
+.embedVideo-container {
+  display: flex;
+  justify-content: center;
 }

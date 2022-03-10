@@ -40,6 +40,22 @@ module.exports = {
         footnotes: true,
         plugins: [
           {
+            resolve: `gatsby-remark-embed-video`,
+            options: {
+              ratio: 1.77,
+              related: false,
+              loadingStrategy: "lazy",
+              urlOverrides: [
+                {
+                  id: "youtube",
+                  embedURL: (videoId) =>
+                    `https://www.youtube-nocookie.com/embed/${videoId}`,
+                },
+              ],
+              containerClass: "embedVideo-container",
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
