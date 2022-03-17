@@ -5,23 +5,6 @@ import { PostList } from "../components/postlist"
 import Pagination from "../components/pagination"
 import { Helmet } from "react-helmet"
 
-// export default class Archive extends React.Component {
-//     render () {
-//         const posts = this.props.data.allMarkdownRemark.edges
-//         return (
-//             <Layout>
-//                 <Helmet title={"Archive - " + this.props.data.site.siteMetadata.title} />
-// 		<h2>Archive</h2>
-//                 <PostList posts={posts} />
-//                 <Pagination pageContext={this.props.pageContext} />
-// 		<p>
-//                     See older posts from <Link to="/gdarchive"><em>That's Debatable</em></Link>
-// 		</p>
-//             </Layout>
-//         )
-//     }
-// }
-
 export default function Archive({data, pageContext}) {
     const posts = data.allMarkdownRemark.edges
     return (
