@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Helmet } from "react-helmet"
-import { graphql } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faFilter,
@@ -12,9 +12,23 @@ import Layout from "../../components/layout"
 
 import "../../styles/special.css"
 
-const special_chars = require("../../../static/special_chars.json")
+type CharInfo = {
+  character: string
+  unicode: string
+  entity_name: string
+  entity_number: string
+  compose: string
+  alt_code: string
+  description: string
+}
 
-function SortArrow({ direction }) {
+type CharInfoKey = keyof CharInfo
+
+const special_chars: CharInfo[] = require("../../../static/special_chars.json")
+
+type SortState = [CharInfoKey, number]
+
+function SortArrow({ direction }: { direction: number }) {
   return (
     <span className="padLeft">
       {direction === 1 ? (
@@ -26,11 +40,13 @@ function SortArrow({ direction }) {
   )
 }
 
-export default function Special({ data }) {
-  const [listed, setListed] = useState(special_chars)
-  const initialSort = ["character", 1]
-  const [sortState, setSortState] = useState(initialSort)
-  const initialFilter = {
+export default function Special({
+  data,
+}: PageProps<Queries.SpecialCharsQuery>) {
+  const [listed, setListed] = useState<CharInfo[]>(special_chars)
+  const initialSort: SortState = ["character", 1]
+  const [sortState, setSortState] = useState<SortState>(initialSort)
+  const initialFilter: CharInfo = {
     character: "",
     unicode: "",
     entity_name: "",
@@ -50,7 +66,13 @@ export default function Special({ data }) {
     description: 20,
   }
 
-  function HeaderCell({ colId, children }) {
+  function HeaderCell({
+    colId,
+    children,
+  }: {
+    colId: CharInfoKey
+    children: JSX.Element | string
+  }) {
     return (
       <th
         title="Click to Sort"
@@ -68,11 +90,11 @@ export default function Special({ data }) {
   useEffect(
     () =>
       setListed(
-        [...listed].sort((a, b) =>
-          sortState[1] === 1
-            ? a[sortState[0]] > b[sortState[0]]
-            : a[sortState[0]] < b[sortState[0]]
-        )
+        [...listed].sort((a, b) => {
+          const col = sortState[0]
+          const res = a[col] > b[col] ? 1 : a[col] < b[col] ? -1 : 0
+          return sortState[1] === 1 ? res : res * -1
+        })
       ),
     [sortState]
   )
@@ -83,11 +105,11 @@ export default function Special({ data }) {
         special_chars.filter((item) => {
           return Object.keys(item)
             .map((key) =>
-              filterState[key] === ""
+              filterState[key as CharInfoKey] === ""
                 ? true
-                : item[key]
+                : item[key as CharInfoKey]
                     .toLowerCase()
-                    .includes(filterState[key].toLowerCase())
+                    .includes(filterState[key as CharInfoKey].toLowerCase())
             )
             .reduce((a, b) => a && b)
         })
@@ -96,10 +118,10 @@ export default function Special({ data }) {
   )
 
   return (
-    <Layout fullWidth={true}>
+    <Layout is_index={false} fullWidth={true}>
       <Helmet
         title={
-          "How Do I Type That Character? - " + data.site.siteMetadata.title
+          "How Do I Type That Character? - " + data?.site?.siteMetadata?.title
         }
       />
       <h2>How Do I Type That Character?</h2>
@@ -180,12 +202,18 @@ export default function Special({ data }) {
               <HeaderCell colId="unicode">Unicode</HeaderCell>
 
               <HeaderCell colId="entity_name">
-                HTML <br /> entity name
+                <p>
+                  HTML
+                  <br />
+                  entity name
+                </p>
               </HeaderCell>
               <HeaderCell colId="entity_number">
-                HTML
-                <br />
-                entity number
+                <p>
+                  HTML
+                  <br />
+                  entity number
+                </p>
               </HeaderCell>
               <HeaderCell colId="compose">Compose Key</HeaderCell>
               <HeaderCell colId="alt_code">Alt Code</HeaderCell>
@@ -209,8 +237,8 @@ export default function Special({ data }) {
                   {i === 0 && <FontAwesomeIcon icon={faFilter} />}
                   <input
                     title="Start typing to filter by column"
-                    size={filterSizes[colId]}
-                    value={filterState[colId]}
+                    size={filterSizes[colId as CharInfoKey]}
+                    value={filterState[colId as CharInfoKey]}
                     onChange={(e) =>
                       setFilterState({
                         ...filterState,
@@ -242,7 +270,7 @@ export default function Special({ data }) {
 }
 
 export const query = graphql`
-  query {
+  query SpecialChars {
     site {
       siteMetadata {
         title

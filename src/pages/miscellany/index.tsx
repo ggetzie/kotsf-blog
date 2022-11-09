@@ -1,12 +1,14 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, PageProps } from "gatsby"
 
 import Layout from "../../components/layout"
 
-export default function Miscellany({ data }) {
+export default function Miscellany({
+  data,
+}: PageProps<Queries.MiscellanyQuery>) {
   return (
-    <Layout>
+    <Layout is_index={false}>
       <Helmet title={"Miscellany - " + data.site.siteMetadata.title} />
       <h2>Miscellany</h2>
       <p>
@@ -50,7 +52,7 @@ export default function Miscellany({ data }) {
 }
 
 export const query = graphql`
-  query {
+  query Miscellany {
     site {
       siteMetadata {
         title

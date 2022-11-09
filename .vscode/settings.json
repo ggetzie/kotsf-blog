@@ -1,17 +1,23 @@
 {
   "cSpell.ignoreWords": [
     "blogpost",
+    "codepaths",
     "darr",
     "documenation",
+    "fontawesome",
+    "fortawesome",
     "frontmatter",
     "gdarchive",
     "hamnav",
+    "noreferrer",
     "okaidia",
     "postlist",
     "prismjs",
     "tiltingatwindmills",
+    "tsbuildinfo",
     "uarr",
-    "uuidv"
+    "uuidv",
+    "webp"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }

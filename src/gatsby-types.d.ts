@@ -3404,13 +3404,13 @@ type aboutPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 type aboutPageQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
-type ArchiveTemplateQueryQueryVariables = Exact<{
+type ArchiveTemplateQueryVariables = Exact<{
   skip: Scalars['Int'];
   limit: Scalars['Int'];
 }>;
 
 
-type ArchiveTemplateQueryQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly excerpt: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly path: string | null } | null } }> }, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+type ArchiveTemplateQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly excerpt: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly path: string | null } | null } }> }, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
 type BlogPostByPathQueryVariables = Exact<{
   path: Scalars['String'];
@@ -3419,10 +3419,15 @@ type BlogPostByPathQueryVariables = Exact<{
 
 type BlogPostByPathQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly date: string | null, readonly path: string | null, readonly title: string | null, readonly subtitle: string | null } | null } | null, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
-type DraftQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type ContactPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type DraftQueryQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly excerpt: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly path: string | null } | null } }> }, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+type ContactPageQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+
+type DraftsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type DraftsQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly excerpt: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly path: string | null } | null } }> }, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
@@ -3450,15 +3455,45 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: st
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
 
-type GDArchiveQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type GDArchiveQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type GDArchiveQueryQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly excerpt: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly path: string | null } | null } }> }, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+type GDArchiveQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly excerpt: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly path: string | null } | null } }> }, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
 type IndexQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type IndexQueryQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly excerpt: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly path: string | null } | null } }> }, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+
+type LicenseQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type LicenseQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+
+type MiscellanyQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type MiscellanyQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+
+type P404QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type P404Query = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+
+type PortfolioQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PortfolioQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+
+type ReferralQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ReferralQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+
+type SpecialCharsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SpecialCharsQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
