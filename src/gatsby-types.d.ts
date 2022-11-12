@@ -3495,6 +3495,11 @@ type SpecialCharsQueryVariables = Exact<{ [key: string]: never; }>;
 
 type SpecialCharsQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
+type TasksPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type TasksPageQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 

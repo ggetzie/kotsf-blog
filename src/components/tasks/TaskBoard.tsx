@@ -1,16 +1,8 @@
 import React, { useState } from "react"
 import { v4 as uuidv4 } from "uuid"
 
-import {
-  TaskCol,
-  TaskForm,
-  TASK_COMPLETED,
-  TASK_LATER,
-  TASK_NOW,
-  TASK_SOMETIME,
-  TASK_SOON,
-  TASK_UNASSIGNED,
-} from "."
+import { TaskCol, TaskForm } from "."
+import { Project, Task, TASK_STATUS } from "./types"
 import getOrDefault from "../../utils/getOrDefault"
 
 export function TaskBoard({
@@ -18,18 +10,25 @@ export function TaskBoard({
   handleNewTask,
   handleEditTask,
   handleDeleteTask,
+}: {
+  project: Project
+  handleNewTask: (task: Task) => void
+  handleEditTask: (taskId: string, name: string, status: TASK_STATUS) => void
+  handleDeleteTask: (task: Task) => void
 }) {
   const emptyTask = {
     id: null,
     name: "",
-    status: TASK_UNASSIGNED,
+    status: TASK_STATUS.UNASSIGNED,
   }
 
-  const [currentTask, setCurrentTask] = useState(emptyTask)
+  const [currentTask, setCurrentTask] = useState<Task>(emptyTask)
   const [taskFormName, setTaskFormName] = useState("")
-  const [taskFormStatus, setTaskFormStatus] = useState(TASK_UNASSIGNED)
+  const [taskFormStatus, setTaskFormStatus] = useState<TASK_STATUS>(
+    TASK_STATUS.UNASSIGNED
+  )
 
-  function selectTask(task) {
+  function selectTask(task: Task) {
     if (currentTask.id === task.id) {
       setCurrentTask(emptyTask)
       setTaskFormName(emptyTask.name)
@@ -52,7 +51,7 @@ export function TaskBoard({
     }
   }
 
-  function deselectAndDelete(task) {
+  function deselectAndDelete(task: Task) {
     if (task.id === currentTask.id) {
       selectTask(emptyTask)
     }
@@ -65,11 +64,15 @@ export function TaskBoard({
       <div className="taskControl">
         <TaskForm
           taskFormName={taskFormName}
-          taskFormNameChange={(e) => setTaskFormName(e.target.value)}
+          taskFormNameChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setTaskFormName(e.target.value)
+          }
           taskFormStatus={taskFormStatus}
-          taskFormStatusChange={(e) => setTaskFormStatus(e.target.value)}
+          taskFormStatusChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+            setTaskFormStatus(e.target.value as TASK_STATUS)
+          }
           editMode={currentTask.id !== null}
-          handleSubmit={(e) => {
+          handleSubmit={(e: React.FormEvent<HTMLFormElement>) => {
             e.preventDefault()
             if (currentTask.id === null) {
               handleNewTask({
@@ -89,56 +92,56 @@ export function TaskBoard({
       <div className="taskBoard">
         <TaskCol
           title="Unassigned"
-          tasks={getOrDefault(taskMap, TASK_UNASSIGNED, [])}
+          tasks={getOrDefault(taskMap, TASK_STATUS.UNASSIGNED, [])}
           handleSelect={(task) => selectTask(task)}
           handleDelete={(task) => deselectAndDelete(task)}
-          currentTaskId={currentTask.id}
+          currentTaskId={currentTask.id as string}
           width="20%"
           classArray={["borderLeft", "borderTop", "borderBottom"]}
         />
         <TaskCol
           title="Sometime"
-          tasks={getOrDefault(taskMap, TASK_SOMETIME, [])}
+          tasks={getOrDefault(taskMap, TASK_STATUS.SOMETIME, [])}
           handleSelect={(task) => selectTask(task)}
           handleDelete={(task) => deselectAndDelete(task)}
-          currentTaskId={currentTask.id}
+          currentTaskId={currentTask.id as string}
           classArray={["borderLeft", "borderTop", "borderBottom"]}
           width="20%"
         />
         <TaskCol
           title="Later"
-          tasks={getOrDefault(taskMap, TASK_LATER, [])}
+          tasks={getOrDefault(taskMap, TASK_STATUS.LATER, [])}
           handleSelect={(task) => selectTask(task)}
           handleDelete={(task) => deselectAndDelete(task)}
           classArray={["borderLeft", "borderTop", "borderBottom"]}
-          currentTaskId={currentTask.id}
+          currentTaskId={currentTask.id as string}
           width="20%"
         />
         <TaskCol
           title="Soon"
-          tasks={getOrDefault(taskMap, TASK_SOON, [])}
+          tasks={getOrDefault(taskMap, TASK_STATUS.SOON, [])}
           handleSelect={(task) => selectTask(task)}
           handleDelete={(task) => deselectAndDelete(task)}
           classArray={["borderLeft", "borderTop", "borderBottom"]}
-          currentTaskId={currentTask.id}
+          currentTaskId={currentTask.id as string}
           width="20%"
         />
 
         <TaskCol
           title="Now"
-          tasks={getOrDefault(taskMap, TASK_NOW, [])}
+          tasks={getOrDefault(taskMap, TASK_STATUS.NOW, [])}
           handleSelect={(task) => selectTask(task)}
-          currentTaskId={currentTask.id}
+          currentTaskId={currentTask.id as string}
           handleDelete={(task) => deselectAndDelete(task)}
           width="20%"
           classArray={["borderLeft", "borderTop", "borderBottom"]}
         />
         <TaskCol
           title="Completed"
-          tasks={getOrDefault(taskMap, TASK_COMPLETED, [])}
+          tasks={getOrDefault(taskMap, TASK_STATUS.COMPLETED, [])}
           handleSelect={(task) => selectTask(task)}
           handleDelete={(task) => deselectAndDelete(task)}
-          currentTaskId={currentTask.id}
+          currentTaskId={currentTask.id as string}
           width="20%"
           classArray={[
             "borderLeft",

@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react"
-import Layout from "../../components/layout"
+import Layout from "../../../components/layout"
 import { Helmet } from "react-helmet"
 import { v4 as uuidv4 } from "uuid"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, PageProps } from "gatsby"
+import { Project, Task, TASK_STATUS } from "../../../components/tasks/types"
 
-import "../../styles/tasks.css"
+import "../../../styles/tasks.css"
 
-import { TaskBoard, ProjectListItem, ProjectForm } from "../../components/tasks"
+import {
+  TaskBoard,
+  ProjectListItem,
+  ProjectForm,
+} from "../../../components/tasks"
 
-export default function TaskPage({ data }) {
+export default function TaskPage({ data }: PageProps<Queries.TasksPageQuery>) {
   const emptyProject = {
     id: null,
     name: "",
@@ -41,7 +46,7 @@ export default function TaskPage({ data }) {
     }
   })
 
-  function selectProject(project) {
+  function selectProject(project: Project) {
     if (currentProject.id === project.id) {
       setCurrentProject(emptyProject)
       setProjectFormName(emptyProject.name)
@@ -51,7 +56,7 @@ export default function TaskPage({ data }) {
     }
   }
 
-  function addProject(name) {
+  function addProject(name: string) {
     const newProject = {
       id: uuidv4(),
       name: name,
@@ -61,17 +66,17 @@ export default function TaskPage({ data }) {
     setCurrentProject(newProject)
   }
 
-  function deleteProject(project) {
+  function deleteProject(project: Project) {
     if (currentProject.id === project.id) {
       setCurrentProject(emptyProject)
     }
     const msg = `Project ${project.name} and all associated tasks will be deleted. Are you sure?`
     if (window.confirm(msg)) {
-      setProjects(projects.filter((p) => p.id !== project.id))
+      setProjects(projects.filter((p: Project) => p.id !== project.id))
     }
   }
 
-  function editProject(projectId, name = null, tasks = null) {
+  function editProject(projectId: string, name?: string, tasks?: Task[]) {
     let newProjectList = []
     for (let project of projects) {
       if (project.id === projectId) {
@@ -91,12 +96,17 @@ export default function TaskPage({ data }) {
     setProjects(newProjectList)
   }
 
-  function addTask(project, task) {
+  function addTask(project: Project, task: Task) {
     const tasks = project.tasks.concat(task)
-    editProject(project.id, project.name, tasks)
+    editProject(project.id!, project.name, tasks)
   }
 
-  function editTask(project, taskId, taskName = null, taskStatus = null) {
+  function editTask(
+    project: Project,
+    taskId: string,
+    taskName?: string,
+    taskStatus?: TASK_STATUS
+  ) {
     let res = []
     for (let t of project.tasks) {
       if (t.id === taskId) {
@@ -109,18 +119,18 @@ export default function TaskPage({ data }) {
         res.push(t)
       }
     }
-    editProject(project.id, project.name, res)
+    editProject(project.id!, project.name, res)
   }
 
-  function deleteTask(project, task) {
+  function deleteTask(project: Project, task: Task) {
     const msg = `Task ${task.name} will be permanently deleted from project ${project.name}. Are you sure?`
     if (window.confirm(msg)) {
-      const filtered = project.tasks.filter((t) => t.id !== task.id)
-      editProject(project.id, project.name, filtered)
+      const filtered = project.tasks.filter((t: Task) => t.id !== task.id)
+      editProject(project.id!, project.name, filtered)
     }
   }
 
-  const ProjectListItems = projects.map((p) => {
+  const ProjectListItems = projects.map((p: Project) => {
     return (
       <ProjectListItem
         key={p.id}
@@ -133,10 +143,10 @@ export default function TaskPage({ data }) {
   })
 
   return (
-    <Layout fullWidth={true}>
-      <Helmet title={"Project Manager - " + data.site.siteMetadata.title} />
+    <Layout is_index={false} fullWidth={true}>
+      <Helmet title={"Project Manager - " + data?.site?.siteMetadata?.title} />
       <h2>Tilting at Windmills Project Manager</h2>
-      <div class="intro">
+      <div className="intro">
         <p>
           Finally, a place to keep track of all the windmills you're tilting at.
           To start, enter a project name "Add Project" form on the left and
@@ -215,7 +225,7 @@ export default function TaskPage({ data }) {
 }
 
 export const query = graphql`
-  query {
+  query TasksPage {
     site {
       siteMetadata {
         title
