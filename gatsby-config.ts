@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  graphqlTypegen: true,
   siteMetadata: {
     title: "Tilting at Windmills",
     author: "Gabriel Getzie",

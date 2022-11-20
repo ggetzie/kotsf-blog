@@ -3,7 +3,7 @@ const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
+  const blogPostTemplate = path.resolve(`src/templates/blog-post.tsx`)
   return graphql(`
     {
       allMarkdownRemark(
@@ -26,7 +26,7 @@ exports.createPages = ({ actions, graphql }) => {
     }
   `).then((result) => {
     if (result.errors) {
-      return Promise.reject(errors)
+      return Promise.reject(result.errors)
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
@@ -43,13 +43,13 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-    postsLength = publishCount(result.data.allMarkdownRemark.group)
+    const postsLength = publishCount(result.data.allMarkdownRemark.group)
     const postsPerPage = 10
     const numPages = Math.ceil(postsLength / postsPerPage)
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/archive/` : `/archive/${i + 1}`,
-        component: path.resolve("./src/templates/archive-template.js"),
+        component: path.resolve("./src/templates/archive-template.tsx"),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
