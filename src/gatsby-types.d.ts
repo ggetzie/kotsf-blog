@@ -666,6 +666,7 @@ type FileFieldsEnum =
   | 'childMarkdownRemark.frontmatter.path'
   | 'childMarkdownRemark.frontmatter.section'
   | 'childMarkdownRemark.frontmatter.subtitle'
+  | 'childMarkdownRemark.frontmatter.tags'
   | 'childMarkdownRemark.frontmatter.title'
   | 'childMarkdownRemark.headings'
   | 'childMarkdownRemark.headings.depth'
@@ -798,6 +799,7 @@ type FileFieldsEnum =
   | 'childrenMarkdownRemark.frontmatter.path'
   | 'childrenMarkdownRemark.frontmatter.section'
   | 'childrenMarkdownRemark.frontmatter.subtitle'
+  | 'childrenMarkdownRemark.frontmatter.tags'
   | 'childrenMarkdownRemark.frontmatter.title'
   | 'childrenMarkdownRemark.headings'
   | 'childrenMarkdownRemark.headings.depth'
@@ -1715,6 +1717,7 @@ type MarkdownRemarkFieldsEnum =
   | 'frontmatter.path'
   | 'frontmatter.section'
   | 'frontmatter.subtitle'
+  | 'frontmatter.tags'
   | 'frontmatter.title'
   | 'headings'
   | 'headings.depth'
@@ -1804,6 +1807,7 @@ type MarkdownRemarkFrontmatter = {
   readonly path: Maybe<Scalars['String']>;
   readonly section: Maybe<Scalars['String']>;
   readonly subtitle: Maybe<Scalars['String']>;
+  readonly tags: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
 };
 
@@ -1821,6 +1825,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly path: InputMaybe<StringQueryOperatorInput>;
   readonly section: InputMaybe<StringQueryOperatorInput>;
   readonly subtitle: InputMaybe<StringQueryOperatorInput>;
+  readonly tags: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
 };
 
