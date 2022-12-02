@@ -89,7 +89,7 @@ export default function Layout({
           <Link to="/">Home</Link>
           <Link to="/about/">About</Link>
           <Link to="/archive/">Archive</Link>
-          <Link to="/portfolio/">Portfolio</Link>
+          <Link to="/notes/">Notes</Link>
           <Link to="/referrals/">Referrals</Link>
           <Link to="/miscellany/">Miscellany</Link>
         </HamNav>

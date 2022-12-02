@@ -3475,6 +3475,11 @@ type MiscellanyQueryVariables = Exact<{ [key: string]: never; }>;
 
 type MiscellanyQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
+type NotesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type NotesQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly excerpt: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly path: string | null } | null } }> }, readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+
 type P404QueryVariables = Exact<{ [key: string]: never; }>;
 
 
