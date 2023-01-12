@@ -17,7 +17,7 @@ export default function Template({
             post?.frontmatter?.title + " - " + data?.site?.siteMetadata?.title
           }
         />
-        <h2>{post?.frontmatter?.title}</h2>
+        <h1>{post?.frontmatter?.title}</h1>
         {post?.frontmatter?.subtitle && (
           <p className="subtitle">{post.frontmatter.subtitle}</p>
         )}
