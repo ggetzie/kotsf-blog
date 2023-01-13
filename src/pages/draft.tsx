@@ -10,7 +10,7 @@ export default function Archive({ data }: { data: ArchiveData }) {
   return (
     <Layout is_index={false}>
       <Helmet title={"Drafts - " + data.site.siteMetadata.title} />
-      <h2>Drafts</h2>
+      <h1>Drafts</h1>
       <PostList posts={posts} />
     </Layout>
   )

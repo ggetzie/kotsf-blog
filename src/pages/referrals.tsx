@@ -8,7 +8,7 @@ export default function Referrals({ data }: PageProps<Queries.ReferralQuery>) {
   return (
     <Layout is_index={false}>
       <Helmet title={data!.site!.siteMetadata!.title!} />
-      <h2>{post?.frontmatter?.title}</h2>
+      <h1>{post?.frontmatter?.title}</h1>
       <div
         className="referrals"
         dangerouslySetInnerHTML={{ __html: post!.html! }}

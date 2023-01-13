@@ -8,7 +8,7 @@ export default function License({ data }: PageProps<Queries.LicenseQuery>) {
   return (
     <Layout is_index={false}>
       <Helmet title={"License - " + data?.site?.siteMetadata?.title} />
-      <h2>{post?.frontmatter?.title}</h2>
+      <h1>{post?.frontmatter?.title}</h1>
       <div
         className="blogpost"
         dangerouslySetInnerHTML={{ __html: post!.html! }}

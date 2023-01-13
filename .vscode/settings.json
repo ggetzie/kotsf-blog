@@ -14,10 +14,12 @@
     "postlist",
     "prismjs",
     "tiltingatwindmills",
+    "truetype",
     "tsbuildinfo",
     "uarr",
     "uuidv",
-    "webp"
+    "webp",
+    "wght"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }

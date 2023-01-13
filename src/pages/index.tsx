@@ -10,7 +10,6 @@ export default function Index({ data }: { data: ArchiveData }) {
   return (
     <Layout is_index={true}>
       <Helmet title={data.site.siteMetadata.title} />
-      <h2>Latest</h2>
       <PostList posts={posts} />
       <p>
         <Link to="/archive/">More…</Link>

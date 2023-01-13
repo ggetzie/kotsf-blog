@@ -9,7 +9,7 @@ export default function Notes({ data }: { data: ArchiveData }) {
   return (
     <Layout is_index={false}>
       <Helmet title={"Notes - " + data.site.siteMetadata.title} />
-      <h2>Notes</h2>
+      <h1>Notes</h1>
       <p>
         Here is where I keep notes on how to do various things or how I solved
         specific problems in the past. Mostly for my own reference, but I hope

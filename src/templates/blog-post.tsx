@@ -2,7 +2,6 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql, PageProps } from "gatsby"
 import Layout from "../components/layout"
-import { Dateline } from "../components/postlist"
 
 export default function Template({
   data,
@@ -21,7 +20,7 @@ export default function Template({
         {post?.frontmatter?.subtitle && (
           <p className="subtitle">{post.frontmatter.subtitle}</p>
         )}
-        <Dateline>{post?.frontmatter?.date}</Dateline>
+        <p className="dateline">{post?.frontmatter?.date}</p>
 
         <div
           className="blogpost"

@@ -9,8 +9,8 @@ export default function Miscellany({
 }: PageProps<Queries.MiscellanyQuery>) {
   return (
     <Layout is_index={false}>
-      <Helmet title={"Miscellany - " + data.site.siteMetadata.title} />
-      <h2>Miscellany</h2>
+      <Helmet title={"Miscellany - " + data!.site!.siteMetadata!.title} />
+      <h1>Miscellany</h1>
       <p>
         This is a place to store random, one-off experiments, projects,
         factoids, utilities, etc. that don't otherwise have a home.

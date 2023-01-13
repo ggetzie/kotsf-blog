@@ -1,19 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
 
-const PostTitle = styled.h3`
-  margin-bottom: 0.2rem;
-`
-const Dateline = styled.p`
-  font-size: smaller;
-  font-weight: 200;
-  margin: 0;
-`
-const PostExcerpt = styled.p`
-  margin-top: 0.1rem;
-  margin-bottom: 0.7rem;
-`
 export type Post = {
   frontmatter: { path: string; title: string; date: string }
   excerpt: string
@@ -22,11 +9,11 @@ export type Post = {
 const PostItem = ({ post }: { post: Post }) => {
   return (
     <div key={post.id}>
-      <PostTitle>
+      <h3 className="postlist-title">
         <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-      </PostTitle>
-      <Dateline>{post.frontmatter.date}</Dateline>
-      <PostExcerpt>{post.excerpt}</PostExcerpt>
+      </h3>
+      <p className="dateline">{post.frontmatter.date}</p>
+      <p className="excerpt">{post.excerpt}</p>
     </div>
   )
 }
@@ -43,4 +30,4 @@ const PostList = ({ posts }: { posts: { node: Post }[] }) => {
   )
 }
 
-export { PostList, Dateline }
+export { PostList }

@@ -1,13 +1,81 @@
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/fonts/Libre_Franklin/LibreFranklin-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/fonts/Libre_Franklin/LibreFranklin-Italic-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Maitree";
+  src: url("/fonts/Maitree/Maitree-ExtraLight.ttf") format("truetype");
+  font-weight: "200";
+}
+
+@font-face {
+  font-family: "Maitree";
+  src: url("/fonts/Maitree/Maitree-Light.ttf") format("truetype");
+  font-weight: "300";
+}
+
+@font-face {
+  font-family: "Maitree";
+  src: url("/fonts/Maitree/Maitree-Medium.ttf") format("truetype");
+  font-weight: "500";
+}
+
+@font-face {
+  font-family: "Maitree";
+  src: url("/fonts/Maitree/Maitree-SemiBold.ttf") format("truetype");
+  font-weight: "600";
+}
+
+@font-face {
+  font-family: "Maitree";
+  src: url("/fonts/Maitree/Maitree-Bold.ttf") format("truetype");
+  font-weight: "700";
+}
+
 body {
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: "Libre Franklin", "Helvetica", "Arial", sans-serif;
   line-height: 1.5;
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Maitree", serif;
+  font-weight: "600";
 }
 
 h2 {
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  text-align: "left";
+}
+
+.postlist-title {
+  margin-bottom: 0.2rem;
+  text-align: "left";
+}
+
+p.dateline {
+  font-size: smaller;
+  font-weight: 200;
+  margin: 0;
+}
+
+p.excerpt {
+  margin-top: 0.1rem;
+  margin-bottom: 0.7rem;
 }
 
 h3 {

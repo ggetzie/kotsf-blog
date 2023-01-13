@@ -124,7 +124,7 @@ export default function Special({
           "How Do I Type That Character? - " + data?.site?.siteMetadata?.title
         }
       />
-      <h2>How Do I Type That Character?</h2>
+      <h1>How Do I Type That Character?</h1>
       <div className="intro">
         <p>
           I often find myself searching for how to type a character that's not

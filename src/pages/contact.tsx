@@ -8,7 +8,7 @@ export default function Contact({ data }: PageProps<Queries.ContactPageQuery>) {
   return (
     <Layout is_index={false}>
       <Helmet title={"Contact - " + data?.site?.siteMetadata?.title} />
-      <h2>{post?.frontmatter?.title}</h2>
+      <h1>{post?.frontmatter?.title}</h1>
       <div
         className="blogpost"
         dangerouslySetInnerHTML={{ __html: post!.html! }}

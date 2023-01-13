@@ -9,7 +9,7 @@ export default function About({ data }: PageProps<Queries.aboutPageQuery>) {
   return (
     <Layout is_index={false}>
       <Helmet title={"About - " + data.site?.siteMetadata?.title} />
-      <h2>{post?.frontmatter?.title}</h2>
+      <h1>{post?.frontmatter?.title}</h1>
       <div
         className="blogpost"
         dangerouslySetInnerHTML={{ __html: post?.html || "" }}
