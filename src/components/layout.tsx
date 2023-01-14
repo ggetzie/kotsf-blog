@@ -31,27 +31,6 @@ const Entry = styled.div`
   flex: 2;
 `
 
-const TagLine = styled.p`
-  padding: 0;
-  /* color: #003366;  */
-  color: black;
-  display: inline-block;
-  width: auto;
-  letter-spacing: 0.7px;
-  position: relative;
-  left: 12%;
-  margin-top: 0;
-`
-
-const Brand = styled.h1`
-  padding: 0;
-  color: #003366;
-  letter-spacing: 0.7px;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: black;
-`
-
 export default function Layout({
   is_index,
   children,
@@ -79,9 +58,9 @@ export default function Layout({
       {is_index && (
         <SiteHeader>
           <Link to="/">
-            <Brand>{data.site.siteMetadata.title}</Brand>
+            <h1 className="brand">{data.site.siteMetadata.title}</h1>
           </Link>
-          <TagLine>{data.site.siteMetadata.tagline}</TagLine>
+          <p className="tagline">{data.site.siteMetadata.tagline}</p>
         </SiteHeader>
       )}
       <div className="header">
