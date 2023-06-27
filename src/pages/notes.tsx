@@ -24,7 +24,7 @@ export const pageQuery = graphql`
   query Notes {
     allMarkdownRemark(
       filter: { frontmatter: { section: { eq: "notes" } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {

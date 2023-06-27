@@ -5,13 +5,13 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`src/templates/blog-post.tsx`)
   return graphql(`
-    {
+    query createdPages {
       allMarkdownRemark(
         filter: { frontmatter: { section: { ne: "standalone" } } }
-        sort: { order: DESC, fields: [frontmatter___date] }
+        sort: { frontmatter: { date: DESC } }
         limit: 1000
       ) {
-        group(field: frontmatter___section) {
+        group(field: { frontmatter: { section: SELECT } }) {
           fieldValue
           totalCount
         }
