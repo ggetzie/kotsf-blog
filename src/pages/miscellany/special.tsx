@@ -7,10 +7,12 @@ import {
   faSortUp,
   faSortDown,
 } from "@fortawesome/free-solid-svg-icons"
+import { IconProp } from "@fortawesome/fontawesome-svg-core"
 
 import Layout from "../../components/layout"
 
 import "../../styles/special.css"
+import { Icon, IconDefinition } from "@fortawesome/fontawesome-svg-core"
 
 type CharInfo = {
   character: string
@@ -32,9 +34,9 @@ function SortArrow({ direction }: { direction: number }) {
   return (
     <span className="padLeft">
       {direction === 1 ? (
-        <FontAwesomeIcon icon={faSortUp} />
+        <FontAwesomeIcon icon={faSortUp as IconProp} />
       ) : (
-        <FontAwesomeIcon icon={faSortDown} />
+        <FontAwesomeIcon icon={faSortDown as IconProp} />
       )}
     </span>
   )
@@ -234,7 +236,7 @@ export default function Special({
             <tr id="filters">
               {Object.keys(filterState).map((colId, i) => (
                 <td key={`filter${colId}`}>
-                  {i === 0 && <FontAwesomeIcon icon={faFilter} />}
+                  {i === 0 && <FontAwesomeIcon icon={faFilter as IconProp} />}
                   <input
                     title="Start typing to filter by column"
                     size={filterSizes[colId as CharInfoKey]}
