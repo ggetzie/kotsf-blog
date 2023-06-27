@@ -21,7 +21,7 @@
     "@fortawesome/react-fontawesome": "^0.1.17",
     "babel-plugin-styled-components": "^1.13.2",
     "dot-prop": "^6.0.1",
-    "gatsby": "^4.6.1",
+    "gatsby": "^4.25.7",
     "gatsby-cli": "^4.9.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-catch-links": "@latest",
