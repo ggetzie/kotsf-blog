@@ -46,6 +46,13 @@ export default function Miscellany({
           A sortable, searchable table of special characters and how to type
           them on different systems.
         </dd>
+        <dt>
+          <Link to="/miscellany/timezone/">Timezone Converter</Link>
+        </dt>
+        <dd>
+          A simple timezone converter. I made this because I was tired of
+          searching for one every time I needed it.
+        </dd>
       </dl>
     </Layout>
   )
