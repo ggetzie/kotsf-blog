@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Helmet } from "react-helmet"
 import { graphql, PageProps } from "gatsby"
 import Layout from "../../components/layout"
+import moment from "moment-timezone"
 
 const toDateTimeString = (d: Date) => {
   const year = d.getFullYear().toString()
@@ -41,6 +42,18 @@ export default function Timezone({ data }: PageProps<Queries.TimezoneQuery>) {
           />
         </div>
       </div>
+      <label htmlFor="inputTimezone">Timezone</label>
+      <select
+        id="inputTimezone"
+        className="form-control"
+        style={{ width: "15em" }}
+      >
+        {moment.tz.names().map((tzName, i) => (
+          <option key={i} value={tzName}>
+            {tzName}
+          </option>
+        ))}
+      </select>
     </Layout>
   )
 }
