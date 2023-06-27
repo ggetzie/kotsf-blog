@@ -279,3 +279,21 @@ dl.section-list dd {
 .footnote-ref {
   padding-left: 0.1em;
 }
+
+.form-control {
+  line-height: 1.4em;
+}
+
+.fc-horizontal {
+  margin-left: 1em;
+}
+
+div.row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5em;
+}
+
+.text-left {
+  text-align: left;
+}
