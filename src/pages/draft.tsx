@@ -20,7 +20,7 @@ export const pageQuery = graphql`
   query Drafts {
     allMarkdownRemark(
       filter: { frontmatter: { section: { eq: "draft" } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {

@@ -23,6 +23,7 @@ type Scalars = {
   Float: number;
   /** A date string, such as 2007-12-03, compliant with the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   Date: string;
+  GatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData;
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: Record<string, unknown>;
 };
@@ -168,29 +169,29 @@ type DirectoryConnection = {
 
 
 type DirectoryConnection_distinctArgs = {
-  field: DirectoryFieldsEnum;
+  field: DirectoryFieldSelector;
 };
 
 
 type DirectoryConnection_groupArgs = {
-  field: DirectoryFieldsEnum;
+  field: DirectoryFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type DirectoryConnection_maxArgs = {
-  field: DirectoryFieldsEnum;
+  field: DirectoryFieldSelector;
 };
 
 
 type DirectoryConnection_minArgs = {
-  field: DirectoryFieldsEnum;
+  field: DirectoryFieldSelector;
 };
 
 
 type DirectoryConnection_sumArgs = {
-  field: DirectoryFieldsEnum;
+  field: DirectoryFieldSelector;
 };
 
 type DirectoryEdge = {
@@ -199,124 +200,43 @@ type DirectoryEdge = {
   readonly previous: Maybe<Directory>;
 };
 
-type DirectoryFieldsEnum =
-  | 'absolutePath'
-  | 'accessTime'
-  | 'atime'
-  | 'atimeMs'
-  | 'base'
-  | 'birthTime'
-  | 'birthtime'
-  | 'birthtimeMs'
-  | 'changeTime'
-  | 'children'
-  | 'children.children'
-  | 'children.children.children'
-  | 'children.children.children.children'
-  | 'children.children.children.id'
-  | 'children.children.id'
-  | 'children.children.internal.content'
-  | 'children.children.internal.contentDigest'
-  | 'children.children.internal.description'
-  | 'children.children.internal.fieldOwners'
-  | 'children.children.internal.ignoreType'
-  | 'children.children.internal.mediaType'
-  | 'children.children.internal.owner'
-  | 'children.children.internal.type'
-  | 'children.children.parent.children'
-  | 'children.children.parent.id'
-  | 'children.id'
-  | 'children.internal.content'
-  | 'children.internal.contentDigest'
-  | 'children.internal.description'
-  | 'children.internal.fieldOwners'
-  | 'children.internal.ignoreType'
-  | 'children.internal.mediaType'
-  | 'children.internal.owner'
-  | 'children.internal.type'
-  | 'children.parent.children'
-  | 'children.parent.children.children'
-  | 'children.parent.children.id'
-  | 'children.parent.id'
-  | 'children.parent.internal.content'
-  | 'children.parent.internal.contentDigest'
-  | 'children.parent.internal.description'
-  | 'children.parent.internal.fieldOwners'
-  | 'children.parent.internal.ignoreType'
-  | 'children.parent.internal.mediaType'
-  | 'children.parent.internal.owner'
-  | 'children.parent.internal.type'
-  | 'children.parent.parent.children'
-  | 'children.parent.parent.id'
-  | 'ctime'
-  | 'ctimeMs'
-  | 'dev'
-  | 'dir'
-  | 'ext'
-  | 'extension'
-  | 'gid'
-  | 'id'
-  | 'ino'
-  | 'internal.content'
-  | 'internal.contentDigest'
-  | 'internal.description'
-  | 'internal.fieldOwners'
-  | 'internal.ignoreType'
-  | 'internal.mediaType'
-  | 'internal.owner'
-  | 'internal.type'
-  | 'mode'
-  | 'modifiedTime'
-  | 'mtime'
-  | 'mtimeMs'
-  | 'name'
-  | 'nlink'
-  | 'parent.children'
-  | 'parent.children.children'
-  | 'parent.children.children.children'
-  | 'parent.children.children.id'
-  | 'parent.children.id'
-  | 'parent.children.internal.content'
-  | 'parent.children.internal.contentDigest'
-  | 'parent.children.internal.description'
-  | 'parent.children.internal.fieldOwners'
-  | 'parent.children.internal.ignoreType'
-  | 'parent.children.internal.mediaType'
-  | 'parent.children.internal.owner'
-  | 'parent.children.internal.type'
-  | 'parent.children.parent.children'
-  | 'parent.children.parent.id'
-  | 'parent.id'
-  | 'parent.internal.content'
-  | 'parent.internal.contentDigest'
-  | 'parent.internal.description'
-  | 'parent.internal.fieldOwners'
-  | 'parent.internal.ignoreType'
-  | 'parent.internal.mediaType'
-  | 'parent.internal.owner'
-  | 'parent.internal.type'
-  | 'parent.parent.children'
-  | 'parent.parent.children.children'
-  | 'parent.parent.children.id'
-  | 'parent.parent.id'
-  | 'parent.parent.internal.content'
-  | 'parent.parent.internal.contentDigest'
-  | 'parent.parent.internal.description'
-  | 'parent.parent.internal.fieldOwners'
-  | 'parent.parent.internal.ignoreType'
-  | 'parent.parent.internal.mediaType'
-  | 'parent.parent.internal.owner'
-  | 'parent.parent.internal.type'
-  | 'parent.parent.parent.children'
-  | 'parent.parent.parent.id'
-  | 'prettySize'
-  | 'rdev'
-  | 'relativeDirectory'
-  | 'relativePath'
-  | 'root'
-  | 'size'
-  | 'sourceInstanceName'
-  | 'uid';
+type DirectoryFieldSelector = {
+  readonly absolutePath: InputMaybe<FieldSelectorEnum>;
+  readonly accessTime: InputMaybe<FieldSelectorEnum>;
+  readonly atime: InputMaybe<FieldSelectorEnum>;
+  readonly atimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly base: InputMaybe<FieldSelectorEnum>;
+  readonly birthTime: InputMaybe<FieldSelectorEnum>;
+  readonly birthtime: InputMaybe<FieldSelectorEnum>;
+  readonly birthtimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly changeTime: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly ctime: InputMaybe<FieldSelectorEnum>;
+  readonly ctimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly dev: InputMaybe<FieldSelectorEnum>;
+  readonly dir: InputMaybe<FieldSelectorEnum>;
+  readonly ext: InputMaybe<FieldSelectorEnum>;
+  readonly extension: InputMaybe<FieldSelectorEnum>;
+  readonly gid: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly ino: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly mode: InputMaybe<FieldSelectorEnum>;
+  readonly modifiedTime: InputMaybe<FieldSelectorEnum>;
+  readonly mtime: InputMaybe<FieldSelectorEnum>;
+  readonly mtimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly nlink: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly prettySize: InputMaybe<FieldSelectorEnum>;
+  readonly rdev: InputMaybe<FieldSelectorEnum>;
+  readonly relativeDirectory: InputMaybe<FieldSelectorEnum>;
+  readonly relativePath: InputMaybe<FieldSelectorEnum>;
+  readonly root: InputMaybe<FieldSelectorEnum>;
+  readonly size: InputMaybe<FieldSelectorEnum>;
+  readonly sourceInstanceName: InputMaybe<FieldSelectorEnum>;
+  readonly uid: InputMaybe<FieldSelectorEnum>;
+};
 
 type DirectoryFilterInput = {
   readonly absolutePath: InputMaybe<StringQueryOperatorInput>;
@@ -372,34 +292,67 @@ type DirectoryGroupConnection = {
 
 
 type DirectoryGroupConnection_distinctArgs = {
-  field: DirectoryFieldsEnum;
+  field: DirectoryFieldSelector;
 };
 
 
 type DirectoryGroupConnection_groupArgs = {
-  field: DirectoryFieldsEnum;
+  field: DirectoryFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type DirectoryGroupConnection_maxArgs = {
-  field: DirectoryFieldsEnum;
+  field: DirectoryFieldSelector;
 };
 
 
 type DirectoryGroupConnection_minArgs = {
-  field: DirectoryFieldsEnum;
+  field: DirectoryFieldSelector;
 };
 
 
 type DirectoryGroupConnection_sumArgs = {
-  field: DirectoryFieldsEnum;
+  field: DirectoryFieldSelector;
 };
 
 type DirectorySortInput = {
-  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<DirectoryFieldsEnum>>>;
-  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+  readonly absolutePath: InputMaybe<SortOrderEnum>;
+  readonly accessTime: InputMaybe<SortOrderEnum>;
+  readonly atime: InputMaybe<SortOrderEnum>;
+  readonly atimeMs: InputMaybe<SortOrderEnum>;
+  readonly base: InputMaybe<SortOrderEnum>;
+  readonly birthTime: InputMaybe<SortOrderEnum>;
+  readonly birthtime: InputMaybe<SortOrderEnum>;
+  readonly birthtimeMs: InputMaybe<SortOrderEnum>;
+  readonly changeTime: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly ctime: InputMaybe<SortOrderEnum>;
+  readonly ctimeMs: InputMaybe<SortOrderEnum>;
+  readonly dev: InputMaybe<SortOrderEnum>;
+  readonly dir: InputMaybe<SortOrderEnum>;
+  readonly ext: InputMaybe<SortOrderEnum>;
+  readonly extension: InputMaybe<SortOrderEnum>;
+  readonly gid: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly ino: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly mode: InputMaybe<SortOrderEnum>;
+  readonly modifiedTime: InputMaybe<SortOrderEnum>;
+  readonly mtime: InputMaybe<SortOrderEnum>;
+  readonly mtimeMs: InputMaybe<SortOrderEnum>;
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly nlink: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly prettySize: InputMaybe<SortOrderEnum>;
+  readonly rdev: InputMaybe<SortOrderEnum>;
+  readonly relativeDirectory: InputMaybe<SortOrderEnum>;
+  readonly relativePath: InputMaybe<SortOrderEnum>;
+  readonly root: InputMaybe<SortOrderEnum>;
+  readonly size: InputMaybe<SortOrderEnum>;
+  readonly sourceInstanceName: InputMaybe<SortOrderEnum>;
+  readonly uid: InputMaybe<SortOrderEnum>;
 };
 
 type DuotoneGradient = {
@@ -407,6 +360,9 @@ type DuotoneGradient = {
   readonly opacity: InputMaybe<Scalars['Int']>;
   readonly shadow: Scalars['String'];
 };
+
+type FieldSelectorEnum =
+  | 'SELECT';
 
 type File = Node & {
   readonly absolutePath: Scalars['String'];
@@ -530,29 +486,29 @@ type FileConnection = {
 
 
 type FileConnection_distinctArgs = {
-  field: FileFieldsEnum;
+  field: FileFieldSelector;
 };
 
 
 type FileConnection_groupArgs = {
-  field: FileFieldsEnum;
+  field: FileFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type FileConnection_maxArgs = {
-  field: FileFieldsEnum;
+  field: FileFieldSelector;
 };
 
 
 type FileConnection_minArgs = {
-  field: FileFieldsEnum;
+  field: FileFieldSelector;
 };
 
 
 type FileConnection_sumArgs = {
-  field: FileFieldsEnum;
+  field: FileFieldSelector;
 };
 
 type FileEdge = {
@@ -561,389 +517,50 @@ type FileEdge = {
   readonly previous: Maybe<File>;
 };
 
-type FileFieldsEnum =
-  | 'absolutePath'
-  | 'accessTime'
-  | 'atime'
-  | 'atimeMs'
-  | 'base'
-  | 'birthTime'
-  | 'birthtime'
-  | 'birthtimeMs'
-  | 'blksize'
-  | 'blocks'
-  | 'changeTime'
-  | 'childImageSharp.children'
-  | 'childImageSharp.children.children'
-  | 'childImageSharp.children.children.children'
-  | 'childImageSharp.children.children.id'
-  | 'childImageSharp.children.id'
-  | 'childImageSharp.children.internal.content'
-  | 'childImageSharp.children.internal.contentDigest'
-  | 'childImageSharp.children.internal.description'
-  | 'childImageSharp.children.internal.fieldOwners'
-  | 'childImageSharp.children.internal.ignoreType'
-  | 'childImageSharp.children.internal.mediaType'
-  | 'childImageSharp.children.internal.owner'
-  | 'childImageSharp.children.internal.type'
-  | 'childImageSharp.children.parent.children'
-  | 'childImageSharp.children.parent.id'
-  | 'childImageSharp.fixed.aspectRatio'
-  | 'childImageSharp.fixed.base64'
-  | 'childImageSharp.fixed.height'
-  | 'childImageSharp.fixed.originalName'
-  | 'childImageSharp.fixed.src'
-  | 'childImageSharp.fixed.srcSet'
-  | 'childImageSharp.fixed.srcSetWebp'
-  | 'childImageSharp.fixed.srcWebp'
-  | 'childImageSharp.fixed.tracedSVG'
-  | 'childImageSharp.fixed.width'
-  | 'childImageSharp.fluid.aspectRatio'
-  | 'childImageSharp.fluid.base64'
-  | 'childImageSharp.fluid.originalImg'
-  | 'childImageSharp.fluid.originalName'
-  | 'childImageSharp.fluid.presentationHeight'
-  | 'childImageSharp.fluid.presentationWidth'
-  | 'childImageSharp.fluid.sizes'
-  | 'childImageSharp.fluid.src'
-  | 'childImageSharp.fluid.srcSet'
-  | 'childImageSharp.fluid.srcSetWebp'
-  | 'childImageSharp.fluid.srcWebp'
-  | 'childImageSharp.fluid.tracedSVG'
-  | 'childImageSharp.gatsbyImageData'
-  | 'childImageSharp.id'
-  | 'childImageSharp.internal.content'
-  | 'childImageSharp.internal.contentDigest'
-  | 'childImageSharp.internal.description'
-  | 'childImageSharp.internal.fieldOwners'
-  | 'childImageSharp.internal.ignoreType'
-  | 'childImageSharp.internal.mediaType'
-  | 'childImageSharp.internal.owner'
-  | 'childImageSharp.internal.type'
-  | 'childImageSharp.original.height'
-  | 'childImageSharp.original.src'
-  | 'childImageSharp.original.width'
-  | 'childImageSharp.parent.children'
-  | 'childImageSharp.parent.children.children'
-  | 'childImageSharp.parent.children.id'
-  | 'childImageSharp.parent.id'
-  | 'childImageSharp.parent.internal.content'
-  | 'childImageSharp.parent.internal.contentDigest'
-  | 'childImageSharp.parent.internal.description'
-  | 'childImageSharp.parent.internal.fieldOwners'
-  | 'childImageSharp.parent.internal.ignoreType'
-  | 'childImageSharp.parent.internal.mediaType'
-  | 'childImageSharp.parent.internal.owner'
-  | 'childImageSharp.parent.internal.type'
-  | 'childImageSharp.parent.parent.children'
-  | 'childImageSharp.parent.parent.id'
-  | 'childImageSharp.resize.aspectRatio'
-  | 'childImageSharp.resize.height'
-  | 'childImageSharp.resize.originalName'
-  | 'childImageSharp.resize.src'
-  | 'childImageSharp.resize.tracedSVG'
-  | 'childImageSharp.resize.width'
-  | 'childMarkdownRemark.children'
-  | 'childMarkdownRemark.children.children'
-  | 'childMarkdownRemark.children.children.children'
-  | 'childMarkdownRemark.children.children.id'
-  | 'childMarkdownRemark.children.id'
-  | 'childMarkdownRemark.children.internal.content'
-  | 'childMarkdownRemark.children.internal.contentDigest'
-  | 'childMarkdownRemark.children.internal.description'
-  | 'childMarkdownRemark.children.internal.fieldOwners'
-  | 'childMarkdownRemark.children.internal.ignoreType'
-  | 'childMarkdownRemark.children.internal.mediaType'
-  | 'childMarkdownRemark.children.internal.owner'
-  | 'childMarkdownRemark.children.internal.type'
-  | 'childMarkdownRemark.children.parent.children'
-  | 'childMarkdownRemark.children.parent.id'
-  | 'childMarkdownRemark.excerpt'
-  | 'childMarkdownRemark.excerptAst'
-  | 'childMarkdownRemark.fileAbsolutePath'
-  | 'childMarkdownRemark.frontmatter.date'
-  | 'childMarkdownRemark.frontmatter.oldId'
-  | 'childMarkdownRemark.frontmatter.path'
-  | 'childMarkdownRemark.frontmatter.section'
-  | 'childMarkdownRemark.frontmatter.subtitle'
-  | 'childMarkdownRemark.frontmatter.tags'
-  | 'childMarkdownRemark.frontmatter.title'
-  | 'childMarkdownRemark.headings'
-  | 'childMarkdownRemark.headings.depth'
-  | 'childMarkdownRemark.headings.id'
-  | 'childMarkdownRemark.headings.value'
-  | 'childMarkdownRemark.html'
-  | 'childMarkdownRemark.htmlAst'
-  | 'childMarkdownRemark.id'
-  | 'childMarkdownRemark.internal.content'
-  | 'childMarkdownRemark.internal.contentDigest'
-  | 'childMarkdownRemark.internal.description'
-  | 'childMarkdownRemark.internal.fieldOwners'
-  | 'childMarkdownRemark.internal.ignoreType'
-  | 'childMarkdownRemark.internal.mediaType'
-  | 'childMarkdownRemark.internal.owner'
-  | 'childMarkdownRemark.internal.type'
-  | 'childMarkdownRemark.parent.children'
-  | 'childMarkdownRemark.parent.children.children'
-  | 'childMarkdownRemark.parent.children.id'
-  | 'childMarkdownRemark.parent.id'
-  | 'childMarkdownRemark.parent.internal.content'
-  | 'childMarkdownRemark.parent.internal.contentDigest'
-  | 'childMarkdownRemark.parent.internal.description'
-  | 'childMarkdownRemark.parent.internal.fieldOwners'
-  | 'childMarkdownRemark.parent.internal.ignoreType'
-  | 'childMarkdownRemark.parent.internal.mediaType'
-  | 'childMarkdownRemark.parent.internal.owner'
-  | 'childMarkdownRemark.parent.internal.type'
-  | 'childMarkdownRemark.parent.parent.children'
-  | 'childMarkdownRemark.parent.parent.id'
-  | 'childMarkdownRemark.rawMarkdownBody'
-  | 'childMarkdownRemark.tableOfContents'
-  | 'childMarkdownRemark.timeToRead'
-  | 'childMarkdownRemark.wordCount.paragraphs'
-  | 'childMarkdownRemark.wordCount.sentences'
-  | 'childMarkdownRemark.wordCount.words'
-  | 'children'
-  | 'childrenImageSharp'
-  | 'childrenImageSharp.children'
-  | 'childrenImageSharp.children.children'
-  | 'childrenImageSharp.children.children.children'
-  | 'childrenImageSharp.children.children.id'
-  | 'childrenImageSharp.children.id'
-  | 'childrenImageSharp.children.internal.content'
-  | 'childrenImageSharp.children.internal.contentDigest'
-  | 'childrenImageSharp.children.internal.description'
-  | 'childrenImageSharp.children.internal.fieldOwners'
-  | 'childrenImageSharp.children.internal.ignoreType'
-  | 'childrenImageSharp.children.internal.mediaType'
-  | 'childrenImageSharp.children.internal.owner'
-  | 'childrenImageSharp.children.internal.type'
-  | 'childrenImageSharp.children.parent.children'
-  | 'childrenImageSharp.children.parent.id'
-  | 'childrenImageSharp.fixed.aspectRatio'
-  | 'childrenImageSharp.fixed.base64'
-  | 'childrenImageSharp.fixed.height'
-  | 'childrenImageSharp.fixed.originalName'
-  | 'childrenImageSharp.fixed.src'
-  | 'childrenImageSharp.fixed.srcSet'
-  | 'childrenImageSharp.fixed.srcSetWebp'
-  | 'childrenImageSharp.fixed.srcWebp'
-  | 'childrenImageSharp.fixed.tracedSVG'
-  | 'childrenImageSharp.fixed.width'
-  | 'childrenImageSharp.fluid.aspectRatio'
-  | 'childrenImageSharp.fluid.base64'
-  | 'childrenImageSharp.fluid.originalImg'
-  | 'childrenImageSharp.fluid.originalName'
-  | 'childrenImageSharp.fluid.presentationHeight'
-  | 'childrenImageSharp.fluid.presentationWidth'
-  | 'childrenImageSharp.fluid.sizes'
-  | 'childrenImageSharp.fluid.src'
-  | 'childrenImageSharp.fluid.srcSet'
-  | 'childrenImageSharp.fluid.srcSetWebp'
-  | 'childrenImageSharp.fluid.srcWebp'
-  | 'childrenImageSharp.fluid.tracedSVG'
-  | 'childrenImageSharp.gatsbyImageData'
-  | 'childrenImageSharp.id'
-  | 'childrenImageSharp.internal.content'
-  | 'childrenImageSharp.internal.contentDigest'
-  | 'childrenImageSharp.internal.description'
-  | 'childrenImageSharp.internal.fieldOwners'
-  | 'childrenImageSharp.internal.ignoreType'
-  | 'childrenImageSharp.internal.mediaType'
-  | 'childrenImageSharp.internal.owner'
-  | 'childrenImageSharp.internal.type'
-  | 'childrenImageSharp.original.height'
-  | 'childrenImageSharp.original.src'
-  | 'childrenImageSharp.original.width'
-  | 'childrenImageSharp.parent.children'
-  | 'childrenImageSharp.parent.children.children'
-  | 'childrenImageSharp.parent.children.id'
-  | 'childrenImageSharp.parent.id'
-  | 'childrenImageSharp.parent.internal.content'
-  | 'childrenImageSharp.parent.internal.contentDigest'
-  | 'childrenImageSharp.parent.internal.description'
-  | 'childrenImageSharp.parent.internal.fieldOwners'
-  | 'childrenImageSharp.parent.internal.ignoreType'
-  | 'childrenImageSharp.parent.internal.mediaType'
-  | 'childrenImageSharp.parent.internal.owner'
-  | 'childrenImageSharp.parent.internal.type'
-  | 'childrenImageSharp.parent.parent.children'
-  | 'childrenImageSharp.parent.parent.id'
-  | 'childrenImageSharp.resize.aspectRatio'
-  | 'childrenImageSharp.resize.height'
-  | 'childrenImageSharp.resize.originalName'
-  | 'childrenImageSharp.resize.src'
-  | 'childrenImageSharp.resize.tracedSVG'
-  | 'childrenImageSharp.resize.width'
-  | 'childrenMarkdownRemark'
-  | 'childrenMarkdownRemark.children'
-  | 'childrenMarkdownRemark.children.children'
-  | 'childrenMarkdownRemark.children.children.children'
-  | 'childrenMarkdownRemark.children.children.id'
-  | 'childrenMarkdownRemark.children.id'
-  | 'childrenMarkdownRemark.children.internal.content'
-  | 'childrenMarkdownRemark.children.internal.contentDigest'
-  | 'childrenMarkdownRemark.children.internal.description'
-  | 'childrenMarkdownRemark.children.internal.fieldOwners'
-  | 'childrenMarkdownRemark.children.internal.ignoreType'
-  | 'childrenMarkdownRemark.children.internal.mediaType'
-  | 'childrenMarkdownRemark.children.internal.owner'
-  | 'childrenMarkdownRemark.children.internal.type'
-  | 'childrenMarkdownRemark.children.parent.children'
-  | 'childrenMarkdownRemark.children.parent.id'
-  | 'childrenMarkdownRemark.excerpt'
-  | 'childrenMarkdownRemark.excerptAst'
-  | 'childrenMarkdownRemark.fileAbsolutePath'
-  | 'childrenMarkdownRemark.frontmatter.date'
-  | 'childrenMarkdownRemark.frontmatter.oldId'
-  | 'childrenMarkdownRemark.frontmatter.path'
-  | 'childrenMarkdownRemark.frontmatter.section'
-  | 'childrenMarkdownRemark.frontmatter.subtitle'
-  | 'childrenMarkdownRemark.frontmatter.tags'
-  | 'childrenMarkdownRemark.frontmatter.title'
-  | 'childrenMarkdownRemark.headings'
-  | 'childrenMarkdownRemark.headings.depth'
-  | 'childrenMarkdownRemark.headings.id'
-  | 'childrenMarkdownRemark.headings.value'
-  | 'childrenMarkdownRemark.html'
-  | 'childrenMarkdownRemark.htmlAst'
-  | 'childrenMarkdownRemark.id'
-  | 'childrenMarkdownRemark.internal.content'
-  | 'childrenMarkdownRemark.internal.contentDigest'
-  | 'childrenMarkdownRemark.internal.description'
-  | 'childrenMarkdownRemark.internal.fieldOwners'
-  | 'childrenMarkdownRemark.internal.ignoreType'
-  | 'childrenMarkdownRemark.internal.mediaType'
-  | 'childrenMarkdownRemark.internal.owner'
-  | 'childrenMarkdownRemark.internal.type'
-  | 'childrenMarkdownRemark.parent.children'
-  | 'childrenMarkdownRemark.parent.children.children'
-  | 'childrenMarkdownRemark.parent.children.id'
-  | 'childrenMarkdownRemark.parent.id'
-  | 'childrenMarkdownRemark.parent.internal.content'
-  | 'childrenMarkdownRemark.parent.internal.contentDigest'
-  | 'childrenMarkdownRemark.parent.internal.description'
-  | 'childrenMarkdownRemark.parent.internal.fieldOwners'
-  | 'childrenMarkdownRemark.parent.internal.ignoreType'
-  | 'childrenMarkdownRemark.parent.internal.mediaType'
-  | 'childrenMarkdownRemark.parent.internal.owner'
-  | 'childrenMarkdownRemark.parent.internal.type'
-  | 'childrenMarkdownRemark.parent.parent.children'
-  | 'childrenMarkdownRemark.parent.parent.id'
-  | 'childrenMarkdownRemark.rawMarkdownBody'
-  | 'childrenMarkdownRemark.tableOfContents'
-  | 'childrenMarkdownRemark.timeToRead'
-  | 'childrenMarkdownRemark.wordCount.paragraphs'
-  | 'childrenMarkdownRemark.wordCount.sentences'
-  | 'childrenMarkdownRemark.wordCount.words'
-  | 'children.children'
-  | 'children.children.children'
-  | 'children.children.children.children'
-  | 'children.children.children.id'
-  | 'children.children.id'
-  | 'children.children.internal.content'
-  | 'children.children.internal.contentDigest'
-  | 'children.children.internal.description'
-  | 'children.children.internal.fieldOwners'
-  | 'children.children.internal.ignoreType'
-  | 'children.children.internal.mediaType'
-  | 'children.children.internal.owner'
-  | 'children.children.internal.type'
-  | 'children.children.parent.children'
-  | 'children.children.parent.id'
-  | 'children.id'
-  | 'children.internal.content'
-  | 'children.internal.contentDigest'
-  | 'children.internal.description'
-  | 'children.internal.fieldOwners'
-  | 'children.internal.ignoreType'
-  | 'children.internal.mediaType'
-  | 'children.internal.owner'
-  | 'children.internal.type'
-  | 'children.parent.children'
-  | 'children.parent.children.children'
-  | 'children.parent.children.id'
-  | 'children.parent.id'
-  | 'children.parent.internal.content'
-  | 'children.parent.internal.contentDigest'
-  | 'children.parent.internal.description'
-  | 'children.parent.internal.fieldOwners'
-  | 'children.parent.internal.ignoreType'
-  | 'children.parent.internal.mediaType'
-  | 'children.parent.internal.owner'
-  | 'children.parent.internal.type'
-  | 'children.parent.parent.children'
-  | 'children.parent.parent.id'
-  | 'ctime'
-  | 'ctimeMs'
-  | 'dev'
-  | 'dir'
-  | 'ext'
-  | 'extension'
-  | 'gid'
-  | 'id'
-  | 'ino'
-  | 'internal.content'
-  | 'internal.contentDigest'
-  | 'internal.description'
-  | 'internal.fieldOwners'
-  | 'internal.ignoreType'
-  | 'internal.mediaType'
-  | 'internal.owner'
-  | 'internal.type'
-  | 'mode'
-  | 'modifiedTime'
-  | 'mtime'
-  | 'mtimeMs'
-  | 'name'
-  | 'nlink'
-  | 'parent.children'
-  | 'parent.children.children'
-  | 'parent.children.children.children'
-  | 'parent.children.children.id'
-  | 'parent.children.id'
-  | 'parent.children.internal.content'
-  | 'parent.children.internal.contentDigest'
-  | 'parent.children.internal.description'
-  | 'parent.children.internal.fieldOwners'
-  | 'parent.children.internal.ignoreType'
-  | 'parent.children.internal.mediaType'
-  | 'parent.children.internal.owner'
-  | 'parent.children.internal.type'
-  | 'parent.children.parent.children'
-  | 'parent.children.parent.id'
-  | 'parent.id'
-  | 'parent.internal.content'
-  | 'parent.internal.contentDigest'
-  | 'parent.internal.description'
-  | 'parent.internal.fieldOwners'
-  | 'parent.internal.ignoreType'
-  | 'parent.internal.mediaType'
-  | 'parent.internal.owner'
-  | 'parent.internal.type'
-  | 'parent.parent.children'
-  | 'parent.parent.children.children'
-  | 'parent.parent.children.id'
-  | 'parent.parent.id'
-  | 'parent.parent.internal.content'
-  | 'parent.parent.internal.contentDigest'
-  | 'parent.parent.internal.description'
-  | 'parent.parent.internal.fieldOwners'
-  | 'parent.parent.internal.ignoreType'
-  | 'parent.parent.internal.mediaType'
-  | 'parent.parent.internal.owner'
-  | 'parent.parent.internal.type'
-  | 'parent.parent.parent.children'
-  | 'parent.parent.parent.id'
-  | 'prettySize'
-  | 'publicURL'
-  | 'rdev'
-  | 'relativeDirectory'
-  | 'relativePath'
-  | 'root'
-  | 'size'
-  | 'sourceInstanceName'
-  | 'uid';
+type FileFieldSelector = {
+  readonly absolutePath: InputMaybe<FieldSelectorEnum>;
+  readonly accessTime: InputMaybe<FieldSelectorEnum>;
+  readonly atime: InputMaybe<FieldSelectorEnum>;
+  readonly atimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly base: InputMaybe<FieldSelectorEnum>;
+  readonly birthTime: InputMaybe<FieldSelectorEnum>;
+  readonly birthtime: InputMaybe<FieldSelectorEnum>;
+  readonly birthtimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly blksize: InputMaybe<FieldSelectorEnum>;
+  readonly blocks: InputMaybe<FieldSelectorEnum>;
+  readonly changeTime: InputMaybe<FieldSelectorEnum>;
+  readonly childImageSharp: InputMaybe<ImageSharpFieldSelector>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly childrenImageSharp: InputMaybe<ImageSharpFieldSelector>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly ctime: InputMaybe<FieldSelectorEnum>;
+  readonly ctimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly dev: InputMaybe<FieldSelectorEnum>;
+  readonly dir: InputMaybe<FieldSelectorEnum>;
+  readonly ext: InputMaybe<FieldSelectorEnum>;
+  readonly extension: InputMaybe<FieldSelectorEnum>;
+  readonly gid: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly ino: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly mode: InputMaybe<FieldSelectorEnum>;
+  readonly modifiedTime: InputMaybe<FieldSelectorEnum>;
+  readonly mtime: InputMaybe<FieldSelectorEnum>;
+  readonly mtimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly nlink: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly prettySize: InputMaybe<FieldSelectorEnum>;
+  readonly publicURL: InputMaybe<FieldSelectorEnum>;
+  readonly rdev: InputMaybe<FieldSelectorEnum>;
+  readonly relativeDirectory: InputMaybe<FieldSelectorEnum>;
+  readonly relativePath: InputMaybe<FieldSelectorEnum>;
+  readonly root: InputMaybe<FieldSelectorEnum>;
+  readonly size: InputMaybe<FieldSelectorEnum>;
+  readonly sourceInstanceName: InputMaybe<FieldSelectorEnum>;
+  readonly uid: InputMaybe<FieldSelectorEnum>;
+};
 
 type FileFilterInput = {
   readonly absolutePath: InputMaybe<StringQueryOperatorInput>;
@@ -1006,34 +623,74 @@ type FileGroupConnection = {
 
 
 type FileGroupConnection_distinctArgs = {
-  field: FileFieldsEnum;
+  field: FileFieldSelector;
 };
 
 
 type FileGroupConnection_groupArgs = {
-  field: FileFieldsEnum;
+  field: FileFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type FileGroupConnection_maxArgs = {
-  field: FileFieldsEnum;
+  field: FileFieldSelector;
 };
 
 
 type FileGroupConnection_minArgs = {
-  field: FileFieldsEnum;
+  field: FileFieldSelector;
 };
 
 
 type FileGroupConnection_sumArgs = {
-  field: FileFieldsEnum;
+  field: FileFieldSelector;
 };
 
 type FileSortInput = {
-  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<FileFieldsEnum>>>;
-  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+  readonly absolutePath: InputMaybe<SortOrderEnum>;
+  readonly accessTime: InputMaybe<SortOrderEnum>;
+  readonly atime: InputMaybe<SortOrderEnum>;
+  readonly atimeMs: InputMaybe<SortOrderEnum>;
+  readonly base: InputMaybe<SortOrderEnum>;
+  readonly birthTime: InputMaybe<SortOrderEnum>;
+  readonly birthtime: InputMaybe<SortOrderEnum>;
+  readonly birthtimeMs: InputMaybe<SortOrderEnum>;
+  readonly blksize: InputMaybe<SortOrderEnum>;
+  readonly blocks: InputMaybe<SortOrderEnum>;
+  readonly changeTime: InputMaybe<SortOrderEnum>;
+  readonly childImageSharp: InputMaybe<ImageSharpSortInput>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly childrenImageSharp: InputMaybe<ImageSharpSortInput>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly ctime: InputMaybe<SortOrderEnum>;
+  readonly ctimeMs: InputMaybe<SortOrderEnum>;
+  readonly dev: InputMaybe<SortOrderEnum>;
+  readonly dir: InputMaybe<SortOrderEnum>;
+  readonly ext: InputMaybe<SortOrderEnum>;
+  readonly extension: InputMaybe<SortOrderEnum>;
+  readonly gid: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly ino: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly mode: InputMaybe<SortOrderEnum>;
+  readonly modifiedTime: InputMaybe<SortOrderEnum>;
+  readonly mtime: InputMaybe<SortOrderEnum>;
+  readonly mtimeMs: InputMaybe<SortOrderEnum>;
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly nlink: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly prettySize: InputMaybe<SortOrderEnum>;
+  readonly publicURL: InputMaybe<SortOrderEnum>;
+  readonly rdev: InputMaybe<SortOrderEnum>;
+  readonly relativeDirectory: InputMaybe<SortOrderEnum>;
+  readonly relativePath: InputMaybe<SortOrderEnum>;
+  readonly root: InputMaybe<SortOrderEnum>;
+  readonly size: InputMaybe<SortOrderEnum>;
+  readonly sourceInstanceName: InputMaybe<SortOrderEnum>;
+  readonly uid: InputMaybe<SortOrderEnum>;
 };
 
 type FloatQueryOperatorInput = {
@@ -1045,6 +702,13 @@ type FloatQueryOperatorInput = {
   readonly lte: InputMaybe<Scalars['Float']>;
   readonly ne: InputMaybe<Scalars['Float']>;
   readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Float']>>>;
+};
+
+type GatsbyImageDataQueryOperatorInput = {
+  readonly eq: InputMaybe<Scalars['GatsbyImageData']>;
+  readonly in: InputMaybe<ReadonlyArray<InputMaybe<Scalars['GatsbyImageData']>>>;
+  readonly ne: InputMaybe<Scalars['GatsbyImageData']>;
+  readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['GatsbyImageData']>>>;
 };
 
 type ImageCropFocus =
@@ -1090,7 +754,7 @@ type ImageSharp = Node & {
   readonly children: ReadonlyArray<Node>;
   readonly fixed: Maybe<ImageSharpFixed>;
   readonly fluid: Maybe<ImageSharpFluid>;
-  readonly gatsbyImageData: Scalars['JSON'];
+  readonly gatsbyImageData: Scalars['GatsbyImageData'];
   readonly id: Scalars['ID'];
   readonly internal: Internal;
   readonly original: Maybe<ImageSharpOriginal>;
@@ -1205,29 +869,29 @@ type ImageSharpConnection = {
 
 
 type ImageSharpConnection_distinctArgs = {
-  field: ImageSharpFieldsEnum;
+  field: ImageSharpFieldSelector;
 };
 
 
 type ImageSharpConnection_groupArgs = {
-  field: ImageSharpFieldsEnum;
+  field: ImageSharpFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type ImageSharpConnection_maxArgs = {
-  field: ImageSharpFieldsEnum;
+  field: ImageSharpFieldSelector;
 };
 
 
 type ImageSharpConnection_minArgs = {
-  field: ImageSharpFieldsEnum;
+  field: ImageSharpFieldSelector;
 };
 
 
 type ImageSharpConnection_sumArgs = {
-  field: ImageSharpFieldsEnum;
+  field: ImageSharpFieldSelector;
 };
 
 type ImageSharpEdge = {
@@ -1236,131 +900,23 @@ type ImageSharpEdge = {
   readonly previous: Maybe<ImageSharp>;
 };
 
-type ImageSharpFieldsEnum =
-  | 'children'
-  | 'children.children'
-  | 'children.children.children'
-  | 'children.children.children.children'
-  | 'children.children.children.id'
-  | 'children.children.id'
-  | 'children.children.internal.content'
-  | 'children.children.internal.contentDigest'
-  | 'children.children.internal.description'
-  | 'children.children.internal.fieldOwners'
-  | 'children.children.internal.ignoreType'
-  | 'children.children.internal.mediaType'
-  | 'children.children.internal.owner'
-  | 'children.children.internal.type'
-  | 'children.children.parent.children'
-  | 'children.children.parent.id'
-  | 'children.id'
-  | 'children.internal.content'
-  | 'children.internal.contentDigest'
-  | 'children.internal.description'
-  | 'children.internal.fieldOwners'
-  | 'children.internal.ignoreType'
-  | 'children.internal.mediaType'
-  | 'children.internal.owner'
-  | 'children.internal.type'
-  | 'children.parent.children'
-  | 'children.parent.children.children'
-  | 'children.parent.children.id'
-  | 'children.parent.id'
-  | 'children.parent.internal.content'
-  | 'children.parent.internal.contentDigest'
-  | 'children.parent.internal.description'
-  | 'children.parent.internal.fieldOwners'
-  | 'children.parent.internal.ignoreType'
-  | 'children.parent.internal.mediaType'
-  | 'children.parent.internal.owner'
-  | 'children.parent.internal.type'
-  | 'children.parent.parent.children'
-  | 'children.parent.parent.id'
-  | 'fixed.aspectRatio'
-  | 'fixed.base64'
-  | 'fixed.height'
-  | 'fixed.originalName'
-  | 'fixed.src'
-  | 'fixed.srcSet'
-  | 'fixed.srcSetWebp'
-  | 'fixed.srcWebp'
-  | 'fixed.tracedSVG'
-  | 'fixed.width'
-  | 'fluid.aspectRatio'
-  | 'fluid.base64'
-  | 'fluid.originalImg'
-  | 'fluid.originalName'
-  | 'fluid.presentationHeight'
-  | 'fluid.presentationWidth'
-  | 'fluid.sizes'
-  | 'fluid.src'
-  | 'fluid.srcSet'
-  | 'fluid.srcSetWebp'
-  | 'fluid.srcWebp'
-  | 'fluid.tracedSVG'
-  | 'gatsbyImageData'
-  | 'id'
-  | 'internal.content'
-  | 'internal.contentDigest'
-  | 'internal.description'
-  | 'internal.fieldOwners'
-  | 'internal.ignoreType'
-  | 'internal.mediaType'
-  | 'internal.owner'
-  | 'internal.type'
-  | 'original.height'
-  | 'original.src'
-  | 'original.width'
-  | 'parent.children'
-  | 'parent.children.children'
-  | 'parent.children.children.children'
-  | 'parent.children.children.id'
-  | 'parent.children.id'
-  | 'parent.children.internal.content'
-  | 'parent.children.internal.contentDigest'
-  | 'parent.children.internal.description'
-  | 'parent.children.internal.fieldOwners'
-  | 'parent.children.internal.ignoreType'
-  | 'parent.children.internal.mediaType'
-  | 'parent.children.internal.owner'
-  | 'parent.children.internal.type'
-  | 'parent.children.parent.children'
-  | 'parent.children.parent.id'
-  | 'parent.id'
-  | 'parent.internal.content'
-  | 'parent.internal.contentDigest'
-  | 'parent.internal.description'
-  | 'parent.internal.fieldOwners'
-  | 'parent.internal.ignoreType'
-  | 'parent.internal.mediaType'
-  | 'parent.internal.owner'
-  | 'parent.internal.type'
-  | 'parent.parent.children'
-  | 'parent.parent.children.children'
-  | 'parent.parent.children.id'
-  | 'parent.parent.id'
-  | 'parent.parent.internal.content'
-  | 'parent.parent.internal.contentDigest'
-  | 'parent.parent.internal.description'
-  | 'parent.parent.internal.fieldOwners'
-  | 'parent.parent.internal.ignoreType'
-  | 'parent.parent.internal.mediaType'
-  | 'parent.parent.internal.owner'
-  | 'parent.parent.internal.type'
-  | 'parent.parent.parent.children'
-  | 'parent.parent.parent.id'
-  | 'resize.aspectRatio'
-  | 'resize.height'
-  | 'resize.originalName'
-  | 'resize.src'
-  | 'resize.tracedSVG'
-  | 'resize.width';
+type ImageSharpFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly fixed: InputMaybe<ImageSharpFixedFieldSelector>;
+  readonly fluid: InputMaybe<ImageSharpFluidFieldSelector>;
+  readonly gatsbyImageData: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly original: InputMaybe<ImageSharpOriginalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly resize: InputMaybe<ImageSharpResizeFieldSelector>;
+};
 
 type ImageSharpFilterInput = {
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly fixed: InputMaybe<ImageSharpFixedFilterInput>;
   readonly fluid: InputMaybe<ImageSharpFluidFilterInput>;
-  readonly gatsbyImageData: InputMaybe<JSONQueryOperatorInput>;
+  readonly gatsbyImageData: InputMaybe<GatsbyImageDataQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
   readonly original: InputMaybe<ImageSharpOriginalFilterInput>;
@@ -1385,6 +941,19 @@ type ImageSharpFixed = {
   readonly width: Scalars['Float'];
 };
 
+type ImageSharpFixedFieldSelector = {
+  readonly aspectRatio: InputMaybe<FieldSelectorEnum>;
+  readonly base64: InputMaybe<FieldSelectorEnum>;
+  readonly height: InputMaybe<FieldSelectorEnum>;
+  readonly originalName: InputMaybe<FieldSelectorEnum>;
+  readonly src: InputMaybe<FieldSelectorEnum>;
+  readonly srcSet: InputMaybe<FieldSelectorEnum>;
+  readonly srcSetWebp: InputMaybe<FieldSelectorEnum>;
+  readonly srcWebp: InputMaybe<FieldSelectorEnum>;
+  readonly tracedSVG: InputMaybe<FieldSelectorEnum>;
+  readonly width: InputMaybe<FieldSelectorEnum>;
+};
+
 type ImageSharpFixedFilterInput = {
   readonly aspectRatio: InputMaybe<FloatQueryOperatorInput>;
   readonly base64: InputMaybe<StringQueryOperatorInput>;
@@ -1396,6 +965,19 @@ type ImageSharpFixedFilterInput = {
   readonly srcWebp: InputMaybe<StringQueryOperatorInput>;
   readonly tracedSVG: InputMaybe<StringQueryOperatorInput>;
   readonly width: InputMaybe<FloatQueryOperatorInput>;
+};
+
+type ImageSharpFixedSortInput = {
+  readonly aspectRatio: InputMaybe<SortOrderEnum>;
+  readonly base64: InputMaybe<SortOrderEnum>;
+  readonly height: InputMaybe<SortOrderEnum>;
+  readonly originalName: InputMaybe<SortOrderEnum>;
+  readonly src: InputMaybe<SortOrderEnum>;
+  readonly srcSet: InputMaybe<SortOrderEnum>;
+  readonly srcSetWebp: InputMaybe<SortOrderEnum>;
+  readonly srcWebp: InputMaybe<SortOrderEnum>;
+  readonly tracedSVG: InputMaybe<SortOrderEnum>;
+  readonly width: InputMaybe<SortOrderEnum>;
 };
 
 type ImageSharpFluid = {
@@ -1413,6 +995,21 @@ type ImageSharpFluid = {
   readonly tracedSVG: Maybe<Scalars['String']>;
 };
 
+type ImageSharpFluidFieldSelector = {
+  readonly aspectRatio: InputMaybe<FieldSelectorEnum>;
+  readonly base64: InputMaybe<FieldSelectorEnum>;
+  readonly originalImg: InputMaybe<FieldSelectorEnum>;
+  readonly originalName: InputMaybe<FieldSelectorEnum>;
+  readonly presentationHeight: InputMaybe<FieldSelectorEnum>;
+  readonly presentationWidth: InputMaybe<FieldSelectorEnum>;
+  readonly sizes: InputMaybe<FieldSelectorEnum>;
+  readonly src: InputMaybe<FieldSelectorEnum>;
+  readonly srcSet: InputMaybe<FieldSelectorEnum>;
+  readonly srcSetWebp: InputMaybe<FieldSelectorEnum>;
+  readonly srcWebp: InputMaybe<FieldSelectorEnum>;
+  readonly tracedSVG: InputMaybe<FieldSelectorEnum>;
+};
+
 type ImageSharpFluidFilterInput = {
   readonly aspectRatio: InputMaybe<FloatQueryOperatorInput>;
   readonly base64: InputMaybe<StringQueryOperatorInput>;
@@ -1426,6 +1023,21 @@ type ImageSharpFluidFilterInput = {
   readonly srcSetWebp: InputMaybe<StringQueryOperatorInput>;
   readonly srcWebp: InputMaybe<StringQueryOperatorInput>;
   readonly tracedSVG: InputMaybe<StringQueryOperatorInput>;
+};
+
+type ImageSharpFluidSortInput = {
+  readonly aspectRatio: InputMaybe<SortOrderEnum>;
+  readonly base64: InputMaybe<SortOrderEnum>;
+  readonly originalImg: InputMaybe<SortOrderEnum>;
+  readonly originalName: InputMaybe<SortOrderEnum>;
+  readonly presentationHeight: InputMaybe<SortOrderEnum>;
+  readonly presentationWidth: InputMaybe<SortOrderEnum>;
+  readonly sizes: InputMaybe<SortOrderEnum>;
+  readonly src: InputMaybe<SortOrderEnum>;
+  readonly srcSet: InputMaybe<SortOrderEnum>;
+  readonly srcSetWebp: InputMaybe<SortOrderEnum>;
+  readonly srcWebp: InputMaybe<SortOrderEnum>;
+  readonly tracedSVG: InputMaybe<SortOrderEnum>;
 };
 
 type ImageSharpGroupConnection = {
@@ -1444,29 +1056,29 @@ type ImageSharpGroupConnection = {
 
 
 type ImageSharpGroupConnection_distinctArgs = {
-  field: ImageSharpFieldsEnum;
+  field: ImageSharpFieldSelector;
 };
 
 
 type ImageSharpGroupConnection_groupArgs = {
-  field: ImageSharpFieldsEnum;
+  field: ImageSharpFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type ImageSharpGroupConnection_maxArgs = {
-  field: ImageSharpFieldsEnum;
+  field: ImageSharpFieldSelector;
 };
 
 
 type ImageSharpGroupConnection_minArgs = {
-  field: ImageSharpFieldsEnum;
+  field: ImageSharpFieldSelector;
 };
 
 
 type ImageSharpGroupConnection_sumArgs = {
-  field: ImageSharpFieldsEnum;
+  field: ImageSharpFieldSelector;
 };
 
 type ImageSharpOriginal = {
@@ -1475,10 +1087,22 @@ type ImageSharpOriginal = {
   readonly width: Maybe<Scalars['Float']>;
 };
 
+type ImageSharpOriginalFieldSelector = {
+  readonly height: InputMaybe<FieldSelectorEnum>;
+  readonly src: InputMaybe<FieldSelectorEnum>;
+  readonly width: InputMaybe<FieldSelectorEnum>;
+};
+
 type ImageSharpOriginalFilterInput = {
   readonly height: InputMaybe<FloatQueryOperatorInput>;
   readonly src: InputMaybe<StringQueryOperatorInput>;
   readonly width: InputMaybe<FloatQueryOperatorInput>;
+};
+
+type ImageSharpOriginalSortInput = {
+  readonly height: InputMaybe<SortOrderEnum>;
+  readonly src: InputMaybe<SortOrderEnum>;
+  readonly width: InputMaybe<SortOrderEnum>;
 };
 
 type ImageSharpResize = {
@@ -1490,6 +1114,15 @@ type ImageSharpResize = {
   readonly width: Maybe<Scalars['Int']>;
 };
 
+type ImageSharpResizeFieldSelector = {
+  readonly aspectRatio: InputMaybe<FieldSelectorEnum>;
+  readonly height: InputMaybe<FieldSelectorEnum>;
+  readonly originalName: InputMaybe<FieldSelectorEnum>;
+  readonly src: InputMaybe<FieldSelectorEnum>;
+  readonly tracedSVG: InputMaybe<FieldSelectorEnum>;
+  readonly width: InputMaybe<FieldSelectorEnum>;
+};
+
 type ImageSharpResizeFilterInput = {
   readonly aspectRatio: InputMaybe<FloatQueryOperatorInput>;
   readonly height: InputMaybe<IntQueryOperatorInput>;
@@ -1499,9 +1132,25 @@ type ImageSharpResizeFilterInput = {
   readonly width: InputMaybe<IntQueryOperatorInput>;
 };
 
+type ImageSharpResizeSortInput = {
+  readonly aspectRatio: InputMaybe<SortOrderEnum>;
+  readonly height: InputMaybe<SortOrderEnum>;
+  readonly originalName: InputMaybe<SortOrderEnum>;
+  readonly src: InputMaybe<SortOrderEnum>;
+  readonly tracedSVG: InputMaybe<SortOrderEnum>;
+  readonly width: InputMaybe<SortOrderEnum>;
+};
+
 type ImageSharpSortInput = {
-  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<ImageSharpFieldsEnum>>>;
-  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly fixed: InputMaybe<ImageSharpFixedSortInput>;
+  readonly fluid: InputMaybe<ImageSharpFluidSortInput>;
+  readonly gatsbyImageData: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly original: InputMaybe<ImageSharpOriginalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly resize: InputMaybe<ImageSharpResizeSortInput>;
 };
 
 type IntQueryOperatorInput = {
@@ -1518,6 +1167,7 @@ type IntQueryOperatorInput = {
 type Internal = {
   readonly content: Maybe<Scalars['String']>;
   readonly contentDigest: Scalars['String'];
+  readonly contentFilePath: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly fieldOwners: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly ignoreType: Maybe<Scalars['Boolean']>;
@@ -1526,15 +1176,40 @@ type Internal = {
   readonly type: Scalars['String'];
 };
 
+type InternalFieldSelector = {
+  readonly content: InputMaybe<FieldSelectorEnum>;
+  readonly contentDigest: InputMaybe<FieldSelectorEnum>;
+  readonly contentFilePath: InputMaybe<FieldSelectorEnum>;
+  readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly fieldOwners: InputMaybe<FieldSelectorEnum>;
+  readonly ignoreType: InputMaybe<FieldSelectorEnum>;
+  readonly mediaType: InputMaybe<FieldSelectorEnum>;
+  readonly owner: InputMaybe<FieldSelectorEnum>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+};
+
 type InternalFilterInput = {
   readonly content: InputMaybe<StringQueryOperatorInput>;
   readonly contentDigest: InputMaybe<StringQueryOperatorInput>;
+  readonly contentFilePath: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly fieldOwners: InputMaybe<StringQueryOperatorInput>;
   readonly ignoreType: InputMaybe<BooleanQueryOperatorInput>;
   readonly mediaType: InputMaybe<StringQueryOperatorInput>;
   readonly owner: InputMaybe<StringQueryOperatorInput>;
   readonly type: InputMaybe<StringQueryOperatorInput>;
+};
+
+type InternalSortInput = {
+  readonly content: InputMaybe<SortOrderEnum>;
+  readonly contentDigest: InputMaybe<SortOrderEnum>;
+  readonly contentFilePath: InputMaybe<SortOrderEnum>;
+  readonly description: InputMaybe<SortOrderEnum>;
+  readonly fieldOwners: InputMaybe<SortOrderEnum>;
+  readonly ignoreType: InputMaybe<SortOrderEnum>;
+  readonly mediaType: InputMaybe<SortOrderEnum>;
+  readonly owner: InputMaybe<SortOrderEnum>;
+  readonly type: InputMaybe<SortOrderEnum>;
 };
 
 type JPGOptions = {
@@ -1562,6 +1237,12 @@ type MarkdownHeading = {
   readonly value: Maybe<Scalars['String']>;
 };
 
+type MarkdownHeadingFieldSelector = {
+  readonly depth: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly value: InputMaybe<FieldSelectorEnum>;
+};
+
 type MarkdownHeadingFilterInput = {
   readonly depth: InputMaybe<IntQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
@@ -1579,6 +1260,12 @@ type MarkdownHeadingLevels =
   | 'h4'
   | 'h5'
   | 'h6';
+
+type MarkdownHeadingSortInput = {
+  readonly depth: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly value: InputMaybe<SortOrderEnum>;
+};
 
 type MarkdownRemark = Node & {
   readonly children: ReadonlyArray<Node>;
@@ -1638,29 +1325,29 @@ type MarkdownRemarkConnection = {
 
 
 type MarkdownRemarkConnection_distinctArgs = {
-  field: MarkdownRemarkFieldsEnum;
+  field: MarkdownRemarkFieldSelector;
 };
 
 
 type MarkdownRemarkConnection_groupArgs = {
-  field: MarkdownRemarkFieldsEnum;
+  field: MarkdownRemarkFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type MarkdownRemarkConnection_maxArgs = {
-  field: MarkdownRemarkFieldsEnum;
+  field: MarkdownRemarkFieldSelector;
 };
 
 
 type MarkdownRemarkConnection_minArgs = {
-  field: MarkdownRemarkFieldsEnum;
+  field: MarkdownRemarkFieldSelector;
 };
 
 
 type MarkdownRemarkConnection_sumArgs = {
-  field: MarkdownRemarkFieldsEnum;
+  field: MarkdownRemarkFieldSelector;
 };
 
 type MarkdownRemarkEdge = {
@@ -1669,115 +1356,23 @@ type MarkdownRemarkEdge = {
   readonly previous: Maybe<MarkdownRemark>;
 };
 
-type MarkdownRemarkFieldsEnum =
-  | 'children'
-  | 'children.children'
-  | 'children.children.children'
-  | 'children.children.children.children'
-  | 'children.children.children.id'
-  | 'children.children.id'
-  | 'children.children.internal.content'
-  | 'children.children.internal.contentDigest'
-  | 'children.children.internal.description'
-  | 'children.children.internal.fieldOwners'
-  | 'children.children.internal.ignoreType'
-  | 'children.children.internal.mediaType'
-  | 'children.children.internal.owner'
-  | 'children.children.internal.type'
-  | 'children.children.parent.children'
-  | 'children.children.parent.id'
-  | 'children.id'
-  | 'children.internal.content'
-  | 'children.internal.contentDigest'
-  | 'children.internal.description'
-  | 'children.internal.fieldOwners'
-  | 'children.internal.ignoreType'
-  | 'children.internal.mediaType'
-  | 'children.internal.owner'
-  | 'children.internal.type'
-  | 'children.parent.children'
-  | 'children.parent.children.children'
-  | 'children.parent.children.id'
-  | 'children.parent.id'
-  | 'children.parent.internal.content'
-  | 'children.parent.internal.contentDigest'
-  | 'children.parent.internal.description'
-  | 'children.parent.internal.fieldOwners'
-  | 'children.parent.internal.ignoreType'
-  | 'children.parent.internal.mediaType'
-  | 'children.parent.internal.owner'
-  | 'children.parent.internal.type'
-  | 'children.parent.parent.children'
-  | 'children.parent.parent.id'
-  | 'excerpt'
-  | 'excerptAst'
-  | 'fileAbsolutePath'
-  | 'frontmatter.date'
-  | 'frontmatter.oldId'
-  | 'frontmatter.path'
-  | 'frontmatter.section'
-  | 'frontmatter.subtitle'
-  | 'frontmatter.tags'
-  | 'frontmatter.title'
-  | 'headings'
-  | 'headings.depth'
-  | 'headings.id'
-  | 'headings.value'
-  | 'html'
-  | 'htmlAst'
-  | 'id'
-  | 'internal.content'
-  | 'internal.contentDigest'
-  | 'internal.description'
-  | 'internal.fieldOwners'
-  | 'internal.ignoreType'
-  | 'internal.mediaType'
-  | 'internal.owner'
-  | 'internal.type'
-  | 'parent.children'
-  | 'parent.children.children'
-  | 'parent.children.children.children'
-  | 'parent.children.children.id'
-  | 'parent.children.id'
-  | 'parent.children.internal.content'
-  | 'parent.children.internal.contentDigest'
-  | 'parent.children.internal.description'
-  | 'parent.children.internal.fieldOwners'
-  | 'parent.children.internal.ignoreType'
-  | 'parent.children.internal.mediaType'
-  | 'parent.children.internal.owner'
-  | 'parent.children.internal.type'
-  | 'parent.children.parent.children'
-  | 'parent.children.parent.id'
-  | 'parent.id'
-  | 'parent.internal.content'
-  | 'parent.internal.contentDigest'
-  | 'parent.internal.description'
-  | 'parent.internal.fieldOwners'
-  | 'parent.internal.ignoreType'
-  | 'parent.internal.mediaType'
-  | 'parent.internal.owner'
-  | 'parent.internal.type'
-  | 'parent.parent.children'
-  | 'parent.parent.children.children'
-  | 'parent.parent.children.id'
-  | 'parent.parent.id'
-  | 'parent.parent.internal.content'
-  | 'parent.parent.internal.contentDigest'
-  | 'parent.parent.internal.description'
-  | 'parent.parent.internal.fieldOwners'
-  | 'parent.parent.internal.ignoreType'
-  | 'parent.parent.internal.mediaType'
-  | 'parent.parent.internal.owner'
-  | 'parent.parent.internal.type'
-  | 'parent.parent.parent.children'
-  | 'parent.parent.parent.id'
-  | 'rawMarkdownBody'
-  | 'tableOfContents'
-  | 'timeToRead'
-  | 'wordCount.paragraphs'
-  | 'wordCount.sentences'
-  | 'wordCount.words';
+type MarkdownRemarkFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly excerpt: InputMaybe<FieldSelectorEnum>;
+  readonly excerptAst: InputMaybe<FieldSelectorEnum>;
+  readonly fileAbsolutePath: InputMaybe<FieldSelectorEnum>;
+  readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterFieldSelector>;
+  readonly headings: InputMaybe<MarkdownHeadingFieldSelector>;
+  readonly html: InputMaybe<FieldSelectorEnum>;
+  readonly htmlAst: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly rawMarkdownBody: InputMaybe<FieldSelectorEnum>;
+  readonly tableOfContents: InputMaybe<FieldSelectorEnum>;
+  readonly timeToRead: InputMaybe<FieldSelectorEnum>;
+  readonly wordCount: InputMaybe<MarkdownWordCountFieldSelector>;
+};
 
 type MarkdownRemarkFilterInput = {
   readonly children: InputMaybe<NodeFilterListInput>;
@@ -1819,6 +1414,16 @@ type MarkdownRemarkFrontmatter_dateArgs = {
   locale: InputMaybe<Scalars['String']>;
 };
 
+type MarkdownRemarkFrontmatterFieldSelector = {
+  readonly date: InputMaybe<FieldSelectorEnum>;
+  readonly oldId: InputMaybe<FieldSelectorEnum>;
+  readonly path: InputMaybe<FieldSelectorEnum>;
+  readonly section: InputMaybe<FieldSelectorEnum>;
+  readonly subtitle: InputMaybe<FieldSelectorEnum>;
+  readonly tags: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
 type MarkdownRemarkFrontmatterFilterInput = {
   readonly date: InputMaybe<DateQueryOperatorInput>;
   readonly oldId: InputMaybe<IntQueryOperatorInput>;
@@ -1827,6 +1432,16 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly subtitle: InputMaybe<StringQueryOperatorInput>;
   readonly tags: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFrontmatterSortInput = {
+  readonly date: InputMaybe<SortOrderEnum>;
+  readonly oldId: InputMaybe<SortOrderEnum>;
+  readonly path: InputMaybe<SortOrderEnum>;
+  readonly section: InputMaybe<SortOrderEnum>;
+  readonly subtitle: InputMaybe<SortOrderEnum>;
+  readonly tags: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
 };
 
 type MarkdownRemarkGroupConnection = {
@@ -1845,34 +1460,47 @@ type MarkdownRemarkGroupConnection = {
 
 
 type MarkdownRemarkGroupConnection_distinctArgs = {
-  field: MarkdownRemarkFieldsEnum;
+  field: MarkdownRemarkFieldSelector;
 };
 
 
 type MarkdownRemarkGroupConnection_groupArgs = {
-  field: MarkdownRemarkFieldsEnum;
+  field: MarkdownRemarkFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type MarkdownRemarkGroupConnection_maxArgs = {
-  field: MarkdownRemarkFieldsEnum;
+  field: MarkdownRemarkFieldSelector;
 };
 
 
 type MarkdownRemarkGroupConnection_minArgs = {
-  field: MarkdownRemarkFieldsEnum;
+  field: MarkdownRemarkFieldSelector;
 };
 
 
 type MarkdownRemarkGroupConnection_sumArgs = {
-  field: MarkdownRemarkFieldsEnum;
+  field: MarkdownRemarkFieldSelector;
 };
 
 type MarkdownRemarkSortInput = {
-  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<MarkdownRemarkFieldsEnum>>>;
-  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly excerpt: InputMaybe<SortOrderEnum>;
+  readonly excerptAst: InputMaybe<SortOrderEnum>;
+  readonly fileAbsolutePath: InputMaybe<SortOrderEnum>;
+  readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterSortInput>;
+  readonly headings: InputMaybe<MarkdownHeadingSortInput>;
+  readonly html: InputMaybe<SortOrderEnum>;
+  readonly htmlAst: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly rawMarkdownBody: InputMaybe<SortOrderEnum>;
+  readonly tableOfContents: InputMaybe<SortOrderEnum>;
+  readonly timeToRead: InputMaybe<SortOrderEnum>;
+  readonly wordCount: InputMaybe<MarkdownWordCountSortInput>;
 };
 
 type MarkdownWordCount = {
@@ -1881,10 +1509,22 @@ type MarkdownWordCount = {
   readonly words: Maybe<Scalars['Int']>;
 };
 
+type MarkdownWordCountFieldSelector = {
+  readonly paragraphs: InputMaybe<FieldSelectorEnum>;
+  readonly sentences: InputMaybe<FieldSelectorEnum>;
+  readonly words: InputMaybe<FieldSelectorEnum>;
+};
+
 type MarkdownWordCountFilterInput = {
   readonly paragraphs: InputMaybe<IntQueryOperatorInput>;
   readonly sentences: InputMaybe<IntQueryOperatorInput>;
   readonly words: InputMaybe<IntQueryOperatorInput>;
+};
+
+type MarkdownWordCountSortInput = {
+  readonly paragraphs: InputMaybe<SortOrderEnum>;
+  readonly sentences: InputMaybe<SortOrderEnum>;
+  readonly words: InputMaybe<SortOrderEnum>;
 };
 
 /** Node Interface */
@@ -1893,6 +1533,13 @@ type Node = {
   readonly id: Scalars['ID'];
   readonly internal: Internal;
   readonly parent: Maybe<Node>;
+};
+
+type NodeFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
 };
 
 type NodeFilterInput = {
@@ -1904,6 +1551,13 @@ type NodeFilterInput = {
 
 type NodeFilterListInput = {
   readonly elemMatch: InputMaybe<NodeFilterInput>;
+};
+
+type NodeSortInput = {
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
 };
 
 type PNGOptions = {
@@ -1967,7 +1621,7 @@ type Query_allDirectoryArgs = {
   filter: InputMaybe<DirectoryFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<DirectorySortInput>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<DirectorySortInput>>>;
 };
 
 
@@ -1975,7 +1629,7 @@ type Query_allFileArgs = {
   filter: InputMaybe<FileFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<FileSortInput>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<FileSortInput>>>;
 };
 
 
@@ -1983,7 +1637,7 @@ type Query_allImageSharpArgs = {
   filter: InputMaybe<ImageSharpFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ImageSharpSortInput>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<ImageSharpSortInput>>>;
 };
 
 
@@ -1991,7 +1645,7 @@ type Query_allMarkdownRemarkArgs = {
   filter: InputMaybe<MarkdownRemarkFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<MarkdownRemarkSortInput>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<MarkdownRemarkSortInput>>>;
 };
 
 
@@ -1999,7 +1653,7 @@ type Query_allSiteArgs = {
   filter: InputMaybe<SiteFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<SiteSortInput>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<SiteSortInput>>>;
 };
 
 
@@ -2007,7 +1661,7 @@ type Query_allSiteBuildMetadataArgs = {
   filter: InputMaybe<SiteBuildMetadataFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<SiteBuildMetadataSortInput>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<SiteBuildMetadataSortInput>>>;
 };
 
 
@@ -2015,7 +1669,7 @@ type Query_allSiteFunctionArgs = {
   filter: InputMaybe<SiteFunctionFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<SiteFunctionSortInput>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<SiteFunctionSortInput>>>;
 };
 
 
@@ -2023,7 +1677,7 @@ type Query_allSitePageArgs = {
   filter: InputMaybe<SitePageFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<SitePageSortInput>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<SitePageSortInput>>>;
 };
 
 
@@ -2031,7 +1685,7 @@ type Query_allSitePluginArgs = {
   filter: InputMaybe<SitePluginFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<SitePluginSortInput>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<SitePluginSortInput>>>;
 };
 
 
@@ -2124,7 +1778,7 @@ type Query_imageSharpArgs = {
   children: InputMaybe<NodeFilterListInput>;
   fixed: InputMaybe<ImageSharpFixedFilterInput>;
   fluid: InputMaybe<ImageSharpFluidFilterInput>;
-  gatsbyImageData: InputMaybe<JSONQueryOperatorInput>;
+  gatsbyImageData: InputMaybe<GatsbyImageDataQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
   original: InputMaybe<ImageSharpOriginalFilterInput>;
@@ -2278,29 +1932,29 @@ type SiteBuildMetadataConnection = {
 
 
 type SiteBuildMetadataConnection_distinctArgs = {
-  field: SiteBuildMetadataFieldsEnum;
+  field: SiteBuildMetadataFieldSelector;
 };
 
 
 type SiteBuildMetadataConnection_groupArgs = {
-  field: SiteBuildMetadataFieldsEnum;
+  field: SiteBuildMetadataFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type SiteBuildMetadataConnection_maxArgs = {
-  field: SiteBuildMetadataFieldsEnum;
+  field: SiteBuildMetadataFieldSelector;
 };
 
 
 type SiteBuildMetadataConnection_minArgs = {
-  field: SiteBuildMetadataFieldsEnum;
+  field: SiteBuildMetadataFieldSelector;
 };
 
 
 type SiteBuildMetadataConnection_sumArgs = {
-  field: SiteBuildMetadataFieldsEnum;
+  field: SiteBuildMetadataFieldSelector;
 };
 
 type SiteBuildMetadataEdge = {
@@ -2309,94 +1963,13 @@ type SiteBuildMetadataEdge = {
   readonly previous: Maybe<SiteBuildMetadata>;
 };
 
-type SiteBuildMetadataFieldsEnum =
-  | 'buildTime'
-  | 'children'
-  | 'children.children'
-  | 'children.children.children'
-  | 'children.children.children.children'
-  | 'children.children.children.id'
-  | 'children.children.id'
-  | 'children.children.internal.content'
-  | 'children.children.internal.contentDigest'
-  | 'children.children.internal.description'
-  | 'children.children.internal.fieldOwners'
-  | 'children.children.internal.ignoreType'
-  | 'children.children.internal.mediaType'
-  | 'children.children.internal.owner'
-  | 'children.children.internal.type'
-  | 'children.children.parent.children'
-  | 'children.children.parent.id'
-  | 'children.id'
-  | 'children.internal.content'
-  | 'children.internal.contentDigest'
-  | 'children.internal.description'
-  | 'children.internal.fieldOwners'
-  | 'children.internal.ignoreType'
-  | 'children.internal.mediaType'
-  | 'children.internal.owner'
-  | 'children.internal.type'
-  | 'children.parent.children'
-  | 'children.parent.children.children'
-  | 'children.parent.children.id'
-  | 'children.parent.id'
-  | 'children.parent.internal.content'
-  | 'children.parent.internal.contentDigest'
-  | 'children.parent.internal.description'
-  | 'children.parent.internal.fieldOwners'
-  | 'children.parent.internal.ignoreType'
-  | 'children.parent.internal.mediaType'
-  | 'children.parent.internal.owner'
-  | 'children.parent.internal.type'
-  | 'children.parent.parent.children'
-  | 'children.parent.parent.id'
-  | 'id'
-  | 'internal.content'
-  | 'internal.contentDigest'
-  | 'internal.description'
-  | 'internal.fieldOwners'
-  | 'internal.ignoreType'
-  | 'internal.mediaType'
-  | 'internal.owner'
-  | 'internal.type'
-  | 'parent.children'
-  | 'parent.children.children'
-  | 'parent.children.children.children'
-  | 'parent.children.children.id'
-  | 'parent.children.id'
-  | 'parent.children.internal.content'
-  | 'parent.children.internal.contentDigest'
-  | 'parent.children.internal.description'
-  | 'parent.children.internal.fieldOwners'
-  | 'parent.children.internal.ignoreType'
-  | 'parent.children.internal.mediaType'
-  | 'parent.children.internal.owner'
-  | 'parent.children.internal.type'
-  | 'parent.children.parent.children'
-  | 'parent.children.parent.id'
-  | 'parent.id'
-  | 'parent.internal.content'
-  | 'parent.internal.contentDigest'
-  | 'parent.internal.description'
-  | 'parent.internal.fieldOwners'
-  | 'parent.internal.ignoreType'
-  | 'parent.internal.mediaType'
-  | 'parent.internal.owner'
-  | 'parent.internal.type'
-  | 'parent.parent.children'
-  | 'parent.parent.children.children'
-  | 'parent.parent.children.id'
-  | 'parent.parent.id'
-  | 'parent.parent.internal.content'
-  | 'parent.parent.internal.contentDigest'
-  | 'parent.parent.internal.description'
-  | 'parent.parent.internal.fieldOwners'
-  | 'parent.parent.internal.ignoreType'
-  | 'parent.parent.internal.mediaType'
-  | 'parent.parent.internal.owner'
-  | 'parent.parent.internal.type'
-  | 'parent.parent.parent.children'
-  | 'parent.parent.parent.id';
+type SiteBuildMetadataFieldSelector = {
+  readonly buildTime: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+};
 
 type SiteBuildMetadataFilterInput = {
   readonly buildTime: InputMaybe<DateQueryOperatorInput>;
@@ -2422,34 +1995,37 @@ type SiteBuildMetadataGroupConnection = {
 
 
 type SiteBuildMetadataGroupConnection_distinctArgs = {
-  field: SiteBuildMetadataFieldsEnum;
+  field: SiteBuildMetadataFieldSelector;
 };
 
 
 type SiteBuildMetadataGroupConnection_groupArgs = {
-  field: SiteBuildMetadataFieldsEnum;
+  field: SiteBuildMetadataFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type SiteBuildMetadataGroupConnection_maxArgs = {
-  field: SiteBuildMetadataFieldsEnum;
+  field: SiteBuildMetadataFieldSelector;
 };
 
 
 type SiteBuildMetadataGroupConnection_minArgs = {
-  field: SiteBuildMetadataFieldsEnum;
+  field: SiteBuildMetadataFieldSelector;
 };
 
 
 type SiteBuildMetadataGroupConnection_sumArgs = {
-  field: SiteBuildMetadataFieldsEnum;
+  field: SiteBuildMetadataFieldSelector;
 };
 
 type SiteBuildMetadataSortInput = {
-  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<SiteBuildMetadataFieldsEnum>>>;
-  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+  readonly buildTime: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
 };
 
 type SiteConnection = {
@@ -2466,29 +2042,29 @@ type SiteConnection = {
 
 
 type SiteConnection_distinctArgs = {
-  field: SiteFieldsEnum;
+  field: SiteFieldSelector;
 };
 
 
 type SiteConnection_groupArgs = {
-  field: SiteFieldsEnum;
+  field: SiteFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type SiteConnection_maxArgs = {
-  field: SiteFieldsEnum;
+  field: SiteFieldSelector;
 };
 
 
 type SiteConnection_minArgs = {
-  field: SiteFieldsEnum;
+  field: SiteFieldSelector;
 };
 
 
 type SiteConnection_sumArgs = {
-  field: SiteFieldsEnum;
+  field: SiteFieldSelector;
 };
 
 type SiteEdge = {
@@ -2497,106 +2073,21 @@ type SiteEdge = {
   readonly previous: Maybe<Site>;
 };
 
-type SiteFieldsEnum =
-  | 'buildTime'
-  | 'children'
-  | 'children.children'
-  | 'children.children.children'
-  | 'children.children.children.children'
-  | 'children.children.children.id'
-  | 'children.children.id'
-  | 'children.children.internal.content'
-  | 'children.children.internal.contentDigest'
-  | 'children.children.internal.description'
-  | 'children.children.internal.fieldOwners'
-  | 'children.children.internal.ignoreType'
-  | 'children.children.internal.mediaType'
-  | 'children.children.internal.owner'
-  | 'children.children.internal.type'
-  | 'children.children.parent.children'
-  | 'children.children.parent.id'
-  | 'children.id'
-  | 'children.internal.content'
-  | 'children.internal.contentDigest'
-  | 'children.internal.description'
-  | 'children.internal.fieldOwners'
-  | 'children.internal.ignoreType'
-  | 'children.internal.mediaType'
-  | 'children.internal.owner'
-  | 'children.internal.type'
-  | 'children.parent.children'
-  | 'children.parent.children.children'
-  | 'children.parent.children.id'
-  | 'children.parent.id'
-  | 'children.parent.internal.content'
-  | 'children.parent.internal.contentDigest'
-  | 'children.parent.internal.description'
-  | 'children.parent.internal.fieldOwners'
-  | 'children.parent.internal.ignoreType'
-  | 'children.parent.internal.mediaType'
-  | 'children.parent.internal.owner'
-  | 'children.parent.internal.type'
-  | 'children.parent.parent.children'
-  | 'children.parent.parent.id'
-  | 'graphqlTypegen.typesOutputPath'
-  | 'host'
-  | 'id'
-  | 'internal.content'
-  | 'internal.contentDigest'
-  | 'internal.description'
-  | 'internal.fieldOwners'
-  | 'internal.ignoreType'
-  | 'internal.mediaType'
-  | 'internal.owner'
-  | 'internal.type'
-  | 'jsxRuntime'
-  | 'parent.children'
-  | 'parent.children.children'
-  | 'parent.children.children.children'
-  | 'parent.children.children.id'
-  | 'parent.children.id'
-  | 'parent.children.internal.content'
-  | 'parent.children.internal.contentDigest'
-  | 'parent.children.internal.description'
-  | 'parent.children.internal.fieldOwners'
-  | 'parent.children.internal.ignoreType'
-  | 'parent.children.internal.mediaType'
-  | 'parent.children.internal.owner'
-  | 'parent.children.internal.type'
-  | 'parent.children.parent.children'
-  | 'parent.children.parent.id'
-  | 'parent.id'
-  | 'parent.internal.content'
-  | 'parent.internal.contentDigest'
-  | 'parent.internal.description'
-  | 'parent.internal.fieldOwners'
-  | 'parent.internal.ignoreType'
-  | 'parent.internal.mediaType'
-  | 'parent.internal.owner'
-  | 'parent.internal.type'
-  | 'parent.parent.children'
-  | 'parent.parent.children.children'
-  | 'parent.parent.children.id'
-  | 'parent.parent.id'
-  | 'parent.parent.internal.content'
-  | 'parent.parent.internal.contentDigest'
-  | 'parent.parent.internal.description'
-  | 'parent.parent.internal.fieldOwners'
-  | 'parent.parent.internal.ignoreType'
-  | 'parent.parent.internal.mediaType'
-  | 'parent.parent.internal.owner'
-  | 'parent.parent.internal.type'
-  | 'parent.parent.parent.children'
-  | 'parent.parent.parent.id'
-  | 'pathPrefix'
-  | 'polyfill'
-  | 'port'
-  | 'siteMetadata.author'
-  | 'siteMetadata.description'
-  | 'siteMetadata.siteUrl'
-  | 'siteMetadata.tagline'
-  | 'siteMetadata.title'
-  | 'trailingSlash';
+type SiteFieldSelector = {
+  readonly buildTime: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFieldSelector>;
+  readonly host: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly jsxRuntime: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly pathPrefix: InputMaybe<FieldSelectorEnum>;
+  readonly polyfill: InputMaybe<FieldSelectorEnum>;
+  readonly port: InputMaybe<FieldSelectorEnum>;
+  readonly siteMetadata: InputMaybe<SiteSiteMetadataFieldSelector>;
+  readonly trailingSlash: InputMaybe<FieldSelectorEnum>;
+};
 
 type SiteFilterInput = {
   readonly buildTime: InputMaybe<DateQueryOperatorInput>;
@@ -2642,29 +2133,29 @@ type SiteFunctionConnection = {
 
 
 type SiteFunctionConnection_distinctArgs = {
-  field: SiteFunctionFieldsEnum;
+  field: SiteFunctionFieldSelector;
 };
 
 
 type SiteFunctionConnection_groupArgs = {
-  field: SiteFunctionFieldsEnum;
+  field: SiteFunctionFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type SiteFunctionConnection_maxArgs = {
-  field: SiteFunctionFieldsEnum;
+  field: SiteFunctionFieldSelector;
 };
 
 
 type SiteFunctionConnection_minArgs = {
-  field: SiteFunctionFieldsEnum;
+  field: SiteFunctionFieldSelector;
 };
 
 
 type SiteFunctionConnection_sumArgs = {
-  field: SiteFunctionFieldsEnum;
+  field: SiteFunctionFieldSelector;
 };
 
 type SiteFunctionEdge = {
@@ -2673,100 +2164,19 @@ type SiteFunctionEdge = {
   readonly previous: Maybe<SiteFunction>;
 };
 
-type SiteFunctionFieldsEnum =
-  | 'absoluteCompiledFilePath'
-  | 'children'
-  | 'children.children'
-  | 'children.children.children'
-  | 'children.children.children.children'
-  | 'children.children.children.id'
-  | 'children.children.id'
-  | 'children.children.internal.content'
-  | 'children.children.internal.contentDigest'
-  | 'children.children.internal.description'
-  | 'children.children.internal.fieldOwners'
-  | 'children.children.internal.ignoreType'
-  | 'children.children.internal.mediaType'
-  | 'children.children.internal.owner'
-  | 'children.children.internal.type'
-  | 'children.children.parent.children'
-  | 'children.children.parent.id'
-  | 'children.id'
-  | 'children.internal.content'
-  | 'children.internal.contentDigest'
-  | 'children.internal.description'
-  | 'children.internal.fieldOwners'
-  | 'children.internal.ignoreType'
-  | 'children.internal.mediaType'
-  | 'children.internal.owner'
-  | 'children.internal.type'
-  | 'children.parent.children'
-  | 'children.parent.children.children'
-  | 'children.parent.children.id'
-  | 'children.parent.id'
-  | 'children.parent.internal.content'
-  | 'children.parent.internal.contentDigest'
-  | 'children.parent.internal.description'
-  | 'children.parent.internal.fieldOwners'
-  | 'children.parent.internal.ignoreType'
-  | 'children.parent.internal.mediaType'
-  | 'children.parent.internal.owner'
-  | 'children.parent.internal.type'
-  | 'children.parent.parent.children'
-  | 'children.parent.parent.id'
-  | 'functionRoute'
-  | 'id'
-  | 'internal.content'
-  | 'internal.contentDigest'
-  | 'internal.description'
-  | 'internal.fieldOwners'
-  | 'internal.ignoreType'
-  | 'internal.mediaType'
-  | 'internal.owner'
-  | 'internal.type'
-  | 'matchPath'
-  | 'originalAbsoluteFilePath'
-  | 'originalRelativeFilePath'
-  | 'parent.children'
-  | 'parent.children.children'
-  | 'parent.children.children.children'
-  | 'parent.children.children.id'
-  | 'parent.children.id'
-  | 'parent.children.internal.content'
-  | 'parent.children.internal.contentDigest'
-  | 'parent.children.internal.description'
-  | 'parent.children.internal.fieldOwners'
-  | 'parent.children.internal.ignoreType'
-  | 'parent.children.internal.mediaType'
-  | 'parent.children.internal.owner'
-  | 'parent.children.internal.type'
-  | 'parent.children.parent.children'
-  | 'parent.children.parent.id'
-  | 'parent.id'
-  | 'parent.internal.content'
-  | 'parent.internal.contentDigest'
-  | 'parent.internal.description'
-  | 'parent.internal.fieldOwners'
-  | 'parent.internal.ignoreType'
-  | 'parent.internal.mediaType'
-  | 'parent.internal.owner'
-  | 'parent.internal.type'
-  | 'parent.parent.children'
-  | 'parent.parent.children.children'
-  | 'parent.parent.children.id'
-  | 'parent.parent.id'
-  | 'parent.parent.internal.content'
-  | 'parent.parent.internal.contentDigest'
-  | 'parent.parent.internal.description'
-  | 'parent.parent.internal.fieldOwners'
-  | 'parent.parent.internal.ignoreType'
-  | 'parent.parent.internal.mediaType'
-  | 'parent.parent.internal.owner'
-  | 'parent.parent.internal.type'
-  | 'parent.parent.parent.children'
-  | 'parent.parent.parent.id'
-  | 'pluginName'
-  | 'relativeCompiledFilePath';
+type SiteFunctionFieldSelector = {
+  readonly absoluteCompiledFilePath: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly functionRoute: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly matchPath: InputMaybe<FieldSelectorEnum>;
+  readonly originalAbsoluteFilePath: InputMaybe<FieldSelectorEnum>;
+  readonly originalRelativeFilePath: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly pluginName: InputMaybe<FieldSelectorEnum>;
+  readonly relativeCompiledFilePath: InputMaybe<FieldSelectorEnum>;
+};
 
 type SiteFunctionFilterInput = {
   readonly absoluteCompiledFilePath: InputMaybe<StringQueryOperatorInput>;
@@ -2798,42 +2208,67 @@ type SiteFunctionGroupConnection = {
 
 
 type SiteFunctionGroupConnection_distinctArgs = {
-  field: SiteFunctionFieldsEnum;
+  field: SiteFunctionFieldSelector;
 };
 
 
 type SiteFunctionGroupConnection_groupArgs = {
-  field: SiteFunctionFieldsEnum;
+  field: SiteFunctionFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type SiteFunctionGroupConnection_maxArgs = {
-  field: SiteFunctionFieldsEnum;
+  field: SiteFunctionFieldSelector;
 };
 
 
 type SiteFunctionGroupConnection_minArgs = {
-  field: SiteFunctionFieldsEnum;
+  field: SiteFunctionFieldSelector;
 };
 
 
 type SiteFunctionGroupConnection_sumArgs = {
-  field: SiteFunctionFieldsEnum;
+  field: SiteFunctionFieldSelector;
 };
 
 type SiteFunctionSortInput = {
-  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<SiteFunctionFieldsEnum>>>;
-  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+  readonly absoluteCompiledFilePath: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly functionRoute: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly matchPath: InputMaybe<SortOrderEnum>;
+  readonly originalAbsoluteFilePath: InputMaybe<SortOrderEnum>;
+  readonly originalRelativeFilePath: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly pluginName: InputMaybe<SortOrderEnum>;
+  readonly relativeCompiledFilePath: InputMaybe<SortOrderEnum>;
 };
 
 type SiteGraphqlTypegen = {
+  readonly documentSearchPaths: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly generateOnBuild: Maybe<Scalars['Boolean']>;
   readonly typesOutputPath: Maybe<Scalars['String']>;
 };
 
+type SiteGraphqlTypegenFieldSelector = {
+  readonly documentSearchPaths: InputMaybe<FieldSelectorEnum>;
+  readonly generateOnBuild: InputMaybe<FieldSelectorEnum>;
+  readonly typesOutputPath: InputMaybe<FieldSelectorEnum>;
+};
+
 type SiteGraphqlTypegenFilterInput = {
+  readonly documentSearchPaths: InputMaybe<StringQueryOperatorInput>;
+  readonly generateOnBuild: InputMaybe<BooleanQueryOperatorInput>;
   readonly typesOutputPath: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteGraphqlTypegenSortInput = {
+  readonly documentSearchPaths: InputMaybe<SortOrderEnum>;
+  readonly generateOnBuild: InputMaybe<SortOrderEnum>;
+  readonly typesOutputPath: InputMaybe<SortOrderEnum>;
 };
 
 type SiteGroupConnection = {
@@ -2852,29 +2287,29 @@ type SiteGroupConnection = {
 
 
 type SiteGroupConnection_distinctArgs = {
-  field: SiteFieldsEnum;
+  field: SiteFieldSelector;
 };
 
 
 type SiteGroupConnection_groupArgs = {
-  field: SiteFieldsEnum;
+  field: SiteFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type SiteGroupConnection_maxArgs = {
-  field: SiteFieldsEnum;
+  field: SiteFieldSelector;
 };
 
 
 type SiteGroupConnection_minArgs = {
-  field: SiteFieldsEnum;
+  field: SiteFieldSelector;
 };
 
 
 type SiteGroupConnection_sumArgs = {
-  field: SiteFieldsEnum;
+  field: SiteFieldSelector;
 };
 
 type SitePage = Node & {
@@ -2905,29 +2340,29 @@ type SitePageConnection = {
 
 
 type SitePageConnection_distinctArgs = {
-  field: SitePageFieldsEnum;
+  field: SitePageFieldSelector;
 };
 
 
 type SitePageConnection_groupArgs = {
-  field: SitePageFieldsEnum;
+  field: SitePageFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type SitePageConnection_maxArgs = {
-  field: SitePageFieldsEnum;
+  field: SitePageFieldSelector;
 };
 
 
 type SitePageConnection_minArgs = {
-  field: SitePageFieldsEnum;
+  field: SitePageFieldSelector;
 };
 
 
 type SitePageConnection_sumArgs = {
-  field: SitePageFieldsEnum;
+  field: SitePageFieldSelector;
 };
 
 type SitePageEdge = {
@@ -2936,146 +2371,19 @@ type SitePageEdge = {
   readonly previous: Maybe<SitePage>;
 };
 
-type SitePageFieldsEnum =
-  | 'children'
-  | 'children.children'
-  | 'children.children.children'
-  | 'children.children.children.children'
-  | 'children.children.children.id'
-  | 'children.children.id'
-  | 'children.children.internal.content'
-  | 'children.children.internal.contentDigest'
-  | 'children.children.internal.description'
-  | 'children.children.internal.fieldOwners'
-  | 'children.children.internal.ignoreType'
-  | 'children.children.internal.mediaType'
-  | 'children.children.internal.owner'
-  | 'children.children.internal.type'
-  | 'children.children.parent.children'
-  | 'children.children.parent.id'
-  | 'children.id'
-  | 'children.internal.content'
-  | 'children.internal.contentDigest'
-  | 'children.internal.description'
-  | 'children.internal.fieldOwners'
-  | 'children.internal.ignoreType'
-  | 'children.internal.mediaType'
-  | 'children.internal.owner'
-  | 'children.internal.type'
-  | 'children.parent.children'
-  | 'children.parent.children.children'
-  | 'children.parent.children.id'
-  | 'children.parent.id'
-  | 'children.parent.internal.content'
-  | 'children.parent.internal.contentDigest'
-  | 'children.parent.internal.description'
-  | 'children.parent.internal.fieldOwners'
-  | 'children.parent.internal.ignoreType'
-  | 'children.parent.internal.mediaType'
-  | 'children.parent.internal.owner'
-  | 'children.parent.internal.type'
-  | 'children.parent.parent.children'
-  | 'children.parent.parent.id'
-  | 'component'
-  | 'componentChunkName'
-  | 'id'
-  | 'internalComponentName'
-  | 'internal.content'
-  | 'internal.contentDigest'
-  | 'internal.description'
-  | 'internal.fieldOwners'
-  | 'internal.ignoreType'
-  | 'internal.mediaType'
-  | 'internal.owner'
-  | 'internal.type'
-  | 'matchPath'
-  | 'pageContext'
-  | 'parent.children'
-  | 'parent.children.children'
-  | 'parent.children.children.children'
-  | 'parent.children.children.id'
-  | 'parent.children.id'
-  | 'parent.children.internal.content'
-  | 'parent.children.internal.contentDigest'
-  | 'parent.children.internal.description'
-  | 'parent.children.internal.fieldOwners'
-  | 'parent.children.internal.ignoreType'
-  | 'parent.children.internal.mediaType'
-  | 'parent.children.internal.owner'
-  | 'parent.children.internal.type'
-  | 'parent.children.parent.children'
-  | 'parent.children.parent.id'
-  | 'parent.id'
-  | 'parent.internal.content'
-  | 'parent.internal.contentDigest'
-  | 'parent.internal.description'
-  | 'parent.internal.fieldOwners'
-  | 'parent.internal.ignoreType'
-  | 'parent.internal.mediaType'
-  | 'parent.internal.owner'
-  | 'parent.internal.type'
-  | 'parent.parent.children'
-  | 'parent.parent.children.children'
-  | 'parent.parent.children.id'
-  | 'parent.parent.id'
-  | 'parent.parent.internal.content'
-  | 'parent.parent.internal.contentDigest'
-  | 'parent.parent.internal.description'
-  | 'parent.parent.internal.fieldOwners'
-  | 'parent.parent.internal.ignoreType'
-  | 'parent.parent.internal.mediaType'
-  | 'parent.parent.internal.owner'
-  | 'parent.parent.internal.type'
-  | 'parent.parent.parent.children'
-  | 'parent.parent.parent.id'
-  | 'path'
-  | 'pluginCreator.browserAPIs'
-  | 'pluginCreator.children'
-  | 'pluginCreator.children.children'
-  | 'pluginCreator.children.children.children'
-  | 'pluginCreator.children.children.id'
-  | 'pluginCreator.children.id'
-  | 'pluginCreator.children.internal.content'
-  | 'pluginCreator.children.internal.contentDigest'
-  | 'pluginCreator.children.internal.description'
-  | 'pluginCreator.children.internal.fieldOwners'
-  | 'pluginCreator.children.internal.ignoreType'
-  | 'pluginCreator.children.internal.mediaType'
-  | 'pluginCreator.children.internal.owner'
-  | 'pluginCreator.children.internal.type'
-  | 'pluginCreator.children.parent.children'
-  | 'pluginCreator.children.parent.id'
-  | 'pluginCreator.id'
-  | 'pluginCreator.internal.content'
-  | 'pluginCreator.internal.contentDigest'
-  | 'pluginCreator.internal.description'
-  | 'pluginCreator.internal.fieldOwners'
-  | 'pluginCreator.internal.ignoreType'
-  | 'pluginCreator.internal.mediaType'
-  | 'pluginCreator.internal.owner'
-  | 'pluginCreator.internal.type'
-  | 'pluginCreator.name'
-  | 'pluginCreator.nodeAPIs'
-  | 'pluginCreator.packageJson'
-  | 'pluginCreator.parent.children'
-  | 'pluginCreator.parent.children.children'
-  | 'pluginCreator.parent.children.id'
-  | 'pluginCreator.parent.id'
-  | 'pluginCreator.parent.internal.content'
-  | 'pluginCreator.parent.internal.contentDigest'
-  | 'pluginCreator.parent.internal.description'
-  | 'pluginCreator.parent.internal.fieldOwners'
-  | 'pluginCreator.parent.internal.ignoreType'
-  | 'pluginCreator.parent.internal.mediaType'
-  | 'pluginCreator.parent.internal.owner'
-  | 'pluginCreator.parent.internal.type'
-  | 'pluginCreator.parent.parent.children'
-  | 'pluginCreator.parent.parent.id'
-  | 'pluginCreator.pluginFilepath'
-  | 'pluginCreator.pluginOptions'
-  | 'pluginCreator.resolve'
-  | 'pluginCreator.ssrAPIs'
-  | 'pluginCreator.version';
+type SitePageFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly component: InputMaybe<FieldSelectorEnum>;
+  readonly componentChunkName: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly internalComponentName: InputMaybe<FieldSelectorEnum>;
+  readonly matchPath: InputMaybe<FieldSelectorEnum>;
+  readonly pageContext: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly path: InputMaybe<FieldSelectorEnum>;
+  readonly pluginCreator: InputMaybe<SitePluginFieldSelector>;
+};
 
 type SitePageFilterInput = {
   readonly children: InputMaybe<NodeFilterListInput>;
@@ -3107,34 +2415,43 @@ type SitePageGroupConnection = {
 
 
 type SitePageGroupConnection_distinctArgs = {
-  field: SitePageFieldsEnum;
+  field: SitePageFieldSelector;
 };
 
 
 type SitePageGroupConnection_groupArgs = {
-  field: SitePageFieldsEnum;
+  field: SitePageFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type SitePageGroupConnection_maxArgs = {
-  field: SitePageFieldsEnum;
+  field: SitePageFieldSelector;
 };
 
 
 type SitePageGroupConnection_minArgs = {
-  field: SitePageFieldsEnum;
+  field: SitePageFieldSelector;
 };
 
 
 type SitePageGroupConnection_sumArgs = {
-  field: SitePageFieldsEnum;
+  field: SitePageFieldSelector;
 };
 
 type SitePageSortInput = {
-  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<SitePageFieldsEnum>>>;
-  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly component: InputMaybe<SortOrderEnum>;
+  readonly componentChunkName: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly internalComponentName: InputMaybe<SortOrderEnum>;
+  readonly matchPath: InputMaybe<SortOrderEnum>;
+  readonly pageContext: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly path: InputMaybe<SortOrderEnum>;
+  readonly pluginCreator: InputMaybe<SitePluginSortInput>;
 };
 
 type SitePlugin = Node & {
@@ -3167,29 +2484,29 @@ type SitePluginConnection = {
 
 
 type SitePluginConnection_distinctArgs = {
-  field: SitePluginFieldsEnum;
+  field: SitePluginFieldSelector;
 };
 
 
 type SitePluginConnection_groupArgs = {
-  field: SitePluginFieldsEnum;
+  field: SitePluginFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type SitePluginConnection_maxArgs = {
-  field: SitePluginFieldsEnum;
+  field: SitePluginFieldSelector;
 };
 
 
 type SitePluginConnection_minArgs = {
-  field: SitePluginFieldsEnum;
+  field: SitePluginFieldSelector;
 };
 
 
 type SitePluginConnection_sumArgs = {
-  field: SitePluginFieldsEnum;
+  field: SitePluginFieldSelector;
 };
 
 type SitePluginEdge = {
@@ -3198,102 +2515,21 @@ type SitePluginEdge = {
   readonly previous: Maybe<SitePlugin>;
 };
 
-type SitePluginFieldsEnum =
-  | 'browserAPIs'
-  | 'children'
-  | 'children.children'
-  | 'children.children.children'
-  | 'children.children.children.children'
-  | 'children.children.children.id'
-  | 'children.children.id'
-  | 'children.children.internal.content'
-  | 'children.children.internal.contentDigest'
-  | 'children.children.internal.description'
-  | 'children.children.internal.fieldOwners'
-  | 'children.children.internal.ignoreType'
-  | 'children.children.internal.mediaType'
-  | 'children.children.internal.owner'
-  | 'children.children.internal.type'
-  | 'children.children.parent.children'
-  | 'children.children.parent.id'
-  | 'children.id'
-  | 'children.internal.content'
-  | 'children.internal.contentDigest'
-  | 'children.internal.description'
-  | 'children.internal.fieldOwners'
-  | 'children.internal.ignoreType'
-  | 'children.internal.mediaType'
-  | 'children.internal.owner'
-  | 'children.internal.type'
-  | 'children.parent.children'
-  | 'children.parent.children.children'
-  | 'children.parent.children.id'
-  | 'children.parent.id'
-  | 'children.parent.internal.content'
-  | 'children.parent.internal.contentDigest'
-  | 'children.parent.internal.description'
-  | 'children.parent.internal.fieldOwners'
-  | 'children.parent.internal.ignoreType'
-  | 'children.parent.internal.mediaType'
-  | 'children.parent.internal.owner'
-  | 'children.parent.internal.type'
-  | 'children.parent.parent.children'
-  | 'children.parent.parent.id'
-  | 'id'
-  | 'internal.content'
-  | 'internal.contentDigest'
-  | 'internal.description'
-  | 'internal.fieldOwners'
-  | 'internal.ignoreType'
-  | 'internal.mediaType'
-  | 'internal.owner'
-  | 'internal.type'
-  | 'name'
-  | 'nodeAPIs'
-  | 'packageJson'
-  | 'parent.children'
-  | 'parent.children.children'
-  | 'parent.children.children.children'
-  | 'parent.children.children.id'
-  | 'parent.children.id'
-  | 'parent.children.internal.content'
-  | 'parent.children.internal.contentDigest'
-  | 'parent.children.internal.description'
-  | 'parent.children.internal.fieldOwners'
-  | 'parent.children.internal.ignoreType'
-  | 'parent.children.internal.mediaType'
-  | 'parent.children.internal.owner'
-  | 'parent.children.internal.type'
-  | 'parent.children.parent.children'
-  | 'parent.children.parent.id'
-  | 'parent.id'
-  | 'parent.internal.content'
-  | 'parent.internal.contentDigest'
-  | 'parent.internal.description'
-  | 'parent.internal.fieldOwners'
-  | 'parent.internal.ignoreType'
-  | 'parent.internal.mediaType'
-  | 'parent.internal.owner'
-  | 'parent.internal.type'
-  | 'parent.parent.children'
-  | 'parent.parent.children.children'
-  | 'parent.parent.children.id'
-  | 'parent.parent.id'
-  | 'parent.parent.internal.content'
-  | 'parent.parent.internal.contentDigest'
-  | 'parent.parent.internal.description'
-  | 'parent.parent.internal.fieldOwners'
-  | 'parent.parent.internal.ignoreType'
-  | 'parent.parent.internal.mediaType'
-  | 'parent.parent.internal.owner'
-  | 'parent.parent.internal.type'
-  | 'parent.parent.parent.children'
-  | 'parent.parent.parent.id'
-  | 'pluginFilepath'
-  | 'pluginOptions'
-  | 'resolve'
-  | 'ssrAPIs'
-  | 'version';
+type SitePluginFieldSelector = {
+  readonly browserAPIs: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly nodeAPIs: InputMaybe<FieldSelectorEnum>;
+  readonly packageJson: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly pluginFilepath: InputMaybe<FieldSelectorEnum>;
+  readonly pluginOptions: InputMaybe<FieldSelectorEnum>;
+  readonly resolve: InputMaybe<FieldSelectorEnum>;
+  readonly ssrAPIs: InputMaybe<FieldSelectorEnum>;
+  readonly version: InputMaybe<FieldSelectorEnum>;
+};
 
 type SitePluginFilterInput = {
   readonly browserAPIs: InputMaybe<StringQueryOperatorInput>;
@@ -3327,34 +2563,45 @@ type SitePluginGroupConnection = {
 
 
 type SitePluginGroupConnection_distinctArgs = {
-  field: SitePluginFieldsEnum;
+  field: SitePluginFieldSelector;
 };
 
 
 type SitePluginGroupConnection_groupArgs = {
-  field: SitePluginFieldsEnum;
+  field: SitePluginFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
 type SitePluginGroupConnection_maxArgs = {
-  field: SitePluginFieldsEnum;
+  field: SitePluginFieldSelector;
 };
 
 
 type SitePluginGroupConnection_minArgs = {
-  field: SitePluginFieldsEnum;
+  field: SitePluginFieldSelector;
 };
 
 
 type SitePluginGroupConnection_sumArgs = {
-  field: SitePluginFieldsEnum;
+  field: SitePluginFieldSelector;
 };
 
 type SitePluginSortInput = {
-  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<SitePluginFieldsEnum>>>;
-  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+  readonly browserAPIs: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly nodeAPIs: InputMaybe<SortOrderEnum>;
+  readonly packageJson: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly pluginFilepath: InputMaybe<SortOrderEnum>;
+  readonly pluginOptions: InputMaybe<SortOrderEnum>;
+  readonly resolve: InputMaybe<SortOrderEnum>;
+  readonly ssrAPIs: InputMaybe<SortOrderEnum>;
+  readonly version: InputMaybe<SortOrderEnum>;
 };
 
 type SiteSiteMetadata = {
@@ -3365,6 +2612,14 @@ type SiteSiteMetadata = {
   readonly title: Maybe<Scalars['String']>;
 };
 
+type SiteSiteMetadataFieldSelector = {
+  readonly author: InputMaybe<FieldSelectorEnum>;
+  readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly siteUrl: InputMaybe<FieldSelectorEnum>;
+  readonly tagline: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
 type SiteSiteMetadataFilterInput = {
   readonly author: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
@@ -3373,9 +2628,28 @@ type SiteSiteMetadataFilterInput = {
   readonly title: InputMaybe<StringQueryOperatorInput>;
 };
 
+type SiteSiteMetadataSortInput = {
+  readonly author: InputMaybe<SortOrderEnum>;
+  readonly description: InputMaybe<SortOrderEnum>;
+  readonly siteUrl: InputMaybe<SortOrderEnum>;
+  readonly tagline: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
 type SiteSortInput = {
-  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<SiteFieldsEnum>>>;
-  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+  readonly buildTime: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenSortInput>;
+  readonly host: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly jsxRuntime: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly pathPrefix: InputMaybe<SortOrderEnum>;
+  readonly polyfill: InputMaybe<SortOrderEnum>;
+  readonly port: InputMaybe<SortOrderEnum>;
+  readonly siteMetadata: InputMaybe<SiteSiteMetadataSortInput>;
+  readonly trailingSlash: InputMaybe<SortOrderEnum>;
 };
 
 type SortOrderEnum =
@@ -3515,10 +2789,10 @@ type TimezoneQueryVariables = Exact<{ [key: string]: never; }>;
 
 type TimezoneQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
-type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+type createdPagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly allMarkdownRemark: { readonly group: ReadonlyArray<{ readonly fieldValue: string | null, readonly totalCount: number }>, readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly path: string | null } | null } }> } };
+type createdPagesQuery = { readonly allMarkdownRemark: { readonly group: ReadonlyArray<{ readonly fieldValue: string | null, readonly totalCount: number }>, readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly path: string | null } | null } }> } };
 
 
 }

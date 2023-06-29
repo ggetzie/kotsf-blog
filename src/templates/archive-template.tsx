@@ -48,7 +48,7 @@ export const ArchiveQuery = graphql`
   query ArchiveTemplate($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       filter: { frontmatter: { section: { eq: "publish" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       limit: $limit
       skip: $skip
     ) {

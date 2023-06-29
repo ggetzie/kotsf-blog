@@ -25,7 +25,7 @@ export const pageQuery = graphql`
   query GDArchive {
     allMarkdownRemark(
       filter: { frontmatter: { section: { eq: "gdarchive" } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {

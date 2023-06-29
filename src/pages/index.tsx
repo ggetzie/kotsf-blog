@@ -22,7 +22,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
       filter: { frontmatter: { section: { eq: "publish" } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { frontmatter: { date: DESC } }
       limit: 5
     ) {
       edges {
