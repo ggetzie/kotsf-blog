@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
 # sync public folder to server
 
-rsync -av -e "ssh -p 19999" /usr/local/src/kotsf-blog/public/ gabe@oldkotsf:/usr/local/src/kotsf-blog/public
+# rsync -av -e "ssh -i $KOTSF_KEY" /usr/local/src/kotsf-blog/public/ ubuntu@kotsf.com:/usr/local/src/kotsf-blog/public
+aws --profile taw s3 sync public/ s3://tilting-at-windmills
