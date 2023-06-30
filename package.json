@@ -54,7 +54,7 @@
     "react-helmet": "latest",
     "react-typography": "^0.16.20",
     "serialize-javascript": ">=6.0.0",
-    "sharp": "^0.31.0",
+    "sharp": "^0.32.1",
     "styled-components": "^5.3.1",
     "typography": "^0.16.21",
     "typography-theme-lincoln": "^0.16.19",
